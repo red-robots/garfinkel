@@ -94,6 +94,9 @@ body {
 	background: #FFF;
 	&.home {
 		background: #FFF;
+		#content {
+			min-height: 30em;
+		}
 	}
 	&.page-template-page-contact {
 		background: $gray;
