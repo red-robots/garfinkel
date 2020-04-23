@@ -6,7 +6,7 @@ get_header();
 		
 		<?php if ( get_the_content() ) { ?>
 		<section class="maintext fw">
-			<div class="wrapper">
+			<div class="wrapper fadeIn wow">
 				<?php echo the_content(); ?>
 			</div>
 		</section>
@@ -30,7 +30,7 @@ get_header();
 		<div class="innerwrap fw">
 			<div class="wrapper">
 				<?php if ($section_2_title || $section_2_subline) { ?>
-					<div class="heading">
+					<div class="heading fadeInLeft wow">
 					<?php if ($section_2_title) { ?>
 						<h2 class="stitle"><span><?php echo $section_2_title; ?></span></h2>
 					<?php } ?>
@@ -46,8 +46,9 @@ get_header();
 							$title = get_the_title();
 							$excerpt = get_field("excerpt");
 							$pagelink = get_permalink();
+							$delay = $i+2;
 							?>
-						<div class="fbox">
+						<div class="fbox fadeInUp wow" data-wow-delay=".<?php echo $delay?>s">
 							<div class="inner">
 								<h3 class="title"><?php echo $title; ?></h3>
 								<div class="text"><?php echo $excerpt ?></div>
