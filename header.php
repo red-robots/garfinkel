@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|Open+Sans+Condensed:300,300i,700|Fira+Sans+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif+JP:200,300,400,500,600,700,900|Noto+Serif+SC:200,300,400,500,600,700,900|Noto+Serif:400,400i,700,700i|Noto+Sans+JP:100,300,400,500,700,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <?php wp_head(); ?>
 <?php  
@@ -54,7 +54,7 @@ $customClass = (get_field("banner")) ? 'hasbanner':'nobanner';
 		        <?php } ?>
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div>
 		</div><!-- wrapper -->

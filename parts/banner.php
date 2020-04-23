@@ -1,89 +1,81 @@
 <?php
-$banner = get_field("banner");
-$taglines = get_field("taglines");
+$homeBanner = ( is_front_page() ) ? 'homepage':'subpage';
+$slides = get_field("hero_image");
+$count = 0;
+if( isset($slides['url']) && $slides['url'] ) {
+	$count = 0;
+} else {
+	$count = ($slides) ? count($slides) : 0; 
+}
+$slidesId = ($count>1) ? 'slideshow':'static-banner';
 $placeholder = THEMEURI . 'images/rectangle.png';
-if( is_front_page() || is_home() ) {
-	if($banner) { ?>
-	<div class="banner cf">
-		<div class="bimage" style="background-image:url('<?php echo $banner['url'] ?>')">
-			<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder" />
-			<?php 
-			$totalSlides = count($taglines);
-			$slidesId = ($totalSlides>1) ? 'slideshow':'static-banner';
-			$isAnimated = ($totalSlides==1) ? ' fadeInLeft animated':'';
-			if ($taglines) { ?>
-			<div class="bcaption">
-				<div id="<?php echo $slidesId ?>" class="slideTextContainer wrapper swiper-container">
-					<div class="swiper-wrapper">
-						<?php foreach ($taglines as $tag) { ?>
-							<div class="swiper-slide">
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder" />
-					    		<div class="inner-text">
-					    			<div class="textwrap<?php echo $isAnimated ?>">
-							    		<?php if ($tag['large_text']) { ?>
-							    		<h2 class="largeTxt"><?php echo $tag['large_text'] ?></h2>	
-							    		<?php } ?>
-							    		<?php if ($tag['small_text']) { ?>
-							    		<div class="smallTxt"><?php echo $tag['small_text'] ?></div>	
-							    		<?php } ?>
-						    		</div>
-					    		</div>
-					    	</div>
+
+if( is_front_page() ) {
+	$tagline = get_field("tagline");
+	if( $slides ) {  ?>
+		<div id="<?php echo $slidesId ?>" class="swiper-container banner-wrap fw homepage">
+			<div class="swiper-wrapper">
+
+				<?php if ( isset($slides['url']) && $slides['url'] ) { ?>
+
+					<div class="swiper-slide slideItem" style="background-image:url('<?php echo $slides['url'] ?>');">
+						<?php if ($tagline) { ?>
+						<div class="slideCaption">
+							<div class="wrapper">
+								<div class="text fadeInDown wow"><?php echo $tagline ?></div>
+							</div>
+						</div>
 						<?php } ?>
 					</div>
-				</div>
-			</div>	
+
+				<?php } else { ?>
+
+					<?php foreach ($slides as $img) { 
+							$title = $img['title'];
+							$caption = $img['caption'];
+						?>
+	    				<div class="swiper-slide slideItem" style="background-image:url('<?php echo $img['url'] ?>');">
+	    					<?php if ($caption) { ?>
+	    					<div class="slideCaption">
+		    					<div class="slideInside animated">
+		    						<div class="slideMid">
+			    						<?php if ($title) { ?>
+			    						<h2 class="slideTitle"><?php echo $title; ?></h2><br>
+			    						<?php } ?>
+			    						<?php if ($caption) { ?>
+			    						<div class="slideText"><?php echo $caption; ?></div>	
+			    						<?php } ?>
+		    						</div>
+	    						</div>
+	    					</div>
+	    					<?php } ?>
+	    					<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+	    				</div>
+	    			<?php } ?>
+
+				<?php } ?>
+
+			</div>
+
+			<?php if ($count>1) { ?>
+			    <div class="swiper-pagination"></div>
+			    <div class="swiper-button-next"></div>
+			    <div class="swiper-button-prev"></div>
 			<?php } ?>
 		</div>
-		<div class="scrolldown">
-			<div class="wrapper"><a href="#content" title="Scroll Down" id="scrolldown"><span class="arrow"></span></a></div>
+		<div class="scrollDownDiv">
+			<div class="wrapper"><a href="#" id="scrolldown" class="fadeInDown wow" data-wow-delay=".5s"><span class="sr">scroll down</span></a></div>
 		</div>
-	</div>
 	<?php } ?>
 
 <?php } else { ?>
-
-	<?php 
-	$header_image = get_field("header_image"); 
-	$page_title = get_the_title();
-	$post_type = get_post_type();
-	$types = array(
-		'post'=>'page-news',
-		'teams'=>'page-team',
-		'partners'=>'page-vendors'
-	);
-	if( is_single() && array_key_exists($post_type, $types) ) {
-		$page_template = $types[$post_type];
-		$parent_id = get_page_id_by_template($page_template);
-		if($parent_id) {
-			$header_image = get_field("header_image",$parent_id);
-			$page_title = get_the_title($parent_id);
-		}
-	}
-
-
-	$style = ($header_image) ? ' style="background-image:url('.$header_image['url'].')"':'';
-
-	?>
-	<?php if (is_404()) { ?>
-	<div class="hero cf">
-		<div class="inner">
-			<div class="wrapper">
-				<div class="titlediv">
-					<h1 class="pagetitle border-animate"><span><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bellaworks' ); ?></span></h1>
-				</div>
-			</div>
+	
+	<?php if( $slides ) {  ?>
+	<div id="static-banner" class="banner-wrap fw subpage">
+		<div class="banner-image cf">
+			<img src="<?php echo $slides['url'] ?>" alt="<?php echo $slides['title'] ?>" />
 		</div>
 	</div>
-	<?php } else { ?>
-	<div class="hero cf"<?php echo $style ?>>
-		<div class="inner">
-			<div class="wrapper">
-				<div class="titlediv"><h1 class="pagetitle border-animate"><span><?php echo $page_title ?></span></h1></div>
-			</div>
-		</div>
-	</div>	
 	<?php } ?>
-	
 
 <?php } ?>
