@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
     });
 
 	move_footer();
-	
+
     $(window).on('resize',function(){
     	move_footer()
     });
@@ -242,14 +242,14 @@ jQuery(document).ready(function ($) {
 	new WOW().init();
 
 
-	$(document).on("click","#menu-toggle",function(e){
+	$(document).on("click",".menu-toggle",function(e){
 		e.preventDefault();
 		$(this).toggleClass('open');
 		$('body').toggleClass('open-menu');
 	});
 	$(document).on("click","#overlay",function(e){
 		e.preventDefault();
-		$('#menu-toggle').trigger('click');
+		$('.menu-toggle').trigger('click');
 	});
 
 });// END #####################################    END

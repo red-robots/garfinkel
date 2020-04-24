@@ -114,7 +114,7 @@ body {
 .site-header {
 	position: relative;
 	z-index: 100;
-	height: 80px;
+	// height: 95px;
 	@include tab {
 		height: auto;
 	}
@@ -127,30 +127,56 @@ body {
 		}
 	}
 	.flexwrap {
+		width: 100%;
+    	float: left;
+    	position: relative;
 		@include flexbox-justify(space-between);
 		@include flexbox-align-items(center);
 	}
-	.topbuttons {
-		position: absolute;
-		top: 0;
-		right: 20px;
-		display: inline-block;
+	.header-buttons {
+		display: block;
+		width: 100%;
+		position: relative;
+		float: left;
+		margin-bottom: 12px;
+		margin-top: -20px;
+		@include tab {
+			display: inline-block;
+			width: auto;
+			padding-right: 0;
+			position: absolute;
+			top: 0;
+			right: 20px;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 		a {
 			display: inline-block;
+			float: left;
 			text-decoration: none;
 			background: $primary;
 			color: #FFF;
 			font-family: $font_secondary;
-			font-size: 15px;
-			font-weight: 600;
+			font-size: 13px;
+			font-weight: 400;
 			line-height: 1;
 			text-transform: uppercase;
-			padding: 8px 13px 6px;
-			border-bottom-right-radius: 5px;
-			border-bottom-left-radius: 5px;
+			padding: 8px 12px 8px;
+			margin-left: 0;
+			width: 50%;
+			text-align: center;
+			@include tab {
+				width: auto;
+				margin-left: 2px;
+			}
 			&:hover {
+				background: shade($primary,35%);
+			}
+			&.btn1 {
 				background: $secondary;
-				box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+				&:hover {
+					background: shade($secondary,30%);
+				}
 			}
 		}
 	}
@@ -158,6 +184,7 @@ body {
 .logo {
 	width: 150px;
 	position: relative;
+	top: 5px;
 	@include xs {
 		width: 180px;
 		top: 0;
@@ -202,6 +229,7 @@ body.subpage {
 	@include tab {
 		width: 70%;
 		right: -15px;
+		top: 10px;
 	}
 	ul {
 		margin: 0 0;
@@ -276,6 +304,61 @@ body.hasbanner .main-navigation {
 		color: #FFF;
 	}
 }
+
+.menu-toggle {
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 45px;
+	z-index: 503;
+	-webkit-appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+	padding: 0 0;
+	margin: 3px 0 0;
+	@include tab {
+		display: none;
+	}
+	span.bar {
+		position: relative;
+		top: -3px;
+	}
+	span.bar, span.bar:before, span.bar:after {
+		display: inline-block;
+		width: 100%;
+		height: 5px;
+		transition: all ease-in-out .3s;
+		background: $primary;
+	}
+	span.bar:before, span.bar:after {
+		content:"";
+		position: absolute;
+		left: 0;
+	}
+	span.bar:before {
+		top: -11px;
+	}
+	span.bar:after {
+		top: 11px;
+	}
+	// &.open {
+	// 	span.bar {
+	// 		background: transparent;
+	// 	}
+	// 	span.bar:before {
+	// 		transform: translateY(11px) rotate(45deg);
+	// 	}
+	// 	span.bar:after {
+	// 		transform: translateY(-11px) rotate(-45deg);
+	// 	}
+	// }
+}
+
+
 #overlay {
 	display: none;
 	background: rgba(0,0,0,.85);
@@ -310,48 +393,15 @@ body.hasbanner .main-navigation {
 	ul#mobile-menu > li:first-child {
 		display: none;
 	}
-}
-
-.menu-toggle {
-	display: block;
-	position: absolute;
-	top: 13px;
-	right: 30px;
-	width: 40px;
-	height: 50px;
-	z-index: 503;
-	-webkit-appearance: none;
-	box-shadow: none;
-	border: none;
-	background: transparent;
-	padding: 0 0;
-	margin: 0 0;
-	@include tab {
-		display: none;
-	}
-	span.bar {
-		position: relative;
-		top: -3px;
-	}
-	span.bar, span.bar:before, span.bar:after {
-		display: inline-block;
-		width: 100%;
-		height: 5px;
-		transition: all ease-in-out .3s;
-		background: $primary;
-	}
-	span.bar:before, span.bar:after {
-		content:"";
+	.menu-toggle {
 		position: absolute;
-		left: 0;
-	}
-	span.bar:before {
-		top: -11px;
-	}
-	span.bar:after {
-		top: 11px;
-	}
-	&.open {
+		top: 10px;
+		right: 103%;
+    	transform: scale(0.6);
+    	span.bar:before,
+    	span.bar:after {
+    		background: #FFF!important;
+    	}
 		span.bar {
 			background: transparent;
 		}
@@ -363,6 +413,7 @@ body.hasbanner .main-navigation {
 		}
 	}
 }
+
 
 /* Mobile Menu */
 @media screen and (max-width: $tabwidth) {
