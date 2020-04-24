@@ -249,7 +249,8 @@ jQuery(document).ready(function ($) {
 	});
 	$(document).on("click","#overlay",function(e){
 		e.preventDefault();
-		$('.menu-toggle').trigger('click');
+		$('.menu-toggle').removeClass('open');
+		$('body').removeClass('open-menu')
 	});
 
 });// END #####################################    END
