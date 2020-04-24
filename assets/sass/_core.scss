@@ -1691,4 +1691,11 @@ h1.entry-title {
 	}
 }
 
+@media screen and (max-width: 600px) {
+	#wpadminbar {
+	    position: absolute;
+	    top: -46px;
+	}
+}
+
 

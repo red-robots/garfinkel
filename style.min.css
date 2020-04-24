@@ -1094,4 +1094,5 @@ h1.entry-title{font-family:"Noto Sans JP",sans-serif;font-size:3em;font-weight:5
 }@media screen and (max-width:782px){body.logged-in.admin-bar #mobileNav .main-menu-mobile{padding-top:45px}
 body.logged-in.admin-bar .menu-toggle{top:18px}
 }@media screen and (min-width:783px) and (max-width:820px){body.logged-in.admin-bar #mobileNav .main-menu-mobile{padding-top:30px}
+}@media screen and (max-width:600px){#wpadminbar{position:absolute;top:-46px}
 }
