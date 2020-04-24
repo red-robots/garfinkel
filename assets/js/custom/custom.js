@@ -37,6 +37,22 @@ jQuery(document).ready(function ($) {
 		}
     });
 
+	move_footer();
+	
+    $(window).on('resize',function(){
+    	move_footer()
+    });
+
+    function move_footer() {
+    	var windowHeight = $(window).height();
+	    var siteContent = $("#page").height();
+	    if( siteContent < windowHeight ) {
+	    	$(".site-footer").addClass("stick-bottom");
+	    } else {
+	    	$(".site-footer").removeClass("stick-bottom");
+	    }
+    }
+
     /* Select Style */
     $(".select-input-field").each(function(){
     	var label = $(this).data("label");

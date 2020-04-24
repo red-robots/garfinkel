@@ -62,4 +62,4 @@ $customClass = (get_field("banner")) ? 'hasbanner':'nobanner';
 
 	<?php get_template_part("parts/banner"); ?>
 
-	<div id="content" class="site-content cf">
+	<div id="content" class="site-content fw">

@@ -20,9 +20,13 @@ $slug = $post->post_name;
 ?>
 
 <div id="primary" class="content-area default cf <?php echo $has_header_image ?>">
-	<main id="main" class="site-main cf" role="main">
+	<main id="main" class="site-main cf wrapper" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
+
+			<header class="entry-header">
+				<h1 class="page-title"><?php the_title(); ?></h1>
+			</header>
 
 			<?php
 			$mainText = strip_tags(get_the_content());
@@ -32,93 +36,10 @@ $slug = $post->post_name;
 			}
 			?>
 			<?php if ( $mainText ) { ?>
-			<section class="maintext cf">
-				<div class="midwrap">
-					<?php the_content(); ?>
-				</div>
-			</section>
+			<div class="entry-content cf">
+				<?php the_content(); ?>
+			</div>
 			<?php } ?>
-
-			<?php  
-			$sections = get_field("twoColContent");
-			if($sections) { ?>
-			<section class="twocol-content cf">
-				<?php $i=1; foreach ($sections as $s) { 
-				$title = $s['col1'];
-				$text = $s['col2'];
-				$hasBlueBox = ($s['hasbluebox'] && $s['hasbluebox']=='yes') ? true : false;
-				if($hasBlueBox) {
-					$bluebox = $s['bluebox'];
-				} else {
-					$bluebox = '';
-				}
-				
-				$class = ($title && $text) ? 'twocol':'full';
-				if($i==1) {
-					$class .= ' first';
-				}
-				?>
-				<div id="<?php echo $slug.'_row'.$i;?>" class="contentrow <?php echo $class ?>">
-					<div class="wrapper">
-						<div class="flexwrap cf">
-							<?php if ($title) { ?>
-							<div class="col title">
-								<h2 class="hd"><?php echo $title ?></h2>
-							</div>	
-							<?php } ?>
-							<?php if ($text) { ?>
-							<div class="col text">
-								<?php echo $text ?>
-							</div>	
-							<?php } ?>
-						</div>
-					</div>
-
-					<?php if ($bluebox) { ?>
-					<div class="bluebox-area cf">
-						<div class="wrapper">
-							<div class="bluebox">
-								<?php echo $bluebox ?>
-							</div>
-						</div>
-					</div>	
-					<?php } ?>
-				</div>	
-				<?php $i++; } ?>
-			</section>
-			<?php } ?>
-
-			<?php 
-			$bottomtext = get_field("bottom_text"); 
-			$bottomImg = get_field("bottom_image");
-			$text1 =  (isset($bottomtext['text1']) && $bottomtext['text1']) ? $bottomtext['text1'] : '';
-			$text2 =  (isset($bottomtext['text2']) && $bottomtext['text2']) ? $bottomtext['text2'] : '';
-			$bottomStyle = ($bottomImg) ? ' style="background-image:url('.$bottomImg['url'].')"':'';
-			$button_name = get_field("button_name");
-			$button_link = get_field("button_link");
-			?>
-
-			<?php if ($bottomtext) { ?>
-			<section class="bottom-section cf"<?php echo $bottomStyle ?>>
-				<div class="wrapper">
-					<div class="textcol">
-						<?php if ($text1) { ?>
-						<h3 class="txt1"><?php echo $text1 ?></h3>	
-						<?php } ?>
-						<?php if ($text2) { ?>
-						<p class="txt2"><?php echo $text2 ?></p>	
-						<?php } ?>
-						<?php if ($button_name && $button_link) { ?>
-						<div class="ctadiv">
-							<a href="<?php echo $button_link ?>" class="btn-default lg"><?php echo $button_name ?></a>
-						</div>	
-						<?php } ?>
-					</div>
-				</div>
-			</section>
-			<?php } ?>
-
-			
 
 		<?php endwhile; ?>
 
