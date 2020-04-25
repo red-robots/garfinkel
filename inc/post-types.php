@@ -94,6 +94,13 @@ function ii_custom_taxonomies() {
                 'single'    => 'Partner Category',
                 'taxonomy'  => 'partner-category'
             ),
+            array(
+                'post_type' => 'teams',
+                'menu_name' => 'Team Groups',
+                'plural'    => 'Team Groups',
+                'single'    => 'Team Group',
+                'taxonomy'  => 'team-groups'
+            ),
         );
     
     if($posts) {
