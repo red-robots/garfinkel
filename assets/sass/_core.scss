@@ -114,7 +114,7 @@ body {
 .site-header {
 	position: relative;
 	z-index: 100;
-	background: #F7F7F7;
+	background: $gray;
 	width: 100%;
 	float: left;
 	@include tab {
@@ -649,6 +649,56 @@ body.open-menu {
 		}
 	}
 }
+body.subpage #static-banner {
+	width: 100%;
+	float: left;
+	height: 180px;
+	@include xs {
+		height: 250px;
+	}
+	@include mid {
+		height: 300px;
+	}
+	.banner-image {
+		width: 100%;
+		height: 100%;
+		float: left;
+		position: relative;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-color: $primary;
+		.wrapper {
+			height: 100%;
+		}
+		.caption {
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 15%;
+			text-align: right;
+			color: #FFF;
+			padding: 0 20px;
+			h1 {
+				color: #FFF;
+				font-size: 2.3rem;
+				line-height: 1.1;
+				@include tab {
+					font-size: 2.6rem;
+				}
+			}
+		}
+	}
+	img.placeholder {
+		width: 100%;
+		height: auto;
+		float: left;
+		display: block;
+		@include tab {
+			display: none;
+		}
+	}
+}
 .scrollDownDiv {
 	width: 100%;
 	float: left;
@@ -729,32 +779,22 @@ body.hasbanner {
 		box-shadow: 0 0 8px rgba(0,0,0,0.45);
 	}
 }
-.btn-more {
+.btngold {
 	display: inline-block;
 	text-decoration: none;
-	position: relative;
+	-webkit-appearance: none;
+	border: none;
+	background: $secondary;
+	color: #FFF;
+	padding: 6px 20px;
+	font-family: $font_primary;
 	font-size: 13px;
+	font-weight: 600;
 	font-style: italic;
-	color: $secondary;
-	&:after {
-		content:"";
-		display: inline-block;
-		width: 0;
-		height: 0;
-		border-left: 8px solid $secondary;
-		border-top: 4px solid transparent;
-		border-bottom: 4px solid transparent;
-		position: absolute;
-		top: 6px;
-		right: -14px;
-		transition: all ease-out .3s
-	}
+	line-height: 1.2;
 	&:hover {
-		color: tint($secondary,30%);
-		&:after {
-			border-left-color: tint($secondary,30%);
-			transform: translateX(3px);
-		}
+		color: #FFF!important;
+		background: shade($secondary,30%);
 	}
 }
 .row2 {
@@ -1557,6 +1597,138 @@ h1.entry-title {
 		margin-top: 40px;
 	}
 }
+
+/* News page */
+body.page-template-page-news {
+	background: $gray;
+}
+.news-results {
+	width: 100%;
+	float: left;
+	padding-top: 40px;
+	padding-bottom: 60px;
+	@include mid {
+		padding-top: 80px;
+		padding-bottom: 100px;
+	}
+	#newsContent {
+		width: 100%;
+		float: left;
+	}
+	.flexwrap {
+		margin-left: -15px;
+		margin-right: -15px;
+		@include flexgroup();
+		@include mid {
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+	}
+	.fcol {
+		width: 100%;
+		position: relative;
+		padding: 15px 15px;
+		@include tab {
+			width: 50%;
+			padding: 20px 20px;
+		}
+		@include mid {
+			padding: 30px 20px;
+			width: 33.33%;
+		}
+		.inside {
+			background: #FFF;
+			height: 100%;
+			position: relative;
+		}
+	}
+	.feat-image {
+		width: 100%;
+		float: left;
+		position: relative;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+		&.na {
+			&:before {
+				content:"Image Not Available";
+				display: block;
+				width: 100%;
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				color: #bbb;
+				font-size: 13px;
+			}
+		}
+	}
+	.textwrap {
+		width: 100%;
+		float: left;
+		padding: 15px 15px 50px;
+		font-family: $font_secondary;
+		position: relative;
+	}
+	.button {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		padding: 15px 15px 10px;
+		a {
+			font-family: $font_primary;
+			font-size: 12px;
+			font-weight: 600;
+			font-style: italic;
+		}
+	}
+	.postdate {
+		font-size: 12px;
+		line-height: 1.1;
+		color: $secondary;
+	}
+	.posttitle {
+		margin: 5px 0 5px;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 1.34;
+		text-transform: uppercase;
+		color: $primary;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: $primary;
+			&:hover {
+				color: $secondary;
+			}
+		}
+	}
+	.excerpt {
+		font-size: 12px;
+		line-height: 1.5;
+		color: $textcolor;
+		margin-bottom: 5px;
+	}
+	.morediv {
+		margin-top: 30px;
+		.end {
+			font-family: $font_secondary;
+			color: #cacaca;
+		}
+	}
+	a#loadmore {
+		display: inline-block;
+	}
+}
+
+#content .single-post {
+	padding-top: 50px;
+}
+
 
 /* Footer */
 .site-footer {

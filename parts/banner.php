@@ -69,11 +69,20 @@ if( is_front_page() ) {
 	<?php } ?>
 
 <?php } else { ?>
+
+	<?php  
+	$post_type = get_post_type();
+	$page_title = get_the_title();
+	?>
 	
 	<?php if( $slides ) {  ?>
 	<div id="static-banner" class="banner-wrap fw subpage">
-		<div class="banner-image cf">
-			<img src="<?php echo $slides['url'] ?>" alt="<?php echo $slides['title'] ?>" />
+		<div class="banner-image cf fadeIn animated" style="background-image:url('<?php echo $slides['url']; ?>');">
+			<div class="wrapper">
+				<div class="caption">
+					<h1 class="page-title fadeInRight wow"><?php echo $page_title ?></h1>
+				</div>
+			</div>
 		</div>
 	</div>
 	<?php } ?>

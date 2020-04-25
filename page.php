@@ -13,7 +13,7 @@
  */
 
 get_header(); 
-$header_image = get_field("header_image"); 
+$header_image = get_field("hero_image"); 
 $has_header_image = ($header_image) ? 'has-header-image':'no-header-image';
 global $post;
 $slug = $post->post_name;

@@ -910,7 +910,17 @@ body.open-menu .menu-toggle{right:87%;-webkit-transform:scale(0.6);-ms-transform
 @media(min-width:850px){.swiper-container .slideCaption .text{width:60%;font-size:2.5rem}
 }@media(min-width:850px){.swiper-container .slideCaption .text{font-size:2.8rem}
 }.swiper-container .slideCaption .text em{font-style:normal;display:inline-block;clear:both;color:#8d7c2f;border-bottom:1px solid #8d7c2f;padding-bottom:2px}
-.scrollDownDiv{width:100%;float:left;position:relative;z-index:20}
+body.subpage #static-banner{width:100%;float:left;height:180px}
+@media(min-width:480px){body.subpage #static-banner{height:250px}
+}@media(min-width:960px){body.subpage #static-banner{height:300px}
+}body.subpage #static-banner .banner-image{width:100%;height:100%;float:left;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#1c3f6e}
+body.subpage #static-banner .banner-image .wrapper{height:100%}
+body.subpage #static-banner .banner-image .caption{width:100%;position:absolute;left:0;bottom:15%;text-align:right;color:#FFF;padding:0 20px}
+body.subpage #static-banner .banner-image .caption h1{color:#FFF;font-size:2.3rem;line-height:1.1}
+@media(min-width:850px){body.subpage #static-banner .banner-image .caption h1{font-size:2.6rem}
+}body.subpage #static-banner img.placeholder{width:100%;height:auto;float:left;display:block}
+@media(min-width:850px){body.subpage #static-banner img.placeholder{display:none}
+}.scrollDownDiv{width:100%;float:left;position:relative;z-index:20}
 .scrollDownDiv .wrapper{overflow:visible}
 .scrollDownDiv #scrolldown{display:block;width:30px;height:50px;position:relative;border-left:2px dashed #8d7c2f;position:absolute;top:0;right:0;margin-top:-3vh}
 @media(min-width:850px){.scrollDownDiv #scrolldown{height:80px;margin-top:-5vh}
@@ -923,10 +933,8 @@ body.hasbanner .site-header{position:absolute;top:0;left:0;width:100%}
 .btn-default{display:inline-block;text-decoration:none;cursor:pointer;background:#1c3f6e;font-size:15px;line-height:1.1;padding:10px 20px;border-radius:4px;color:#FFF}
 .btn-default.lg{font-size:18px;padding:12px 25px}
 .btn-default:hover{color:#FFF;background:#8d7c2f;box-shadow:0 0 8px rgba(0,0,0,0.45)}
-.btn-more{display:inline-block;text-decoration:none;position:relative;font-size:13px;font-style:italic;color:#8d7c2f}
-.btn-more:after{content:"";display:inline-block;width:0;height:0;border-left:8px solid #8d7c2f;border-top:4px solid transparent;border-bottom:4px solid transparent;position:absolute;top:6px;right:-14px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-.btn-more:hover{color:#afa36d}
-.btn-more:hover:after{border-left-color:#afa36d;-webkit-transform:translateX(3px);-ms-transform:translateX(3px);transform:translateX(3px)}
+.btngold{display:inline-block;text-decoration:none;-webkit-appearance:none;border:0;background:#8d7c2f;color:#FFF;padding:6px 20px;font-family:"Noto Serif",serif;font-size:13px;font-weight:600;font-style:italic;line-height:1.2}
+.btngold:hover{color:#FFF !important;background:#635721}
 .row2{position:relative;z-index:5;overflow:hidden}
 .row2:before{content:"";display:block;width:100%;height:100%;background:rgba(255,255,255,0.85);position:absolute;top:0;left:0}
 @media(min-width:850px){.row2:before{background:rgba(255,255,255,0.75)}
@@ -1065,6 +1073,31 @@ h1.entry-title{font-family:"Noto Sans JP",sans-serif;font-size:3em;font-weight:5
 .section-contact .sectiontitle{font-size:2rem;font-weight:500;line-height:1.3;color:#8d7c2f;margin:0 0 20px}
 .section-contact .sectiontext{font-size:1.3rem;color:#1c3f6e}
 .section-contact .button{margin-top:40px}
+body.page-template-page-news{background:#f7f7f7}
+.news-results{width:100%;float:left;padding-top:40px;padding-bottom:60px}
+@media(min-width:960px){.news-results{padding-top:80px;padding-bottom:100px}
+}.news-results #newsContent{width:100%;float:left}
+.news-results .flexwrap{margin-left:-15px;margin-right:-15px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+@media(min-width:960px){.news-results .flexwrap{margin-left:-20px;margin-right:-20px}
+}.news-results .fcol{width:100%;position:relative;padding:15px 15px}
+@media(min-width:850px){.news-results .fcol{width:50%;padding:20px 20px}
+}@media(min-width:960px){.news-results .fcol{padding:30px 20px;width:33.33%}
+}.news-results .fcol .inside{background:#FFF;height:100%;position:relative}
+.news-results .feat-image{width:100%;float:left;position:relative}
+.news-results .feat-image img{width:100%;height:auto;float:left}
+.news-results .feat-image.na:before{content:"Image Not Available";display:block;width:100%;text-align:center;position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);color:#bbb;font-size:13px}
+.news-results .textwrap{width:100%;float:left;padding:15px 15px 50px;font-family:"Noto Sans JP",sans-serif;position:relative}
+.news-results .button{width:100%;position:absolute;left:0;bottom:0;padding:15px 15px 10px}
+.news-results .button a{font-family:"Noto Serif",serif;font-size:12px;font-weight:600;font-style:italic}
+.news-results .postdate{font-size:12px;line-height:1.1;color:#8d7c2f}
+.news-results .posttitle{margin:5px 0 5px;font-size:15px;font-weight:500;line-height:1.34;text-transform:uppercase;color:#1c3f6e}
+.news-results .posttitle a{display:inline-block;text-decoration:none;color:#1c3f6e}
+.news-results .posttitle a:hover{color:#8d7c2f}
+.news-results .excerpt{font-size:12px;line-height:1.5;color:#505567;margin-bottom:5px}
+.news-results .morediv{margin-top:30px}
+.news-results .morediv .end{font-family:"Noto Sans JP",sans-serif;color:#cacaca}
+.news-results a#loadmore{display:inline-block}
+#content .single-post{padding-top:50px}
 .site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%}
 @media(min-width:850px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}
