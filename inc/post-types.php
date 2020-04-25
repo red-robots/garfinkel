@@ -159,11 +159,12 @@ function set_custom_cpt_columns($columns) {
     }
 
     if($post_type=='teams') {
+        unset( $columns['taxonomy-team-groups'] );
         unset( $columns['title'] );
         unset( $columns['date'] );
         $columns['title'] = __( 'Name', 'bellaworks' );
-        $columns['jobtitle'] = __( 'Job Title', 'bellaworks' );
         $columns['photo'] = __( 'Photo', 'bellaworks' );
+        $columns['taxonomy-team-groups'] = __( 'Group', 'bellaworks' );
         $columns['date'] = __( 'Date', 'bellaworks' );
     }
     

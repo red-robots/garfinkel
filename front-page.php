@@ -5,7 +5,7 @@ get_header();
 	<?php while ( have_posts() ) : the_post(); ?>
 		
 		<?php if ( get_the_content() ) { ?>
-		<section class="maintext fw">
+		<section class="maintext fw fadeIn wow" data-wow-delay=".3s">
 			<div class="wrapper fadeIn wow">
 				<?php echo the_content(); ?>
 			</div>
