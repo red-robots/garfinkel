@@ -28,7 +28,7 @@ $customClass = (get_field("banner")) ? 'hasbanner':'nobanner';
 	
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="wrapper">
+		<div class="wrapper cf">
 
 			<?php  
 			$header_buttons[] = get_field("header_button1","option");
