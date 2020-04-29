@@ -37,11 +37,9 @@
 					<div class="info phone"><span>Phone:</span> <?php echo $phone ?></div>
 					<?php } ?>
 					<?php if ($toll) { ?>
-					<div class="info toll"><span>Toll Free</span><?php echo $toll ?></div>
+					<div class="info toll"><span>Toll Free:</span> <?php echo $toll ?></div>
 					<?php } ?>
-					<?php if ($email) { ?>
-					<div class="info email"><a href="mailto:<?php echo antispambot($email,1) ?>"><?php echo antispambot($email) ?></a></div>
-					<?php } ?>
+	
 				<?php } ?>
 				</div>
 			</div>

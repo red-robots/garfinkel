@@ -811,7 +811,7 @@ html,body{height:100%;position:relative}
 body{font-family:"Noto Serif",serif;font-size:15px;line-height:1.5;background:#FFF}
 body.home{background:#FFF}
 body.home #content{min-height:20em}
-body.page-template-page-contact{background:#f7f7f7}
+body.page-template-page-contact{background:#FFF}
 .site-header{position:relative;z-index:100;background:#f7f7f7;width:100%;float:left}
 @media(min-width:850px){.site-header{height:auto}
 }.site-header .wrapper{padding-top:20px;padding-bottom:20px;overflow:visible}
@@ -1122,6 +1122,49 @@ body.page-template-page-news{background:#f7f7f7}
 .team-lists .info .jobtitle{font-weight:300;font-size:12px;margin-top:2px}
 .team-lists div.button{position:relative;top:-13px;text-align:center}
 .team-lists img.placeholder{width:100%;height:auto;float:left}
+.contact-section{position:relative}
+.contact-section .wrapper{padding-top:50px;padding-bottom:50px;position:relative;z-index:10}
+@media(min-width:850px){.contact-section .wrapper{padding-top:80px;padding-bottom:80px}
+}.contact-section .contactCol{width:100%;float:left}
+.contact-section .contactCol.col1{margin-bottom:30px}
+@media(min-width:850px){.contact-section .contactCol.col1{margin-bottom:0}
+}.contact-section.twocol .col1{width:100%;float:left;margin-bottom:30px}
+@media(min-width:850px){.contact-section.twocol .col1{width:40%}
+}.contact-section.twocol .col2{width:100%;float:left}
+@media(min-width:850px){.contact-section.twocol .col2{width:58%;float:right}
+}.contact-section .col1{font-family:"Noto Sans JP",sans-serif;line-height:1.6}
+.contact-section .col1 .company_name{display:inline-block;color:#1c3f6e;text-transform:uppercase;font-size:1.1em;font-weight:600}
+.contact-section .col1 .email{display:inline-block;text-decoration:none}
+.contact-section .col1 .address{display:inline-block;color:#5b5d5f;padding:2px 0}
+.contact-section .col1 .phnum{display:inline-block;color:#8d7c2f}
+.contact-section .formCol h2{margin:0;font-family:"Noto Serif",serif;font-size:18px;font-weight:500;line-height:1.2;color:#1c3f6e}
+.contact-section .diagonalStripes{width:100%;height:50%;position:absolute;right:0;top:15%;background-size:6px 6px !important;background-image:-webkit-linear-gradient(135deg,transparent 46%,#333 49%,#f7f7f7 51%,transparent 55%);background-image:linear-gradient(-45deg,transparent 46%,#333 49%,#f7f7f7 51%,transparent 55%)}
+@media(min-width:850px){.contact-section .diagonalStripes{top:8%}
+}.contact-section .diagonalStripes:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;margin-left:-98%;z-index:2;background:#FFF;-webkit-transform:skew(-45deg);-ms-transform:skew(-45deg);transform:skew(-45deg)}
+@media(min-width:850px){.contact-section .diagonalStripes:before{width:95%;margin-left:-40%}
+}.contact-section .diagonalStripes:after{content:"";display:block;width:65%;height:30%;position:absolute;bottom:0;left:0;background:#FFF;z-index:3}
+#content .gform_wrapper textarea,#content .gform_wrapper select,#content .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]){border:1px solid #FFF;-webkit-appearance:none;border-radius:0;background:#FFF;box-shadow:none;outline:0}
+#content .gform_wrapper textarea:focus,#content .gform_wrapper select:focus,#content .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus{border-color:#d4bc7f;outline:0;box-shadow:0 0 0 .2rem rgba(177,133,26,0.25)}
+#content .gform_wrapper textarea{height:150px}
+#content .gform_wrapper .gfield_description,#content .gform_wrapper ul.gfield_radio li label{font-family:"Noto Sans JP",sans-serif;color:#5b5d5f}
+#content .gform_wrapper ul.gfield_radio li label{font-weight:500}
+#content .gform_wrapper .top_label .gfield_label{font-family:"Noto Sans JP",sans-serif;font-size:12px;font-weight:500;line-height:1.2;color:#5b5d5f}
+#content .gform_wrapper .contact-preference{width:100%;float:left;margin-bottom:10px}
+#content .gform_wrapper .contact-preference .gfield_label,#content .gform_wrapper .contact-preference .gfield_description{display:inline-block;float:left;width:auto !important;clear:none;position:relative}
+#content .gform_wrapper .contact-preference .gfield_description{padding-left:5px;top:-2px;font-weight:300}
+@media(min-width:850px){#content .gform_wrapper .contact-preference .ginput_container_radio{display:inline-block;width:auto;float:left;margin:0;position:relative;top:-5px}
+}#content .gform_wrapper .contact-preference ul.gfield_radio{width:100%;float:left;margin:5px 0 0}
+@media(min-width:850px){#content .gform_wrapper .contact-preference ul.gfield_radio{margin:0}
+}#content .gform_wrapper .contact-preference ul.gfield_radio li{display:inline-block;float:left;margin:0 12px 0 0;padding-left:16px !important;position:relative}
+#content .gform_wrapper .contact-preference ul.gfield_radio li input{margin:0;position:absolute;top:6px;left:2px}
+#content .gform_wrapper .consent-field .gfield_consent_description{border:0;background:#1c3f6e;color:#FFF;font-family:"Noto Serif",serif;font-style:italic;font-weight:400;font-size:12px;line-height:1.5;padding:10px}
+#content .gform_wrapper .consent-field .gfield_label{display:none !important}
+#content .gform_wrapper .consent-field .gfield_consent_label{font-family:"Noto Sans JP",sans-serif;font-size:12px;color:#5b5d5f}
+#content .gform_wrapper .gform_footer input.button,#content .gform_wrapper .gform_footer input[type=submit],#content .gform_wrapper .gform_page_footer input.button,#content .gform_wrapper .gform_page_footer input[type=submit]{display:inline-block;text-decoration:none;font-family:"Noto Serif",serif;font-size:14px;font-weight:500;font-style:italic;line-height:1;background:#8d7c2f;color:#FFF;padding:6px 20px 7px;border:0}
+#content .gform_wrapper .gform_footer input.button:hover,#content .gform_wrapper .gform_footer input[type=submit]:hover,#content .gform_wrapper .gform_page_footer input.button:hover,#content .gform_wrapper .gform_page_footer input[type=submit]:hover{color:#FFF;opacity:1;background:#635721}
+#content .gform_wrapper .ginput_container span:not(.ginput_price){display:inline-block !important}
+#content .contactpage .gform_wrapper{padding:20px;background:#f7f7f7}
+#content .contactpage .gform_wrapper ul.gform_fields li.gfield:first-child{margin-top:0}
 .site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%}
 @media(min-width:850px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}
