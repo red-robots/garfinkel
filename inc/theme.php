@@ -32,6 +32,13 @@ function my_login_logo() {
 }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
+function my_admin_theme_style() {
+    wp_enqueue_style('my-admin-theme', get_stylesheet_directory_uri(). '/css/admin.css' );
+}
+add_action('admin_enqueue_scripts', 'my_admin_theme_style');
+add_action('login_enqueue_scripts', 'my_admin_theme_style');
+
+
 // Change Link
 function loginpage_custom_link() {
   return get_site_url();

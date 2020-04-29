@@ -99,7 +99,8 @@ function ii_custom_taxonomies() {
                 'menu_name' => 'Team Groups',
                 'plural'    => 'Team Groups',
                 'single'    => 'Team Group',
-                'taxonomy'  => 'team-groups'
+                'taxonomy'  => 'team-groups',
+                'rewrite'   => 'team'
             ),
         );
     
@@ -110,6 +111,7 @@ function ii_custom_taxonomies() {
             $plural_name = ( isset($p['plural']) && $p['plural'] ) ? $p['plural'] : "Custom Post"; 
             $menu_name = ( isset($p['menu_name']) && $p['menu_name'] ) ? $p['menu_name'] : $p['plural'];
             $taxonomy = ( isset($p['taxonomy']) && $p['taxonomy'] ) ? $p['taxonomy'] : "";
+            $rewrite = ( isset($p['rewrite']) && $p['rewrite'] ) ? $p['rewrite'] : $taxonomy;
             
             
             if( $taxonomy && $p_type ) {
@@ -134,7 +136,7 @@ function ii_custom_taxonomies() {
                 'show_in_rest' => true,
                 'show_admin_column' => true,
                 'query_var' => true,
-                'rewrite' => array( 'slug' => $taxonomy ),
+                'rewrite' => array( 'slug' => $rewrite ),
               ));
             }
             
@@ -203,11 +205,11 @@ function custom_post_column( $column, $post_id ) {
                 break;
 
             case 'photo' :
-                $img = get_field('photo',$post_id);
-                $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
-                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;border:1px solid #CCC">';
+                $img = get_field('image',$post_id);
+                $img_src = ($img) ? $img['sizes']['medium'] : '';
+                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;border:1px solid #CCC;overflow:hidden;">';
                 if($img_src) {
-                   $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto;" />';
+                   $the_photo .= '<span style="display:block;width:100%;height:100%;background:url('.$img_src.') top center no-repeat;background-size:cover;transform:scale(1.2)"></span>';
                 } else {
                     $the_photo .= '<i class="dashicons dashicons-businessperson" style="font-size:25px;position:relative;top:13px;left: -3px;opacity:0.3;"></i>';
                 }
