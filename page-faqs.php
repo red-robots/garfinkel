@@ -1,15 +1,7 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: FAQs
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package bellaworks
  */
 
 get_header(); 
@@ -19,8 +11,8 @@ global $post;
 $slug = $post->post_name;
 ?>
 
-<div id="primary" class="content-area default cf <?php echo $has_header_image ?>">
-	<main id="main" class="site-main cf wrapper" role="main">
+<div id="primary" class="content-area faqspage default cf <?php echo $has_header_image ?>">
+	<main id="main" class="site-main cf" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -31,7 +23,9 @@ $slug = $post->post_name;
 				</div>
 			</header>
 			<?php } ?>
+	
 			
+
 			<?php
 			$mainText = strip_tags(get_the_content());
 			$mainText = preg_replace('/\s+/', '', $mainText);
@@ -41,11 +35,31 @@ $slug = $post->post_name;
 			?>
 			<?php if ( $mainText ) { ?>
 			<div class="entry-content cf">
-				<?php the_content(); ?>
+				<div class="wrapper"><?php the_content(); ?></div>
 			</div>
 			<?php } ?>
 
 		<?php endwhile; ?>
+
+		<?php  
+		$args = array(
+			'posts_per_page'=> -1,
+			'post_type'		=> 'faq',
+			'post_status'	=> 'publish'
+		);
+		$faqs = new WP_Query($args);
+		if ( $faqs->have_posts() ) {  ?>
+		<section class="section-faqs fw">
+			<div class="wrapper cf">
+				<?php while ( $faqs->have_posts() ) : $faqs->the_post();  ?>
+					<div class="faq-item">
+						<h2 class="question"><?php echo get_the_title(); ?><i class="arrow"></i></h2>
+						<div class="answer"><?php the_content(); ?></div>
+					</div>
+				<?php endwhile; wp_reset_postdata(); ?>
+			</div>
+		</section>
+		<?php } ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

@@ -2136,6 +2136,85 @@ body.page-template-page-news {
 	}
 }
 
+/* FAQs */
+.section-faqs {
+	.wrapper {
+		max-width: 900px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		@include tab {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+	}
+	.faq-item {
+		font-family: $font_secondary;
+		width: 100%;
+		float: left;
+		margin-bottom: 10px;
+	}
+	.question {
+		font-size: 15px;
+		line-height: 1.4;
+		text-transform: uppercase;
+		margin: 0 0;
+		padding: 20px 15px;
+		color: $primary;
+		background: $gray;
+		width: 100%;
+		float: left;
+		position: relative;
+		cursor: pointer;
+		transition: all ease .3s;
+		@include tab {
+			padding: 20px 30px;
+		}
+		.arrow {
+			position: absolute;
+			right: 30px;
+			top: 10px;
+			display: block;
+			width: 15px;
+			background: yellow;
+			transition: all ease .3s;
+			&:before, &:after {
+				content:"";
+				display: block;
+				width: 100%;
+				height: 1px;
+				background: $primary;
+				position: absolute;
+				left: 0;
+				top: 20px;
+				transition: all ease .3s;
+			}
+			&:before {
+				transform: translateY(-5px) rotate(45deg);
+			}
+			&:after {
+				transform: translateY(5px) rotate(-45deg);
+			}
+		}
+		&:hover {
+			background: shade($gray,8%);
+		}
+	}
+	.answer {
+		width: 100%;
+		float: left;
+		padding: 10px 20px;
+		font-size: 13px;
+		line-height: 1.5;
+		color: $lightgray;
+		display: none;
+	}
+	.faq-item.open {
+		.question .arrow {
+			transform: translate(15px,23px) rotate(90deg);
+		}
+	}
+}
+
 /* Footer */
 .site-footer {
 	background: $darkblue;

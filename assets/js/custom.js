@@ -63,6 +63,16 @@ jQuery(document).ready(function ($) {
 
 	$(".contactform select").select2();
 
+	/* FAQS accordion */
+	if( $(".faq-item").length > 0 ) {
+		$(".faq-item .question").on("click",function(){
+			if( $(this).next(".answer").text() ) {
+				$(this).next(".answer").slideToggle();
+				$(this).parents(".faq-item").toggleClass("open");
+			}
+		});
+	}
+
 
     /* Smooth Scroll */
     $('a[href*="#"]')

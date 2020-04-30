@@ -1163,6 +1163,18 @@ body.page-template-page-news{background:#f7f7f7}
 #content .gform_wrapper .ginput_container span:not(.ginput_price){display:inline-block !important}
 #content .contactpage .gform_wrapper{padding:20px;background:#f7f7f7}
 #content .contactpage .gform_wrapper ul.gform_fields li.gfield:first-child{margin-top:0}
+.section-faqs .wrapper{max-width:900px;padding-top:50px;padding-bottom:50px}
+@media(min-width:850px){.section-faqs .wrapper{padding-top:80px;padding-bottom:80px}
+}.section-faqs .faq-item{font-family:"Noto Sans JP",sans-serif;width:100%;float:left;margin-bottom:10px}
+.section-faqs .question{font-size:15px;line-height:1.4;text-transform:uppercase;margin:0;padding:20px 15px;color:#1c3f6e;background:#f7f7f7;width:100%;float:left;position:relative;cursor:pointer;-webkit-transition:all ease .3s;transition:all ease .3s}
+@media(min-width:850px){.section-faqs .question{padding:20px 30px}
+}.section-faqs .question .arrow{position:absolute;right:30px;top:10px;display:block;width:15px;background:yellow;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-faqs .question .arrow:before,.section-faqs .question .arrow:after{content:"";display:block;width:100%;height:1px;background:#1c3f6e;position:absolute;left:0;top:20px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-faqs .question .arrow:before{-webkit-transform:translateY(-5px) rotate(45deg);-ms-transform:translateY(-5px) rotate(45deg);transform:translateY(-5px) rotate(45deg)}
+.section-faqs .question .arrow:after{-webkit-transform:translateY(5px) rotate(-45deg);-ms-transform:translateY(5px) rotate(-45deg);transform:translateY(5px) rotate(-45deg)}
+.section-faqs .question:hover{background:#e3e3e3}
+.section-faqs .answer{width:100%;float:left;padding:10px 20px;font-size:13px;line-height:1.5;color:#5b5d5f;display:none}
+.section-faqs .faq-item.open .question .arrow{-webkit-transform:translate(15px,23px) rotate(90deg);-ms-transform:translate(15px,23px) rotate(90deg);transform:translate(15px,23px) rotate(90deg)}
 .site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%}
 @media(min-width:850px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}

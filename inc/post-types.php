@@ -24,6 +24,14 @@ function js_custom_init() {
             'menu_icon' => 'dashicons-image-filter',
             'supports'  => array('title','editor')
         ),
+        array(
+            'post_type' => 'faq',
+            'menu_name' => 'FAQs',
+            'plural'    => 'FAQs',
+            'single'    => 'FAQ',
+            'menu_icon' => 'dashicons-lightbulb',
+            'supports'  => array('title','editor')
+        ),
     );
 
     
