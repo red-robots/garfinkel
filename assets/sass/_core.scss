@@ -124,10 +124,6 @@ body {
 		padding-top: 20px;
 		padding-bottom: 20px;
 		overflow: visible;
-		@include tab {
-			padding-top: 30px;
-			padding-bottom: 30px;
-		}
 	}
 	.flexwrap {
 		width: 100%;
@@ -188,6 +184,7 @@ body {
 	width: 150px;
 	position: relative;
 	top: 5px;
+	z-index: 20;
 	@include xs {
 		width: 180px;
 	}
@@ -195,7 +192,8 @@ body {
 		width: 200px;
 	}
 	@include mid {
-		width: 240px;
+		width: 310px;
+		top: -1px;
 	}
 	a,img {
 		display: block;
@@ -235,7 +233,9 @@ body.subpage {
 		top: 10px;
 	}
 	@include mid {
-		width: 73%;
+		width: 90%;
+		position: absolute;
+		top: 53%;
 	}
 	ul {
 		margin: 0 0;
@@ -354,11 +354,7 @@ body.subpage {
 		padding-bottom: 8px;
 	}
 }
-body.home .main-navigation {
-	ul.menu > li:first-child {
-		display: none;
-	}
-}
+
 body.hasbanner .main-navigation {
 	ul.menu > li > a {
 		color: #FFF;
@@ -1463,14 +1459,12 @@ h1.entry-title {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	@include tab {
-		padding-top: 50px;
-		padding-bottom: 50px;
 		font-size: 1rem;
 	}
 	@include mid {
-		padding-top: 60px;
-		padding-bottom: 60px;
 		font-size: 1.3rem;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 	.midwrap {
 		padding-top: 50px;
@@ -1563,7 +1557,7 @@ h1.entry-title {
 		z-index: 10;
 		max-width: 100%;
 		width: 100%;
-		padding: 30px 20px;
+		padding: 15px 15px;
 		margin-left: 0;
 		@include mid {
 			max-width: 380px;
