@@ -497,30 +497,30 @@ function sortArray($array, $sortByKey, $sortDirection) {
     return $sortArray;
 }
 
-if( isset($_GET['insert']) && $_GET['insert']='faqs' ) {
-    do_insert_custom_posts();
-}
+// if( isset($_GET['insert']) && $_GET['insert']='faqs' ) {
+//     do_insert_custom_posts();
+// }
 
-function do_insert_custom_posts() {
-    $url = get_site_url() . '/wp-content/uploads/faqs.json';
-    $data = file_get_contents($url);
-    $posts = json_decode($data);
-    $items = array();
-    foreach($posts as $p) {
-        $title = $p->title;
-        $new_post = array(
-            'post_title'  => $title,
-            'post_content'=> '',
-            'post_status' => 'publish',
-            'post_type'   => 'faq'
-        );
-        $post_id = wp_insert_post($new_post);
-        if($post_id) {
-            $items[] = $post_id;
-        }
-    }
-    return $items;
-}
+// function do_insert_custom_posts() {
+//     $url = get_site_url() . '/wp-content/uploads/faqs.json';
+//     $data = file_get_contents($url);
+//     $posts = json_decode($data);
+//     $items = array();
+//     foreach($posts as $p) {
+//         $title = $p->title;
+//         $new_post = array(
+//             'post_title'  => $title,
+//             'post_content'=> '',
+//             'post_status' => 'publish',
+//             'post_type'   => 'faq'
+//         );
+//         $post_id = wp_insert_post($new_post);
+//         if($post_id) {
+//             $items[] = $post_id;
+//         }
+//     }
+//     return $items;
+// }
 
 
 
