@@ -2158,7 +2158,7 @@ body.page-template-page-news {
 		line-height: 1.4;
 		text-transform: uppercase;
 		margin: 0 0;
-		padding: 20px 15px;
+		padding: 20px 60px 20px 30px;
 		color: $primary;
 		background: $gray;
 		width: 100%;
@@ -2166,9 +2166,6 @@ body.page-template-page-news {
 		position: relative;
 		cursor: pointer;
 		transition: all ease .3s;
-		@include tab {
-			padding: 20px 30px;
-		}
 		.arrow {
 			position: absolute;
 			right: 30px;
