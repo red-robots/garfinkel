@@ -78,6 +78,12 @@ pre {
 	padding-right: 20px;
 	position: relative;
 	overflow: hidden;
+	&.medium {
+		max-width: 900px;
+	}
+	&.medium-large {
+		max-width: 1000px;
+	}
 }
 .fw {
 	width: 100%;
@@ -1194,7 +1200,7 @@ h1.entry-title {
 	}
 	@include desk {
 		padding-top: 130px;
-		padding-bottom: 130px;
+		padding-bottom: 120px;
 	}
 	.innerwrap {
 		position: relative;
@@ -1460,11 +1466,13 @@ h1.entry-title {
 	padding-bottom: 30px;
 	@include tab {
 		font-size: 1rem;
+		padding-top: 60px;
+		padding-bottom: 60px;
 	}
 	@include mid {
 		font-size: 1.3rem;
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-top: 90px;
+		padding-bottom: 90px;
 	}
 	.midwrap {
 		padding-top: 50px;
@@ -1785,6 +1793,258 @@ body.page-template-page-news {
 
 #content .single-post {
 	padding-top: 50px;
+}
+
+/* News Single */
+.page-header {
+	background: $primary;
+	color: #FFF;
+	margin: 0 0;
+	position: relative;
+	overflow: hidden;
+	.wrapper {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		position: relative;
+		z-index: 5;
+	}
+	.entry-title {
+		font-family: $font_primary;
+		font-size: 1.8em;
+		line-height: 1.2;
+		text-transform: none;
+		margin: 0 0;
+		color: #FFF;
+		position: relative;
+		z-index: 10;
+		@include tab {
+			padding-right: 15%;
+		}
+		span.postDate {
+			display: block;
+			width: 100%;
+			font-family: $font_secondary;
+			font-size: 0.45em;
+			font-weight: 400;
+			letter-spacing: 1px;
+			position: relative;
+			margin-top: 2px;
+		}
+	}
+	.diagonal-lines {
+		display: block;
+		width: 70%;
+		height: 100%;
+		background-size: 6px 6px!important;
+  		background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0) 46%, #333 49%, #f7f7f7 51%, rgba(0, 0, 0, 0) 55%);
+  		opacity: 0.45;
+  		position: absolute;
+		top: 0;
+		right: 0;
+  		&:before {
+  			content:"";
+  			display: block;
+  			width: 80%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+    		margin-left: -27%;
+			z-index: 2;
+			background: $primary;
+			transform: skew(-45deg);
+  		}
+	}
+}
+
+#content .site-main.single-post {
+	font-family: $font_secondary;
+	font-size: 13px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	position: relative;
+	.feat-image {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.hentry {
+		width: 100%;
+		float: left;
+		margin-bottom: 30px;
+		line-height: 1.6;
+		@include tab {
+			width: 70%;
+			margin-bottom: 0;
+			padding-right: 8%;
+		}
+		@include mid {
+			padding-right: 10%;
+		}
+		li {
+			margin-bottom: 0.8em;
+		}
+		p {
+			margin-bottom: 1.6em;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			color: $secondary;
+			text-transform: uppercase;
+		}
+		h2 { font-size: 1.5em; }
+		h3 { font-size: 1.3em; }
+		h4 { font-size: 1.1em; }
+		h5 { font-size: 1em; }
+		h6 { font-size: 0.85em; }
+	}
+
+	#sidebar {
+		width: 100%;
+		float: left;
+		font-family: $font_secondary;
+		font-size: 13px;
+		@include tab {
+			width: 30%;
+		}
+		.widget .inside {
+			padding-left: 0;
+			@include tab {
+				padding-left: 10%;
+				border-left: 1px solid $secondary;
+			}
+		}
+		.wtitle {
+			margin: 0 0 20px;
+			font-family: $font_secondary;
+			font-size: 1em;
+			font-weight: 500;
+			line-height: 1.2;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: $secondary;
+			position: relative;
+			&:after {
+				content:"";
+				display: block;
+				width: 12%;
+				height: 2px;
+				background: $secondary;
+				margin-top: 12px;
+			}
+		}
+		.recent-posts {
+			margin: 0 0;
+			padding: 0 0;
+			list-style: none;
+			width: 100%;
+			float: left;
+			.item {
+				margin-top: 15px;
+			}
+			.postdate {
+				color: $secondary;
+				margin: 0 0 2px;
+				font-size: 12px;
+			}
+			h4 {
+				margin: 0 0;
+				font-weight: 500;
+				text-transform: uppercase;
+				color: $primary;
+				a {
+					color: $primary;
+					&:hover {
+						color: $secondary;
+					}
+				}
+			}
+		}
+		.recent-posts .item:first-child {
+			margin-top: 0;
+		}
+		.morediv {
+			width: 100%;
+			float: left;
+			margin-top: 25px;
+			position: relative;
+			padding-left: 0;
+			@include tab {
+				padding-left: 10%;
+			}
+			a {
+				display: block;
+			}
+			.end {
+				margin-top: -10px;
+				display: block;
+				color: #CCC;
+			}
+		}
+			
+	}
+
+}
+.breadcrumb {
+	color: $secondary;
+	margin-top: 8px;
+    padding-left: 15px;
+	span {
+		display: inline-block;
+		padding: 0 6px;
+		line-height: 1;
+	}
+	a {
+		display: inline-block;
+		position: relative;
+		font-family: $font_primary;
+		font-weight: 500;
+		font-style: italic;
+		&:before, &:after {
+			content: "";
+			display: block;
+			width: 6px;
+			height: 1px;
+			background: $secondary;
+			position: absolute;
+			top: 10px;
+			transition: all ease .3s;
+		}
+		&#prevpost {
+			&:before, &:after {
+				left: -12px;
+			}
+			&:before {
+				transform: translateY(1px) rotate(-45deg);
+			}
+			&:after {
+				transform: translateY(5px) rotate(45deg);
+			}
+			&:hover {
+				&:before, &:after {
+					margin-left: -3px;
+				}
+			}
+		}
+		&#nextpost {
+			&:before, &:after {
+				right: -12px;
+			}
+			&:before {
+				transform: translateY(1px) rotate(45deg);
+			}
+			&:after {
+				transform: translateY(5px) rotate(-45deg);
+			}
+			&:hover {
+				&:before, &:after {
+					margin-right: -3px;
+				}
+			}
+			
+		}
+
+	}
 }
 
 /* Team List */
@@ -2173,7 +2433,7 @@ body.page-template-page-news {
 			display: block;
 			width: 15px;
 			background: yellow;
-			transition: all ease .3s;
+			transition: all ease .1s;
 			&:before, &:after {
 				content:"";
 				display: block;
@@ -2211,6 +2471,22 @@ body.page-template-page-news {
 		}
 	}
 }
+
+/* 404 */
+.error-404 {
+	position: relative;
+	top: -15px;
+	.sitemapMenu {
+		margin-top: 30px;
+		ul.menu {
+			@include xs {
+				column-count: 2;
+				display: inline-block;
+			}
+		}
+	}
+}
+
 
 /* Footer */
 .site-footer {

@@ -1,4 +1,54 @@
-<main id="main" class="site-main single-post" role="main">
+<?php
+$post_type = 'post';
+$current_id = get_the_ID();
+$p_args = array(
+	'posts_per_page'=> -1,
+	'post_type'		=> $post_type,
+	'post_status'	=> 'publish',
+	'orderby'       => 'date',       
+  	'order'         => 'DESC'
+);
+$allPOSTS = get_posts($p_args);
+$lists = array();
+$currentIndex = 0;
+if($allPOSTS) {
+	foreach($allPOSTS as $k=>$a) {
+		$pId = $a->ID;
+		$lists[] = $pId;
+		if($pId==$current_id) {
+			$currentIndex = $k;
+		}
+	}
+}
+$next_id = ( isset($lists[$currentIndex+1]) && $lists[$currentIndex+1] ) ? $lists[$currentIndex+1] : '';
+$prev_id = ( isset($lists[$currentIndex-1]) && $lists[$currentIndex-1] ) ? $lists[$currentIndex-1] : '';
+?>
+
+<header class="page-header">
+	<div class="wrapper">
+		<h1 class="entry-title">
+			<?php the_title(); ?>
+			<span class="postDate">(<?php echo get_the_date('m/d/Y',$current_id); ?>)</span>		
+		</h1>
+	</div>
+	<span class="diagonal-lines"></span>
+</header>
+
+<div class="breadcrumb">
+	<div class="wrapper">
+		<?php if ($prev_id) { ?>
+			<a href="<?php echo get_permalink($prev_id); ?>" id="prevpost">previous</a>
+		<?php } ?>
+		<?php if ($prev_id && $next_id) { ?>
+			<span>|</span>
+		<?php } ?>
+		<?php if ($next_id) { ?>
+			<a href="<?php echo get_permalink($next_id); ?>" id="nextpost">next</a>
+		<?php } ?>
+	</div>
+</div>
+
+<main id="main" class="site-main single-post cf" role="main">
 	<div class="wrapper">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -7,11 +57,6 @@
 			<?php if ( has_post_thumbnail() ) { ?>
 			<div class="feat-image"><?php the_post_thumbnail('large') ?></div>	
 			<?php } ?>
-
-			<header class="entry-header">
-				<p class="postmeta"><?php echo get_the_date('F j, Y'); ?></p>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header><!-- .entry-header -->
 
 			<div class="entry-content">
 				<?php 
@@ -30,9 +75,8 @@
 		<?php
 		/* SIDE BAR */
 		$current_id = get_the_ID();
-		$posts_per_page = 4;
+		$posts_per_page = 10;
 		$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
-		$post_type = 'post';
 		$args = array(
 			'posts_per_page'=> $posts_per_page,
 			'post_type'		=> $post_type,
@@ -57,30 +101,30 @@
 		<aside id="sidebar" class="sidebar-right">
 			<?php if ($posts) { ?>
 			<div id="widget-articles" class="widget articles">
-				<h3 class="wtitle">More Articles</h3>
-				<div id="recentPosts">
-					<ul class="recent-posts">
-						<?php foreach ($posts as $p) { 
-						$id = $p->ID; 
-						$title = $p->post_title;
-						$link = get_permalink($id);
-						$content = strip_tags( $p->post_content );
-						$content = ($content) ? shortenText($content,100,' ') : '';
-						?>
-						<li class="item animated fadeIn">
-							<p class="postdate"><?php echo get_the_date('F j, Y',$id); ?></p>
-							<h4><a href="<?php echo $link ?>"><?php echo $title ?></a></h4>
-							<p class="excerpt"><?php echo $content ?></p>
-							<div class="button"><a href="<?php echo $link ?>" class="btn-more">Read More</a></div>
-						</li>	
-						<?php } ?>
-					</ul>
+				<div class="inside cf">
+					<h3 class="wtitle">More Articles</h3>
+					<div id="recentPosts">
+						<ul class="recent-posts">
+							<?php foreach ($posts as $p) { 
+							$id = $p->ID; 
+							$title = $p->post_title;
+							$link = get_permalink($id);
+							$content = strip_tags( $p->post_content );
+							$content = ($content) ? shortenText($content,100,' ') : '';
+							?>
+							<li class="item animated fadeIn">
+								<p class="postdate"><?php echo get_the_date('m/d/Y',$id); ?></p>
+								<h4><a href="<?php echo $link ?>"><?php echo $title ?></a></h4>
+							</li>	
+							<?php } ?>
+						</ul>
+					</div>
 				</div>
 
 				<?php 
 				$total_pages = ceil($total / $posts_per_page);
 				if($paged!=$total_pages) { ?>
-				<div class="morediv text-center"><a href="#" id="sbloadmore" data-maxpagenum="<?php echo $total_pages ?>" data-nextpage="<?php echo $paged ?>" class="btn-default">Load More</a></div>
+				<div class="morediv text-center"><a href="#" id="sbloadmore" data-maxpagenum="<?php echo $total_pages ?>" data-nextpage="<?php echo $paged ?>" class="btnbg">Load More</a></div>
 				<?php } else { ?>
 				<div class="morediv text-center endpage"><span class="end">No more posts to load.</span></div>
 				<?php } ?>
@@ -103,6 +147,7 @@
 				<?php } ?>
 			</div>
 			<?php } ?>
+			
 		</aside>
 	</div>
 </main>

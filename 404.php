@@ -11,6 +11,10 @@ get_header(); ?>
 
 	<div id="primary" class="content-area default page404 cf">
 		<main id="main" class="site-main wrapper" role="main">
+			
+			<header class="entry-header">
+				<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bellaworks' ); ?></h1>
+			</header>
 
 			<section class="error-404 not-found">
 				<div class="page-content">

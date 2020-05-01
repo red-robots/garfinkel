@@ -5,8 +5,8 @@ get_header();
 	<?php while ( have_posts() ) : the_post(); ?>
 		
 		<?php if ( get_the_content() ) { ?>
-		<section class="maintext fw fadeIn wow" data-wow-delay=".3s">
-			<div class="wrapper fadeIn wow">
+		<section class="maintext fw fadeIn wow" data-wow-delay=".5s">
+			<div class="wrapper medium fadeIn wow">
 				<?php echo the_content(); ?>
 			</div>
 		</section>
@@ -28,7 +28,7 @@ get_header();
 	if ( $areas->have_posts() ) {  ?>
 	<section class="practice-areas fw">
 		<div class="innerwrap fw">
-			<div class="wrapper">
+			<div class="wrapper medium-large cf">
 				<?php if ($section_2_title || $section_2_subline) { ?>
 					<div class="heading fadeInLeft wow">
 					<?php if ($section_2_title) { ?>
