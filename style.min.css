@@ -1113,8 +1113,9 @@ body.page-template-page-news{background:#f7f7f7}
 }.page-header .entry-title span.postDate{display:block;width:100%;font-family:"Noto Sans JP",sans-serif;font-size:.45em;font-weight:400;letter-spacing:1px;position:relative;margin-top:2px}
 .page-header .diagonal-lines{display:block;width:70%;height:100%;background-size:6px 6px !important;background-image:-webkit-linear-gradient(135deg,transparent 46%,#333 49%,#f7f7f7 51%,transparent 55%);background-image:linear-gradient(-45deg,transparent 46%,#333 49%,#f7f7f7 51%,transparent 55%);opacity:.45;position:absolute;top:0;right:0}
 .page-header .diagonal-lines:before{content:"";display:block;width:80%;height:100%;position:absolute;top:0;left:0;margin-left:-27%;z-index:2;background:#1c3f6e;-webkit-transform:skew(-45deg);-ms-transform:skew(-45deg);transform:skew(-45deg)}
-#content .site-main.single-post{font-family:"Noto Sans JP",sans-serif;font-size:13px;padding-top:80px;padding-bottom:80px;position:relative}
-#content .site-main.single-post .feat-image img{width:100%;height:auto}
+#content .site-main.single-post{font-family:"Noto Sans JP",sans-serif;font-size:13px;padding-top:40px;padding-bottom:60px;position:relative}
+@media(min-width:850px){#content .site-main.single-post{padding-top:70px;padding-bottom:80px}
+}#content .site-main.single-post .feat-image img{width:100%;height:auto}
 #content .site-main.single-post .hentry{width:100%;float:left;margin-bottom:30px;line-height:1.6}
 @media(min-width:850px){#content .site-main.single-post .hentry{width:70%;margin-bottom:0;padding-right:8%}
 }@media(min-width:960px){#content .site-main.single-post .hentry{padding-right:10%}
@@ -1126,13 +1127,16 @@ body.page-template-page-news{background:#f7f7f7}
 #content .site-main.single-post .hentry h4{font-size:1.1em}
 #content .site-main.single-post .hentry h5{font-size:1em}
 #content .site-main.single-post .hentry h6{font-size:.85em}
-#content .site-main.single-post #sidebar{width:100%;float:left;font-family:"Noto Sans JP",sans-serif;font-size:13px}
-@media(min-width:850px){#content .site-main.single-post #sidebar{width:30%}
+#content .site-main.single-post #sidebar{width:100%;float:left;font-family:"Noto Sans JP",sans-serif;font-size:13px;border-top:2px solid #8d7c2f;padding-top:30px}
+@media(min-width:850px){#content .site-main.single-post #sidebar{width:30%;border-top:0;padding-top:0}
 }#content .site-main.single-post #sidebar .widget .inside{padding-left:0}
 @media(min-width:850px){#content .site-main.single-post #sidebar .widget .inside{padding-left:10%;border-left:1px solid #8d7c2f}
-}#content .site-main.single-post #sidebar .wtitle{margin:0 0 20px;font-family:"Noto Sans JP",sans-serif;font-size:1em;font-weight:500;line-height:1.2;letter-spacing:1px;text-transform:uppercase;color:#8d7c2f;position:relative}
-#content .site-main.single-post #sidebar .wtitle:after{content:"";display:block;width:12%;height:2px;background:#8d7c2f;margin-top:12px}
-#content .site-main.single-post #sidebar .recent-posts{margin:0;padding:0;list-style:none;width:100%;float:left}
+}#content .site-main.single-post #sidebar .wtitle{margin:0 0 20px;font-family:"Noto Sans JP",sans-serif;font-size:1em;font-weight:500;line-height:1.2;letter-spacing:1px;text-transform:uppercase;color:#8d7c2f;position:relative;text-align:center}
+@media(min-width:850px){#content .site-main.single-post #sidebar .wtitle{text-align:left}
+}#content .site-main.single-post #sidebar .wtitle span{display:inline-block;position:relative}
+#content .site-main.single-post #sidebar .wtitle span:after{content:"";display:block;width:35%;height:2px;background:#8d7c2f;margin:12px auto 0}
+@media(min-width:850px){#content .site-main.single-post #sidebar .wtitle span:after{margin:12px 0 0}
+}#content .site-main.single-post #sidebar .recent-posts{margin:0;padding:0;list-style:none;width:100%;float:left}
 #content .site-main.single-post #sidebar .recent-posts .item{margin-top:15px}
 #content .site-main.single-post #sidebar .recent-posts .postdate{color:#8d7c2f;margin:0 0 2px;font-size:12px}
 #content .site-main.single-post #sidebar .recent-posts h4{margin:0;font-weight:500;text-transform:uppercase;color:#1c3f6e}

@@ -102,7 +102,7 @@ $prev_id = ( isset($lists[$currentIndex-1]) && $lists[$currentIndex-1] ) ? $list
 			<?php if ($posts) { ?>
 			<div id="widget-articles" class="widget articles">
 				<div class="inside cf">
-					<h3 class="wtitle">More Articles</h3>
+					<h3 class="wtitle"><span>More Articles</span></h3>
 					<div id="recentPosts">
 						<ul class="recent-posts">
 							<?php foreach ($posts as $p) { 

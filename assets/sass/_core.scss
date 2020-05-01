@@ -1860,9 +1860,13 @@ body.page-template-page-news {
 #content .site-main.single-post {
 	font-family: $font_secondary;
 	font-size: 13px;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 40px;
+	padding-bottom: 60px;
 	position: relative;
+	@include tab {
+		padding-top: 70px;
+		padding-bottom: 80px;
+	}
 	.feat-image {
 		img {
 			width: 100%;
@@ -1904,8 +1908,12 @@ body.page-template-page-news {
 		float: left;
 		font-family: $font_secondary;
 		font-size: 13px;
+		border-top: 2px solid $secondary;
+		padding-top: 30px;
 		@include tab {
 			width: 30%;
+			border-top: none;
+			padding-top: 0;
 		}
 		.widget .inside {
 			padding-left: 0;
@@ -1924,14 +1932,26 @@ body.page-template-page-news {
 			text-transform: uppercase;
 			color: $secondary;
 			position: relative;
-			&:after {
-				content:"";
-				display: block;
-				width: 12%;
-				height: 2px;
-				background: $secondary;
-				margin-top: 12px;
+			text-align: center;
+			@include tab {
+				text-align: left;
 			}
+			span {
+				display: inline-block;
+				position: relative;
+				&:after {
+					content:"";
+					display: block;
+					width: 35%;
+					height: 2px;
+					background: $secondary;
+					margin: 12px auto 0;
+					@include tab {
+						margin: 12px 0 0;
+					}
+				}
+			}
+			
 		}
 		.recent-posts {
 			margin: 0 0;
