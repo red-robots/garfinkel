@@ -95,7 +95,7 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 						$photo = get_field("image");
 						$jobtitle = get_field("title");
 						$teamName = get_the_title();
-						$photoBg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
+						$photoBg = ($photo) ? ' style="background-image:url('.$photo['sizes']['medium_large'].')"':'';
 						$delay = $i;
 						?>
 						<div class="team">
