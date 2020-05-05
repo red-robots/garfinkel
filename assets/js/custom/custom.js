@@ -73,6 +73,20 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
+	var windowHeight = $(window).scrollTop();
+	var offset = 100;
+	if(windowHeight  > offset) {
+		$("body").addClass('scrolled');
+	}
+
+	$(window).scroll(function() {    
+		var wHeight = $(window).scrollTop();
+		if(wHeight  > offset) {
+			$("body").addClass('scrolled');
+		} else{
+			$("body").removeClass('scrolled');
+		}
+	});
 
     /* Smooth Scroll */
     $('a[href*="#"]')

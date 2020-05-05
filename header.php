@@ -14,6 +14,20 @@ $customClass = (get_field("banner")) ? 'hasbanner':'nobanner';
 <script>var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});</script>
 </head>
 
+<?php
+$posttype = get_post_type();
+$has_team_photo = '';
+$style = '';
+if($posttype=='teams' && is_single() ) {
+	$photo = get_field("image");
+	if($photo) {
+		$has_team_photo = ' has-team-photo';
+		$style = ' style="background-image:url('.$photo['url'].')"';
+	}
+}
+
+?>
+
 <body <?php body_class($customClass); ?>>
 <div id="page" class="site cf">
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
