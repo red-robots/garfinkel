@@ -2173,7 +2173,7 @@ body.page-template-page-news {
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	top: 160px;
+	top: 170px;
 	right: 0;
 	overflow: hidden;
 	transition: all ease .3s;
@@ -2246,6 +2246,9 @@ body.page-template-page-news {
 			width: 40%;
 		}
 	}
+	@include desk {
+		top: 200px;
+	}
 	@media screen and (max-width:500px) {
 		position: relative;
 		top: 0!important;
@@ -2257,6 +2260,7 @@ body.page-template-page-news {
 		top: 0!important;
 		height: 450px;
 	}
+
 }
 
 body.scrolled .teamPicWrap {
