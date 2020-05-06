@@ -14,6 +14,7 @@
 
 get_header(); 
 $obj = get_queried_object();
+$term_slug = $obj->slug;
 $term_id = $obj->term_id;
 $term_name = $obj->name;
 $term_description = $obj->description;
@@ -86,31 +87,52 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 				  )
 			);
 			$teams = new WP_Query($args);
+			$allTeams = get_posts($args);
+			$total = ($allTeams) ? count($allTeams) : 0;
 			$placeholder = THEMEURI . 'images/square.png';
 			if ( $teams->have_posts() ) {  ?>
-			<div class="team-lists fw">
+			<div class="team-lists fw term-<?php echo $term_slug ?>">
 				<div class="wrapper">
 					<div class="flexwrap fadeIn wow" data-wow-delay=".5s">
 					<?php $i=1; while ( $teams->have_posts() ) : $teams->the_post();  
+						$id = get_the_ID();
 						$photo = get_field("image");
 						$jobtitle = get_field("title");
+						$bio = get_field("bio");
 						$teamName = get_the_title();
 						$photoBg = ($photo) ? ' style="background-image:url('.$photo['sizes']['medium_large'].')"':'';
 						$delay = $i;
+						$z = ($total+1) - $i;
 						?>
-						<div class="team">
+						<div class="team" style="z-index:<?php echo $z;?>">
 							<div class="wrap">
 								<div class="photo <?php echo ($photo) ? 'haspic':'nopic'; ?>"<?php echo $photoBg ?>>
 									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
 								</div>
-								<div class="info">
-									<div class="name"><?php echo $teamName ?></div>
-									<?php if ($jobtitle) { ?>
-									<div class="jobtitle"><?php echo $jobtitle ?></div>	
+
+								<div class="infowrap fw">
+									<div class="infoInner fw">
+										<div class="info">
+											<div class="name"><?php echo $teamName ?></div>
+											<?php if ($jobtitle) { ?>
+											<div class="jobtitle"><?php echo $jobtitle ?></div>	
+											<?php } ?>
+										</div>
+										<div class="button">
+											<?php if ($term_slug=='staff') { ?>
+												<a href="#" id="staff_<?php echo $id?>" class="staffmoreBtn btnlink">Read Bio</a>
+											<?php } else { ?>
+												<a href="<?php echo get_permalink(); ?>" class="btnbg-arrow">Read Bio</a>
+											<?php } ?>
+										</div>
+									</div>
+									<?php if ($term_slug=='staff') { ?>
+										<?php if ($bio) { ?>
+										<div class="staff-description animated staff_<?php echo $id?>">
+											<div class="inside"><?php echo $bio; ?></div>
+										</div>
+										<?php } ?>
 									<?php } ?>
-								</div>
-								<div class="button">
-									<a href="<?php echo get_permalink(); ?>" class="btnbg-arrow">Read Bio</a>
 								</div>
 							</div>
 						</div>
@@ -124,6 +146,32 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 
 	</main><!-- #main -->
 </div><!-- #primary -->
-
+<script>
+jQuery(document).ready(function($){
+	$(".staffmoreBtn").on("click",function(e){
+		e.preventDefault();
+		var id = $(this).attr("id");
+		var parent = $(this).parents(".team");
+		//$(".staff-description."+id).slideToggle(600);
+		parent.toggleClass("active");
+		// var parent = $(this).parents(".team");
+		// parent.find(".staff-description").slideToggle(600);
+		// if( parent.hasClass("active") ) {
+		// 	parent.removeClass('active');
+		// } else {
+		// 	parent.addClass("active");
+		// }
+	});
+	if( $(".term-staff .infoInner").length > 0 ) {
+		$(".term-staff .infoInner").each(function(){
+			var divHeight = $(this).outerHeight();
+			var parent = $(this).parents(".team");
+			var topVal = divHeight + "px";
+			parent.find('.staff-description').css("top",topVal);
+		});
+	} 
+	
+});
+</script>
 <?php
 get_footer();

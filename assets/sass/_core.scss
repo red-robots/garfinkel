@@ -2149,6 +2149,7 @@ body.page-template-page-news {
 			font-weight: 500;
 			line-height: 1.2;
 			text-transform: uppercase;
+			letter-spacing: 1px;
 		}
 		.jobtitle {
 			font-weight: 300;
@@ -2166,6 +2167,93 @@ body.page-template-page-news {
 		width: 100%;
 		height: auto;
 		float: left;
+	}
+}
+.team-lists.term-staff {
+	.wrapper {
+		overflow: visible;
+	}
+	.infowrap {
+		background: $primary;
+		padding: 0 0;
+		position: relative;
+	}
+	div.button {
+		top: 0;
+		margin-top: 5px;
+		margin-bottom: 8px;
+		a {
+			color: #FFF;
+			&:before, &:after {
+				background: #FFF;
+			}
+		}
+	}
+	.info {
+		padding: 10px 10px 0;
+	}
+	.infoInner {
+		position: relative;
+		z-index: 10;
+	}
+	.staff-description {
+		display: none;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 74px;
+		color: #FFF;
+		margin-top: 0;
+		border-top: 1px solid rgba(255,255,255,.2);
+		transition: all ease .3s;
+		opacity: 0;
+		height: 0;
+		max-height: 0;
+		overflow: hidden;
+		animation-duration: .5s;
+		.inside {
+			background: rgba(4, 22, 47, 0.9);
+			font-family: $font_secondary;
+			font-size: 0.8rem;
+			line-height: 1.6;
+			padding: 15px;
+			p {
+				margin-top: 0;
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.team {
+		position: relative;
+		.wrap {
+			position: relative;
+		}
+		&.active {
+			// z-index: 200;
+			.staff-description {
+				display: block;
+				opacity: 1;
+				height: auto;
+				max-height: 100%;
+				overflow: visible;
+  				animation-name: fadeIn;
+			}
+			div.button {
+				a.btnlink {
+					&:before, &:after {
+						right: 10px;
+					}
+					&:before {
+						transform: translate(4px, 4px) rotate(134deg);
+					}
+					&:after {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
 	}
 }
 

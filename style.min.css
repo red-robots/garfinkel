@@ -1173,10 +1173,27 @@ body.page-template-page-news{background:#f7f7f7}
 .team-lists .photo.nopic:before{content:"Photo Coming Soon";display:block;width:100%;text-align:center;position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);font-family:"Noto Sans JP",sans-serif;font-size:11px;letter-spacing:1px;color:#b1b0b0;text-transform:uppercase}
 .team-lists .info,.team-lists div.button{width:100%;float:left}
 .team-lists .info{background:#1c3f6e;color:#FFF;padding:10px 15px 21px 15px;font-family:"Noto Sans JP",sans-serif;text-align:center}
-.team-lists .info .name{font-size:14px;font-weight:500;line-height:1.2;text-transform:uppercase}
+.team-lists .info .name{font-size:14px;font-weight:500;line-height:1.2;text-transform:uppercase;letter-spacing:1px}
 .team-lists .info .jobtitle{font-weight:300;font-size:12px;margin-top:2px}
 .team-lists div.button{position:relative;top:-13px;text-align:center}
 .team-lists img.placeholder{width:100%;height:auto;float:left}
+.team-lists.term-staff .wrapper{overflow:visible}
+.team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative}
+.team-lists.term-staff div.button{top:0;margin-top:5px;margin-bottom:8px}
+.team-lists.term-staff div.button a{color:#FFF}
+.team-lists.term-staff div.button a:before,.team-lists.term-staff div.button a:after{background:#FFF}
+.team-lists.term-staff .info{padding:10px 10px 0}
+.team-lists.term-staff .infoInner{position:relative;z-index:10}
+.team-lists.term-staff .staff-description{display:none;width:100%;position:absolute;left:0;top:74px;color:#FFF;margin-top:0;border-top:1px solid rgba(255,255,255,0.2);-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;height:0;max-height:0;overflow:hidden;-webkit-animation-duration:.5s;animation-duration:.5s}
+.team-lists.term-staff .staff-description .inside{background:rgba(4,22,47,0.9);font-family:"Noto Sans JP",sans-serif;font-size:.8rem;line-height:1.6;padding:15px}
+.team-lists.term-staff .staff-description .inside p{margin-top:0}
+.team-lists.term-staff .staff-description .inside p:last-child{margin-bottom:0}
+.team-lists.term-staff .team{position:relative}
+.team-lists.term-staff .team .wrap{position:relative}
+.team-lists.term-staff .team.active .staff-description{display:block;opacity:1;height:auto;max-height:100%;overflow:visible;-webkit-animation-name:fadeIn;animation-name:fadeIn}
+.team-lists.term-staff .team.active div.button a.btnlink:before,.team-lists.term-staff .team.active div.button a.btnlink:after{right:10px}
+.team-lists.term-staff .team.active div.button a.btnlink:before{-webkit-transform:translate(4px,4px) rotate(134deg);-ms-transform:translate(4px,4px) rotate(134deg);transform:translate(4px,4px) rotate(134deg)}
+.team-lists.term-staff .team.active div.button a.btnlink:after{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 .teamPicWrap{width:100%;height:100%;position:fixed;top:170px;right:0;overflow:hidden;-webkit-transition:all ease .3s;transition:all ease .3s}
 .teamPicWrap *{-webkit-transition:all ease .3s;transition:all ease .3s}
 .teamPicWrap .wrapper{max-width:80%;height:100%;position:relative;background-size:contain;background-attachment:scroll;background-position:top right;background-repeat:no-repeat}
