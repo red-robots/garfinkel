@@ -55,11 +55,20 @@ if($posttype=='teams' && is_single() ) {
 					$link_type = ( isset($btn['link_type']) && $btn['link_type'] ) ? $btn['link_type'] : 'internal';
 					$buttonLabel = ( isset($btn['button_label']) && $btn['button_label'] ) ? $btn['button_label'] : '';
 					$buttonLink = ( isset($btn[$link_type.'_link']) && $btn[$link_type.'_link'] ) ? $btn[$link_type.'_link'] : '';
+					$code = ( isset($btn['code']) && $btn['code'] ) ? $btn['code'] : '';
+					if($link_type=='code' && $code) { ?>
+		
+					<a href="#" target="<?php echo $opt['target'] ?>" id="formSubmit<?php echo $b?>" class="formSubmitBtn btn<?php echo $b?>"><?php echo $buttonLabel ?></a>
+					<div class="formCode formSubmit<?php echo $b?>" style="display:none;"><?php echo $code; ?></div>
+
+					<?php } else { ?>
 					
-					if ($buttonLabel && $buttonLink) { 
+					<?php if ($buttonLabel && $buttonLink) { 
 						$opt = parse_external_url($buttonLink); ?>
 						<a href="<?php echo $buttonLink ?>" target="<?php echo $opt['target'] ?>" class="<?php echo $opt['class'] ?> btn<?php echo $b?>"><?php echo $buttonLabel ?></a>
 					<?php $b++; } ?>
+
+					<?php } ?>
 
 				<?php } ?>
 			</div>

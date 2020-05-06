@@ -112,6 +112,7 @@ body {
 	font-size: 15px;
 	line-height: 1.5;
 	background: #FFF;
+	color: $textcolor;
 	&.home {
 		background: #FFF;
 		#content {
@@ -2367,27 +2368,135 @@ body.subpage.single-teams {
 			}
 		}
 		.bio {
+			margin-bottom: 3.5em;
+		}
+	}
+}
+.tabItem {
+	margin: 0 0 13px;
+	.tabName {
+		font-family: $font_primary;
+		font-size: 1.25rem;
+		font-weight: 200;
+		line-height: 1.2;
+		margin: 0 0;
+		color: $primary;
+		position: relative;
+		cursor: pointer;
+		transition: all ease .2s;
+		* {
+			transition: all ease .2s;
+		}
+		span {
+			display: inline-block;
+			position: relative;
+			text-decoration: none;
+		}
+		.arrow {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			top: 6px;
+			right: -26px;
+			&:before, &:after {
+				content:"";
+				display: block;
+				width: 75%;
+				height: 1px;
+				background: $primary;
+				position: absolute;
+				left: 0;
+				top: 7px;
+			}
+			&:before {
+				transform: translateY(-4px) rotate(48deg);
+			}
+			&:after {
+				transform: translateY(4px) rotate(-48deg);
+			}
+		}
+		&:hover {
+			color: $secondary;
+			.arrow {
+				transform: translateX(3px);
+				&:before, &:after {
+					background: $secondary;
+				}
+			}
 			
 		}
 	}
-	// .rightcol {
-	// 	display: none;
-	// 	width: 50%;
-	// 	height: 100%;
-	// 	position: fixed;
-	// 	top: 230px;
-	// 	right: 0;
-	// 	.photo {
-	// 		width: 60%;
-	// 		height: 100%;
-	// 		background-size: 100%;
-	// 		background-position: top right;
-	// 		background-repeat: no-repeat;
-	// 		position: absolute;
-	// 		top: 0;
-	// 		left: 0;
-	// 	}
-	// }
+	.tabContent {
+		margin-top: 20px;
+		margin-bottom: 30px;
+		display: none;
+	}
+	.listinfo {
+		ul.list {
+			margin: 0 0;
+			padding: 0 0;
+			list-style: none;
+		}
+		li.info {
+			position: relative;
+			padding-left: 20px;
+			margin-top: 12px;
+			&.first {
+				margin-top: 0;
+			}
+			&:before {
+				content:'';
+				display: block;
+				width: 7px;
+				height: 7px;
+				background: $primary;
+				border-radius: 100px;
+				position: absolute;
+				top: 6px;
+				left: 0;
+			}
+		}
+		.gold {
+			color: $secondary;
+		}
+		.uppercase {
+			text-transform: uppercase;
+		}
+		ul.list.style2 {
+			li.info {
+				margin: 0 0;
+			}
+		}
+	}
+	&.active {
+		.tabName {
+			color: $primary;
+			&:after {
+				content:"";
+				display: block;
+				width: 8%;
+				height: 2px;
+				background: $secondary;
+				margin-top: 10px;
+			}
+			.arrow {
+				transform: translate(3px,3px) rotate(90deg);
+			}
+			&:hover {
+				color: $secondary;
+				.arrow {
+					&:before, &:after {
+						background: $secondary;
+					}
+				}
+				
+			}
+		}
+		// .tabContent {
+		// 	display: block;
+		// }
+	}
 }
 
 /* Contact page */

@@ -811,7 +811,7 @@ pre{font-family:"Courier 10 Pitch",Courier,monospace;font-size:13px;line-height:
 .site.has-team-photo{background-repeat:no-repeat;background-attachment:fixed;background-position:bottom right;background-size:contain}
 .flexwrap{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 html,body{height:100%;position:relative}
-body{font-family:"Noto Serif",serif;font-size:15px;line-height:1.5;background:#FFF}
+body{font-family:"Noto Serif",serif;font-size:15px;line-height:1.5;background:#FFF;color:#505567}
 body.home{background:#FFF}
 body.home #content{min-height:20em}
 body.page-template-page-contact{background:#FFF}
@@ -1213,6 +1213,31 @@ body.subpage.single-teams .leftcol{font-family:"Noto Sans JP",sans-serif;width:1
 body.subpage.single-teams .leftcol .contactinfo .t1{text-transform:uppercase;color:#1c3f6e;letter-spacing:1px;font-weight:600}
 body.subpage.single-teams .leftcol .topinfo{position:relative;margin-bottom:40px}
 body.subpage.single-teams .leftcol .topinfo:after{content:"";display:block;width:50px;height:2px;background:#8d7c2f}
+body.subpage.single-teams .leftcol .bio{margin-bottom:3.5em}
+.tabItem{margin:0 0 13px}
+.tabItem .tabName{font-family:"Noto Serif",serif;font-size:1.25rem;font-weight:200;line-height:1.2;margin:0;color:#1c3f6e;position:relative;cursor:pointer;-webkit-transition:all ease .2s;transition:all ease .2s}
+.tabItem .tabName *{-webkit-transition:all ease .2s;transition:all ease .2s}
+.tabItem .tabName span{display:inline-block;position:relative;text-decoration:none}
+.tabItem .tabName .arrow{display:inline-block;width:15px;height:15px;position:absolute;top:6px;right:-26px}
+.tabItem .tabName .arrow:before,.tabItem .tabName .arrow:after{content:"";display:block;width:75%;height:1px;background:#1c3f6e;position:absolute;left:0;top:7px}
+.tabItem .tabName .arrow:before{-webkit-transform:translateY(-4px) rotate(48deg);-ms-transform:translateY(-4px) rotate(48deg);transform:translateY(-4px) rotate(48deg)}
+.tabItem .tabName .arrow:after{-webkit-transform:translateY(4px) rotate(-48deg);-ms-transform:translateY(4px) rotate(-48deg);transform:translateY(4px) rotate(-48deg)}
+.tabItem .tabName:hover{color:#8d7c2f}
+.tabItem .tabName:hover .arrow{-webkit-transform:translateX(3px);-ms-transform:translateX(3px);transform:translateX(3px)}
+.tabItem .tabName:hover .arrow:before,.tabItem .tabName:hover .arrow:after{background:#8d7c2f}
+.tabItem .tabContent{margin-top:20px;margin-bottom:30px;display:none}
+.tabItem .listinfo ul.list{margin:0;padding:0;list-style:none}
+.tabItem .listinfo li.info{position:relative;padding-left:20px;margin-top:12px}
+.tabItem .listinfo li.info.first{margin-top:0}
+.tabItem .listinfo li.info:before{content:'';display:block;width:7px;height:7px;background:#1c3f6e;border-radius:100px;position:absolute;top:6px;left:0}
+.tabItem .listinfo .gold{color:#8d7c2f}
+.tabItem .listinfo .uppercase{text-transform:uppercase}
+.tabItem .listinfo ul.list.style2 li.info{margin:0}
+.tabItem.active .tabName{color:#1c3f6e}
+.tabItem.active .tabName:after{content:"";display:block;width:8%;height:2px;background:#8d7c2f;margin-top:10px}
+.tabItem.active .tabName .arrow{-webkit-transform:translate(3px,3px) rotate(90deg);-ms-transform:translate(3px,3px) rotate(90deg);transform:translate(3px,3px) rotate(90deg)}
+.tabItem.active .tabName:hover{color:#8d7c2f}
+.tabItem.active .tabName:hover .arrow:before,.tabItem.active .tabName:hover .arrow:after{background:#8d7c2f}
 .contact-section{position:relative}
 .contact-section .wrapper{padding-top:50px;padding-bottom:50px;position:relative;z-index:10}
 @media(min-width:800px){.contact-section .wrapper{padding-top:80px;padding-bottom:80px}

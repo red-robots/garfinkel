@@ -37,6 +37,13 @@ jQuery(document).ready(function ($) {
 		}
     });
 
+    /* Header Button */
+    $(".formSubmitBtn").on("click",function(e){
+    	e.preventDefault();
+    	var id = $(this).attr("id");
+    	$("div."+id).find("form").trigger("submit");
+    });
+
 	move_footer();
 
     $(window).on('resize',function(){
