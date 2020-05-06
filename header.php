@@ -43,7 +43,7 @@ if($posttype=='teams' && is_single() ) {
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper cf">
-
+			
 			<?php  
 			$header_buttons[] = get_field("header_button1","option");
 			$header_buttons[] = get_field("header_button2","option");

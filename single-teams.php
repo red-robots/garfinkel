@@ -95,6 +95,7 @@ get_header();
 					$values = get_field($fieldName);
 					$is_active = ($ctr==1) ? ' active':'';
 					$show_content = ($ctr==1) ? ' style="display:block"':'';
+					$list_style = ( in_array($fieldName, $noMarginBottomLists) ) ? ' style2':'';
 					if($values) { ?>
 					<div class="tabItem <?php echo $fieldName.$is_active ?>">
 						<h2 class="tabName"><span><?php echo $tabName ?> <i class="arrow"></i></span></h2>
@@ -120,29 +121,28 @@ get_header();
 						else if($fieldName=='classesseminars') { ?>
 						<div class="tabContent listinfo"<?php echo $show_content ?>>
 							<ul class="list">
-								<?php $n=1; foreach ($values as $v) { 
+							<?php $n=1; foreach ($values as $v) { 
 								$data = array_values($v);
 								$textVal1 = ( isset($data[0]) && $data[0] ) ? $data[0] : '';
-								$parts = explode(",",$textVal1);
-								$boldTxt = $parts[0] . ': ';
-								$info = str_replace($boldTxt.',','',$textVal1);
-								$first = ($n==1) ? ' first':'';
-								?>
-								<li class="info<?php echo $first ?>">
-									<strong class="gold uppercase"><?php echo $boldTxt ?></strong> <?php echo $info ?>
-								</li>
+								$textVal1 = ($textVal1) ? preg_replace('/\s+/', ' ', $textVal1) : '';
+								$boldTxt = '';
+								$info = '';
+								if($textVal1) {
+									$parts = explode(",",$textVal1);
+									$boldTxt = $parts[0] . ': ';
+									$info = str_replace($parts[0].', ','',$textVal1);
+									$first = ($n==1) ? ' first':'';
+									?>
+									<li class="info<?php echo $first ?>">
+										<strong class="gold uppercase"><?php echo $boldTxt ?></strong> <?php echo $info ?>
+									</li>
 								<?php $n++; } ?>
+							<?php } ?>
 							</ul>
 						</div>
 						<?php }
 
 						else { ?>
-
-							<?php 
-							$list_style = '';
-							if ( in_array($fieldName, $noMarginBottomLists) ) {
-								$list_style = ' style2';
-							} ?>
 
 							<div class="tabContent listinfo"<?php echo $show_content ?>>
 								<ul class="list<?php echo $list_style?>">
