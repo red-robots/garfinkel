@@ -84,7 +84,7 @@ $slug = $post->post_name;
 				</div>	
 				<?php } ?>
 			</div>
-			<div class="diagonalStripes"></div>
+			<div class="diagonalStripes" style="display:none;"></div>
 		</section>
 	
 	<?php endwhile; ?><!-- #main -->

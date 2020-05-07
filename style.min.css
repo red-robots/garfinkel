@@ -815,7 +815,7 @@ body{font-family:"Noto Serif",serif;font-size:15px;line-height:1.5;background:#F
 body.home{background:#FFF}
 body.home #content{min-height:20em}
 body.page-template-page-contact{background:#FFF}
-#content{font-size:14px;line-height:1.7}
+#content{font-size:14px;line-height:1.75}
 .defaultTemplate .entry-content{font-family:"Noto Sans JP",sans-serif}
 .site-header{position:relative;z-index:100;background:#f7f7f7;width:100%;float:left}
 @media(min-width:800px){.site-header{height:auto}
