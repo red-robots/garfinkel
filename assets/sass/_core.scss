@@ -2436,14 +2436,18 @@ body.subpage.single-teams {
 		color: #FFF;
 		position: relative;
 		z-index: 20;
+		.wrapper {
+			overflow: visible;
+		}
 		.titlediv {
 			width: 100%;
-			padding: 30px 5%;
+			padding: 20px 5%;
 			background-image:url("images/diamond-pattern.png");
 			background-position: center;
 			background-repeat: repeat;
 			background-color: $secondary;
 			@include tab {
+				padding: 30px 5%;
 				width: 45%;
 				float: left;
 			}
@@ -2469,19 +2473,23 @@ body.subpage.single-teams {
 			width: 45%;
 			height: 100%;
 			position: absolute;
-			top: 0;
+			bottom: 0;
 			right: 0;
 			@include flexgroup-center();
 			.btndiv {
 				width: 100%;
 				text-align: right;
+				padding-right: 40px;
+				@include tab {
+					padding-right: 30px;
+				}
 				a {
 					display: inline-block;
 					text-decoration: none;
 					color: #FFF;
 					font-family: $font_secondary;
 					font-size: 0.8rem;
-					font-weight: 400;
+					font-weight: 500;
 					opacity: 0.7;
 					i {
 						position: relative;
@@ -2493,6 +2501,22 @@ body.subpage.single-teams {
 						i {
 							transform: translateX(-3px);
 						}
+					}
+				}
+			}
+			@media screen and (max-width: $xswidth) {
+				position: absolute;
+				width: 100%;
+				height: auto;
+				display: block;
+				bottom: -30px;
+				.btndiv {
+					text-align: right;
+					padding-left: 30px;
+					padding-right: 30px;
+					a {
+						color: $primary;
+						opacity: 1;
 					}
 				}
 			}
@@ -2526,7 +2550,7 @@ body.subpage.single-teams {
 	.leftcol {
 		font-family: $font_secondary;
 		width: 100%;
-		padding-top: 50px;
+		padding-top: 70px;
 		padding-bottom: 50px;
 		@include tab {
 			width: 50%;

@@ -16,7 +16,7 @@ get_header();
 <?php } ?>
 
 <header class="single-header fw">
-	<div class="wrapper">
+	<div class="wrapper cf">
 		<div class="titlediv">
 			<h1 class="page-title"><?php echo get_the_title(); ?></h1>
 			<?php if ($jobtitle) { ?>
