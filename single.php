@@ -1,22 +1,30 @@
 <?php
 get_header(); 
-$post_type = get_post_type();
+$header_image = get_field("hero_image"); 
+$has_header_image = ($header_image) ? 'has-header-image':'no-header-image';
+global $post;
+$slug = $post->post_name;
 ?>
 
-<div id="primary" class="content-area cf">
+<div id="primary" class="content-area defaultTemplate cf">
 	<?php if ( $post_type=='post' ) { 
 
 		get_template_part( 'parts/content', 'news' );
 		
 	} else { ?>
-	<main id="main" class="site-main" role="main">
+	<main id="main" class="site-main cf" role="main">
+		<div class="wrapper">
 
-	<?php while ( have_posts() ) : the_post();
+			<?php while ( have_posts() ) : the_post(); ?>
+			<header class="entry-header">
+				<h1 class="page-title"><?php the_title(); ?></h1>
+			</header>
+			<div class="entry-content cf">
+				<?php the_content(); ?>
+			</div>
+			<?php endwhile; ?>
 
-		get_template_part( 'parts/content', get_post_format() );
-
-	endwhile; // End of the loop.
-	?>
+		</div>
 	</main><!-- #main -->
 
 	<?php } ?>

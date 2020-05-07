@@ -124,9 +124,15 @@ body {
 	}
 }
 #content {
-	font-size: 13px;
-	line-height: 1.6;
+	font-size: 14px;
+	line-height: 1.7;
 }
+.defaultTemplate {
+	.entry-content {
+		font-family: $font_secondary;
+	}
+}
+
 /* Header */
 .site-header {
 	position: relative;
@@ -1914,7 +1920,8 @@ body.page-template-page-news {
 
 #content .site-main.single-post {
 	font-family: $font_secondary;
-	font-size: 13px;
+	// font-size: 14px;
+	// line-height: 1.7;
 	padding-top: 40px;
 	padding-bottom: 60px;
 	position: relative;
@@ -1932,7 +1939,6 @@ body.page-template-page-news {
 		width: 100%;
 		float: left;
 		margin-bottom: 30px;
-		line-height: 1.6;
 		@include tab {
 			width: 70%;
 			margin-bottom: 0;
