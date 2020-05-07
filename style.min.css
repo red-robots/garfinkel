@@ -848,7 +848,7 @@ body.subpage h1.page-title{font-size:2rem;font-weight:600;line-height:1.3;color:
 .main-navigation ul.menu a{font-family:"Noto Sans JP",sans-serif;display:inline-block;text-decoration:none;color:#1c3f6e}
 .main-navigation ul.menu>li>a{font-size:.7rem;padding:4px .65rem;line-height:1.2;padding:4px 15px;text-transform:uppercase}
 @media(min-width:800px){.main-navigation ul.menu>li>a{font-size:.85rem;padding:4px .8rem}
-}@media(min-width:960px){.main-navigation ul.menu>li>a{font-size:16px;padding:4px .85rem}
+}@media(min-width:960px){.main-navigation ul.menu>li>a{font-size:15px;padding:4px .85rem}
 }.main-navigation ul.menu>li>a span{display:inline-block;padding-bottom:2px;position:relative}
 .main-navigation ul.menu>li>a span:after{content:"";display:block;width:100%;height:1px;background:#8d7c2f;position:relative;top:2px;-webkit-transition:all ease .3s;transition:all ease .3s;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0)}
 .main-navigation ul.menu>li>a:hover{color:#8d7c2f}

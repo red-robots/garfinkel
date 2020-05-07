@@ -4034,7 +4034,7 @@ body.subpage h1.page-title {
         padding: 4px .8rem; } }
     @media (min-width: 960px) {
       .main-navigation ul.menu > li > a {
-        font-size: 16px;
+        font-size: 15px;
         padding: 4px .85rem; } }
     .main-navigation ul.menu > li > a span {
       display: inline-block;
