@@ -4,6 +4,7 @@ $header_image = get_field("hero_image");
 $has_header_image = ($header_image) ? 'has-header-image':'no-header-image';
 global $post;
 $slug = $post->post_name;
+$post_type = $post->post_type;
 ?>
 
 <div id="primary" class="content-area defaultTemplate cf">
