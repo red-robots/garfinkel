@@ -98,13 +98,15 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 						$id = get_the_ID();
 						$photo = get_field("image");
 						$jobtitle = get_field("title");
+						$jt = ($jobtitle) ? preg_replace('/\s+/','', $jobtitle) : '';
 						$bio = get_field("bio");
 						$teamName = get_the_title();
 						$photoBg = ($photo) ? ' style="background-image:url('.$photo['sizes']['medium_large'].')"':'';
 						$delay = $i;
 						$z = ($total+1) - $i;
+						$has_jobtitle = ($jt) ? 'hasjobtitle':'nojobtitle';
 						?>
-						<div class="team" style="z-index:<?php echo $z;?>">
+						<div class="team <?php echo $has_jobtitle ?>" style="z-index:<?php echo $z;?>">
 							<div class="wrap">
 								<div class="photo <?php echo ($photo) ? 'haspic':'nopic'; ?>"<?php echo $photoBg ?>>
 									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
@@ -114,7 +116,7 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 									<div class="infoInner fw">
 										<div class="info">
 											<div class="name"><?php echo $teamName ?></div>
-											<?php if ($jobtitle) { ?>
+											<?php if ($jt) { ?>
 											<div class="jobtitle"><?php echo $jobtitle ?></div>	
 											<?php } ?>
 										</div>
@@ -152,25 +154,16 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		var id = $(this).attr("id");
 		var parent = $(this).parents(".team");
-		//$(".staff-description."+id).slideToggle(600);
 		parent.toggleClass("active");
-		// var parent = $(this).parents(".team");
-		// parent.find(".staff-description").slideToggle(600);
-		// if( parent.hasClass("active") ) {
-		// 	parent.removeClass('active');
-		// } else {
-		// 	parent.addClass("active");
-		// }
 	});
-	if( $(".term-staff .infoInner").length > 0 ) {
-		$(".term-staff .infoInner").each(function(){
+	if( $(".term-staff .infowrap").length > 0 ) {
+		$(".term-staff .infowrap").each(function(){
 			var divHeight = $(this).outerHeight();
 			var parent = $(this).parents(".team");
 			var topVal = divHeight + "px";
 			parent.find('.staff-description').css("top",topVal);
 		});
-	} 
-	
+	}
 });
 </script>
 <?php

@@ -1187,7 +1187,7 @@ body.page-template-page-news{background:#f7f7f7}
 .team-lists div.button{position:relative;top:-13px;text-align:center}
 .team-lists img.placeholder{width:100%;height:auto;float:left}
 .team-lists.term-staff .wrapper{overflow:visible}
-.team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative}
+.team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative;min-height:83px}
 .team-lists.term-staff div.button{top:0;margin-top:5px;margin-bottom:8px}
 .team-lists.term-staff div.button a{color:#FFF}
 .team-lists.term-staff div.button a:before,.team-lists.term-staff div.button a:after{background:#FFF}
@@ -1198,8 +1198,9 @@ body.page-template-page-news{background:#f7f7f7}
 .team-lists.term-staff .staff-description .inside p{margin-top:0}
 .team-lists.term-staff .staff-description .inside p:last-child{margin-bottom:0}
 .team-lists.term-staff .team{position:relative}
-.team-lists.term-staff .team .wrap{position:relative}
-.team-lists.term-staff .team.active .staff-description{display:block;opacity:1;height:auto;max-height:100%;overflow:visible;-webkit-animation-name:fadeIn;animation-name:fadeIn}
+.team-lists.term-staff .team .wrap{position:relative;height:100%;background-color:#1c3f6e}
+@media(min-width:600px){.team-lists.term-staff .team.nojobtitle .infoInner{position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+}.team-lists.term-staff .team.active .staff-description{display:block;opacity:1;height:auto;max-height:100%;overflow:visible;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 .team-lists.term-staff .team.active div.button a.btnlink:before,.team-lists.term-staff .team.active div.button a.btnlink:after{right:10px}
 .team-lists.term-staff .team.active div.button a.btnlink:before{-webkit-transform:translate(4px,4px) rotate(134deg);-ms-transform:translate(4px,4px) rotate(134deg);transform:translate(4px,4px) rotate(134deg)}
 .team-lists.term-staff .team.active div.button a.btnlink:after{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
@@ -1220,7 +1221,7 @@ body.page-template-page-news{background:#f7f7f7}
 }@media(min-width:1300px){.teamPicWrap{top:200px}
 }@media screen and (max-width:500px){.teamPicWrap{position:relative;top:0 !important;height:350px;margin-top:-5%}
 }@media screen and (min-width:501px) and (max-width:768px){.teamPicWrap{position:relative;top:0 !important;height:450px}
-}body.scrolled .teamPicWrap{top:0}
+}body.scrolled .teamPicWrap{top:0 !important}
 @media screen and (min-width:701px) and (max-width:860px){body.scrolled .teamPicWrap .wrapper{margin-top:0}
 }body.subpage.single-teams .single-header{background:#1c3f6e;color:#FFF;position:relative;z-index:20}
 body.subpage.single-teams .single-header .titlediv{width:100%;padding:30px 5%;background-image:url("images/diamond-pattern.png");background-position:center;background-repeat:repeat;background-color:#8d7c2f}

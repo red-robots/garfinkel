@@ -283,5 +283,6 @@ jQuery(document).ready(function ($) {
 		$('.menu-toggle').removeClass('open');
 		$('body').removeClass('open-menu')
 	});
+	
 
 });// END #####################################    END

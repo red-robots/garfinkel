@@ -2218,6 +2218,7 @@ body.page-template-page-news {
 		background: $primary;
 		padding: 0 0;
 		position: relative;
+		min-height: 83px;
 	}
 	div.button {
 		top: 0;
@@ -2270,6 +2271,17 @@ body.page-template-page-news {
 		position: relative;
 		.wrap {
 			position: relative;
+			height: 100%;
+			background-color: $primary;
+		}
+		&.nojobtitle {
+			.infoInner {
+				@include xs {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
 		}
 		&.active {
 			// z-index: 200;
@@ -2394,7 +2406,7 @@ body.page-template-page-news {
 }
 
 body.scrolled .teamPicWrap {
-	top: 0;
+	top: 0!important;
 	.wrapper {
 		@media screen and (min-width:701px) and (max-width:860px) {
 			margin-top: 0;

@@ -193,6 +193,14 @@ jQuery(document).ready(function($){
 			parent.addClass("active");
 		}
 	});
+
+	if( $(".teamPicWrap").length > 0 ) {
+		var headerHeight = $("#masthead").height();
+		var titleBarHeight = $(".single-header").height();
+		var ht = (headerHeight + titleBarHeight) + 10;
+		var topTeam = Math.round(ht);
+		$(".teamPicWrap").css("top",topTeam+"px");
+	}
 });
 </script>
 
