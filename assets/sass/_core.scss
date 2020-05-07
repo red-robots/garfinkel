@@ -294,16 +294,16 @@ body.subpage {
 		padding: 4px 15px;
 		text-transform: uppercase;
 		@include tab {
-			font-size: 0.75rem;
+			font-size: 0.85rem;
 			padding: 4px .8rem;
 		}
 		@include mid {
-			font-size: 0.8rem;
+			font-size: 16px;
 			padding: 4px .85rem;
 		}
-		@include desk {
-			font-size: 0.85rem;
-		}
+		// @include desk {
+		// 	font-size: 0.85rem;
+		// }
 		span {
 			display: inline-block;
 			padding-bottom: 2px;
@@ -337,8 +337,9 @@ body.subpage {
 	ul.menu ul {
 		position: absolute;
 		right: 0;
-		width: 180px;
-		text-align: right;
+		// width: 180px;
+		width: 210px;
+		text-align: left;
 		height: 0;
 		max-height: 0;
 		overflow: hidden;
@@ -359,12 +360,12 @@ body.subpage {
 	}
 	ul.menu ul a {
 		font-family: $font_primary;
-		font-size: 0.75rem;
-		font-weight: 600;
-		font-style: italic;
-		line-height: 1.3;
+		font-size: 15px;
+		font-weight: 500;
+		font-style: normal;
+		line-height: 1.4;
 		display: block;
-		padding: .2rem .5rem;
+		padding: .4rem .5rem;
 	}
 	ul.menu ul > li:hover > a,
 	ul.menu ul > li.current_page_item > a {
