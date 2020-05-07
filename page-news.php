@@ -8,6 +8,9 @@ $header_image = get_field("hero_image");
 $has_header_image = ($header_image) ? 'has-header-image':'no-header-image';
 global $post;
 $slug = $post->post_name;
+$taxonomy = 'category';
+$post_type = 'post';
+$currentPage = get_permalink();
 ?>
 
 <div id="primary" class="content-area default cf <?php echo $has_header_image ?>">
@@ -37,14 +40,41 @@ $slug = $post->post_name;
 
 		<?php endwhile; ?>
 
-		<?php /* NEWS FEEDS */ ?>
+		<?php 
+		/* NEWS FEEDS */ 
+		//$query_cat_id = ( isset($_GET['cat']) && is_numeric($_GET['cat']) ) ? $_GET['cat'] : '';
+		$query_cat_slug = ( isset($_GET['cat']) && $_GET['cat'] ) ? $_GET['cat'] : '';
+		$options = array();
+		$filter_by = '';
+		$terms = get_terms([
+		    'taxonomy' => $taxonomy,
+		    'hide_empty' => true,
+		]);
+		if($terms) {
+			$default = (empty($query_cat_slug)) ? ' active':'';
+			$filter_by = '<a href="'.$currentPage.'" class="opt'.$default.'"><span>All</span></a>';
+			foreach($terms as $term) {
+				$catID = $term->term_id;
+				$catName = $term->name;
+				$catSlug = $term->slug;
+				$isActive = ($catSlug==$query_cat_slug) ? ' active':'';
+				$filter_by .= '<a href="'.$currentPage.'?cat='.$catSlug.'" class="opt'.$isActive.'"><span>'.$catName.'</span></a>';
+			}
+		}
+		?>
 		<div class="news-section-wrapper cf">
+			<?php if ($terms) { ?>
+			<div class="filterby">
+				<span class="filtertxt">FILTER BY</span>
+				<span class="filterOpts"><?php echo $filter_by; ?></span>
+			</div>
+			<?php } ?>
+
 			<div class="news-inner cf">
 
 				<?php  
-				$posts_per_page = 9;
+				$posts_per_page = 12;
 				$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
-				$post_type = 'post';
 				$posts = array();
 				$total = 0;
 				$total_text = '';
@@ -65,6 +95,23 @@ $slug = $post->post_name;
 					'post_status'	=> 'publish',
 				);
 
+				if( $query_cat_slug ) {
+					$args['tax_query'] = array(
+										array(
+											'taxonomy' => $taxonomy,
+											'field' => 'slug',
+											'terms' => $query_cat_slug
+										)
+									);
+					$all_args['tax_query'] = array(
+										array(
+											'taxonomy' => $taxonomy,
+											'field' => 'slug',
+											'terms' => $query_cat_slug
+										)
+									);
+				}
+
 				$posts = get_posts($args);
 				$all = get_posts($all_args);
 				$total = count($all);
@@ -83,6 +130,21 @@ $slug = $post->post_name;
 							$thumbID = get_post_thumbnail_id($id);
 							$img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
 							$imgAlt = ($img) ? get_the_title($thumbID) : '';
+							$post_terms = get_the_terms($id,$taxonomy);
+							$categories = '';
+							if( $post_terms ) {
+								$n=1; foreach($post_terms as $p) {
+									$cName = $p->name; 
+									$cSlug = $p->slug;
+									$comma = ($n>1) ? ', ':'';
+									$categories .= $comma . '<a href="'.$currentPage.'?cat='.$cSlug.'">'.$cName.'</a>';
+									$n++;
+								}
+							}
+							$post_date_text = get_the_date('m/d/Y',$id);
+							if($categories) {
+								$post_date_text = '<span class="cats">' . $categories . '</span>' . $post_date_text;
+							} 
 							?>
 							<div class="fcol news animated fadeIn">
 								<div class="inside">
@@ -92,7 +154,7 @@ $slug = $post->post_name;
 									<div class="feat-image na"><img src="<?php echo $rectangle ?>" alt="" aria-hidden="true" class="placeholder"></div>
 									<?php } ?>
 									<div class="textwrap">
-										<div class="postdate"><?php echo get_the_date('m/d/Y',$id) ?></div>
+										<div class="postdate"><?php echo $post_date_text; ?></div>
 										<h3 class="posttitle"><a href="<?php echo get_permalink($id); ?>"><?php echo get_the_title($id); ?></a></h3>
 										<div class="excerpt"><?php echo $content; ?></div>
 									</div>
