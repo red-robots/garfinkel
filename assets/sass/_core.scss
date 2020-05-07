@@ -2188,11 +2188,11 @@ body.page-template-page-news {
 	.info {
 		background: $primary;
 		color: #FFF;
-		padding: 10px 15px 21px 15px;
+		padding: 10px 15px 23px 15px;
 		font-family: $font_secondary;
 		text-align: center;
 		.name {
-			font-size: 14px;
+			font-size: 16px;
 			font-weight: 500;
 			line-height: 1.2;
 			text-transform: uppercase;
@@ -2200,14 +2200,23 @@ body.page-template-page-news {
 		}
 		.jobtitle {
 			font-weight: 300;
-			font-size: 12px;
-			margin-top: 2px;
+			font-size: 14px;
+			margin-top: 0;
 		}
 	}
 	div.button {
 		position: relative;
     	top: -13px;
 		text-align: center;
+		a.btnbg-arrow {
+			font-size: 15px;
+			&:before {
+				top: 11px;
+			}
+			&:after {
+				bottom: 11px; 
+			}
+		}
 	}
 
 	img.placeholder {

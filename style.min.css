@@ -1183,10 +1183,13 @@ body.page-template-page-news{background:#f7f7f7}
 }.team-lists .photo{width:100%;float:left;background-size:cover;background-position:top center;background-repeat:no-repeat;background-color:#e2e2e2;position:relative}
 .team-lists .photo.nopic:before{content:"Photo Coming Soon";display:block;width:100%;text-align:center;position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);font-family:"Noto Sans JP",sans-serif;font-size:11px;letter-spacing:1px;color:#b1b0b0;text-transform:uppercase}
 .team-lists .info,.team-lists div.button{width:100%;float:left}
-.team-lists .info{background:#1c3f6e;color:#FFF;padding:10px 15px 21px 15px;font-family:"Noto Sans JP",sans-serif;text-align:center}
-.team-lists .info .name{font-size:14px;font-weight:500;line-height:1.2;text-transform:uppercase;letter-spacing:1px}
-.team-lists .info .jobtitle{font-weight:300;font-size:12px;margin-top:2px}
+.team-lists .info{background:#1c3f6e;color:#FFF;padding:10px 15px 23px 15px;font-family:"Noto Sans JP",sans-serif;text-align:center}
+.team-lists .info .name{font-size:16px;font-weight:500;line-height:1.2;text-transform:uppercase;letter-spacing:1px}
+.team-lists .info .jobtitle{font-weight:300;font-size:14px;margin-top:0}
 .team-lists div.button{position:relative;top:-13px;text-align:center}
+.team-lists div.button a.btnbg-arrow{font-size:15px}
+.team-lists div.button a.btnbg-arrow:before{top:11px}
+.team-lists div.button a.btnbg-arrow:after{bottom:11px}
 .team-lists img.placeholder{width:100%;height:auto;float:left}
 .team-lists.term-staff .wrapper{overflow:visible}
 .team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative}
