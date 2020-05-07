@@ -1350,7 +1350,7 @@ body.subpage.single-teams .leftcol .bio{margin-bottom:3.5em}
 .section-faqs .question .arrow:before{-webkit-transform:translateY(-5px) rotate(45deg);-ms-transform:translateY(-5px) rotate(45deg);transform:translateY(-5px) rotate(45deg)}
 .section-faqs .question .arrow:after{-webkit-transform:translateY(5px) rotate(-45deg);-ms-transform:translateY(5px) rotate(-45deg);transform:translateY(5px) rotate(-45deg)}
 .section-faqs .question:hover{background:#e3e3e3}
-.section-faqs .answer{width:100%;float:left;padding:10px 20px;font-size:13px;line-height:1.5;color:#5b5d5f;display:none}
+.section-faqs .answer{width:100%;float:left;padding:10px 20px;font-size:14px;line-height:1.6;color:#5b5d5f;display:none}
 .section-faqs .faq-item.open .question .arrow{-webkit-transform:translate(15px,23px) rotate(90deg);-ms-transform:translate(15px,23px) rotate(90deg);transform:translate(15px,23px) rotate(90deg)}
 .error-404{position:relative;top:-15px}
 .error-404 .sitemapMenu{margin-top:30px}
