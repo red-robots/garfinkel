@@ -2792,6 +2792,8 @@ body.subpage.single-teams {
 		width: 100%;
 		float: left;
 		&.col1 {
+			font-size: 15px;
+			line-height: 1.7;
 			margin-bottom: 30px;
 			@include tab {
 				margin-bottom: 0;

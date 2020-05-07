@@ -1302,7 +1302,7 @@ body.subpage.single-teams .leftcol .bio{margin-bottom:3.5em}
 .contact-section .wrapper{padding-top:50px;padding-bottom:50px;position:relative;z-index:10}
 @media(min-width:800px){.contact-section .wrapper{padding-top:80px;padding-bottom:80px}
 }.contact-section .contactCol{width:100%;float:left}
-.contact-section .contactCol.col1{margin-bottom:30px}
+.contact-section .contactCol.col1{font-size:15px;line-height:1.7;margin-bottom:30px}
 @media(min-width:800px){.contact-section .contactCol.col1{margin-bottom:0}
 }.contact-section.twocol .col1{width:100%;float:left;margin-bottom:30px}
 @media(min-width:800px){.contact-section.twocol .col1{width:40%}
