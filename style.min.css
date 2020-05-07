@@ -933,6 +933,7 @@ body.subpage #static-banner img.placeholder{width:100%;height:auto;float:left;di
 .scrollDownDiv #scrolldown:after{right:17px;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
 body.hasbanner .site-header{position:absolute;top:0;left:0;width:100%}
 .site-content{position:relative;width:100%;float:left}
+body.term-staff .site-content{z-index:35}
 .ctadiv{margin-top:20px}
 .btn-default{display:inline-block;text-decoration:none;cursor:pointer;background:#1c3f6e;font-size:15px;line-height:1.1;padding:10px 20px;border-radius:4px;color:#FFF}
 .btn-default.lg{font-size:18px;padding:12px 25px}
@@ -1172,6 +1173,7 @@ body.page-template-page-news{background:#f7f7f7}
 .breadcrumb a#nextpost:hover:before,.breadcrumb a#nextpost:hover:after{margin-right:-3px}
 .team-lists{background:#f7f7f7;padding-top:50px;padding-bottom:50px}
 @media(min-width:800px){.team-lists{padding-top:80px;padding-bottom:80px}
+}@media screen and (max-width:599px){.team-lists{padding-bottom:50px !important}
 }.team-lists .flexwrap{margin-left:-15px;margin-right:-15px}
 @media(min-width:960px){.team-lists .flexwrap{margin-left:-30px;margin-right:-30px}
 }.team-lists .team{width:100%;padding:15px}
@@ -1187,14 +1189,17 @@ body.page-template-page-news{background:#f7f7f7}
 .team-lists div.button{position:relative;top:-13px;text-align:center}
 .team-lists img.placeholder{width:100%;height:auto;float:left}
 .team-lists.term-staff .wrapper{overflow:visible}
-.team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative;min-height:83px}
-.team-lists.term-staff div.button{top:0;margin-top:5px;margin-bottom:8px}
+.team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative}
+@media(min-width:600px){.team-lists.term-staff .infowrap{min-height:83px}
+}.team-lists.term-staff div.button{top:0;margin-top:5px;margin-bottom:8px}
 .team-lists.term-staff div.button a{color:#FFF}
 .team-lists.term-staff div.button a:before,.team-lists.term-staff div.button a:after{background:#FFF}
 .team-lists.term-staff .info{padding:10px 10px 0}
 .team-lists.term-staff .infoInner{position:relative;z-index:10}
-.team-lists.term-staff .staff-description{display:none;width:100%;position:absolute;left:0;top:74px;color:#FFF;margin-top:0;border-top:1px solid rgba(255,255,255,0.2);-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;height:0;max-height:0;overflow:hidden;-webkit-animation-duration:.5s;animation-duration:.5s}
-.team-lists.term-staff .staff-description .inside{background:rgba(4,22,47,0.9);font-family:"Noto Sans JP",sans-serif;font-size:.8rem;line-height:1.6;padding:15px}
+.team-lists.term-staff .staff-description{display:none;width:100%;color:#FFF;margin-top:0;border-top:1px solid rgba(255,255,255,0.2);-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;height:0;max-height:0;overflow:hidden;-webkit-animation-duration:.5s;animation-duration:.5s;float:left;position:relative}
+@media(min-width:600px){.team-lists.term-staff .staff-description{position:absolute;left:0;top:74px}
+}@media screen and (max-width:599px){.team-lists.term-staff .staff-description{position:relative !important;top:0 !important}
+}.team-lists.term-staff .staff-description .inside{background:rgba(4,22,47,0.9);font-family:"Noto Sans JP",sans-serif;font-size:.8rem;line-height:1.6;padding:15px}
 .team-lists.term-staff .staff-description .inside p{margin-top:0}
 .team-lists.term-staff .staff-description .inside p:last-child{margin-bottom:0}
 .team-lists.term-staff .team{position:relative}
@@ -1225,9 +1230,15 @@ body.page-template-page-news{background:#f7f7f7}
 @media screen and (min-width:701px) and (max-width:860px){body.scrolled .teamPicWrap .wrapper{margin-top:0}
 }body.subpage.single-teams .single-header{background:#1c3f6e;color:#FFF;position:relative;z-index:20}
 body.subpage.single-teams .single-header .titlediv{width:100%;padding:30px 5%;background-image:url("images/diamond-pattern.png");background-position:center;background-repeat:repeat;background-color:#8d7c2f}
-@media(min-width:800px){body.subpage.single-teams .single-header .titlediv{width:45%}
+@media(min-width:800px){body.subpage.single-teams .single-header .titlediv{width:45%;float:left}
 }body.subpage.single-teams .single-header h1{margin:0;color:#FFF;font-size:1.5em;font-weight:400;line-height:1.2}
 body.subpage.single-teams .single-header .jobtitle{font-family:"Noto Sans JP",sans-serif;font-size:.8em;font-weight:500;line-height:1.2;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+body.subpage.single-teams .single-header .backButton{width:45%;height:100%;position:absolute;top:0;right:0;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+body.subpage.single-teams .single-header .backButton .btndiv{width:100%;text-align:right}
+body.subpage.single-teams .single-header .backButton .btndiv a{display:inline-block;text-decoration:none;color:#FFF;font-family:"Noto Sans JP",sans-serif;font-size:.8rem;font-weight:400;opacity:.7}
+body.subpage.single-teams .single-header .backButton .btndiv a i{position:relative;left:-5px;-webkit-transition:all ease .3s;transition:all ease .3s}
+body.subpage.single-teams .single-header .backButton .btndiv a:hover{opacity:1}
+body.subpage.single-teams .single-header .backButton .btndiv a:hover i{-webkit-transform:translateX(-3px);-ms-transform:translateX(-3px);transform:translateX(-3px)}
 body.subpage.single-teams .site-main{position:relative;z-index:15}
 body.subpage.single-teams .site-main .wrapper{z-index:15}
 body.subpage.single-teams .teamphoto{width:100%;height:100%;position:absolute;bottom:0;left:0}

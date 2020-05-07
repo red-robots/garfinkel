@@ -152,10 +152,32 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 jQuery(document).ready(function($){
 	$(".staffmoreBtn").on("click",function(e){
 		e.preventDefault();
+		var target = $(this);
 		var id = $(this).attr("id");
 		var parent = $(this).parents(".team");
 		parent.toggleClass("active");
+		var btn_offset = $(this).offset().top;
+		var footer_offset = $('#footer').offset().top;
+		var offset = footer_offset - btn_offset;
+		var footerHeight = $('#footer').height();
+		var maxHeight = -1;
+		
+		/* If user clicks one of the items on last rows, adjust content height. That way, bio will NOT go under footer */
+		if( offset < footerHeight ) {
+			parent.addClass("adjustHeight");
+			$(".team.adjustHeight .staff-description .inside").each(function(){
+				maxHeight = maxHeight > $(this).outerHeight() ? maxHeight : $(this).outerHeight();
+			});
+
+			var padBottom = maxHeight + 20;
+			$(".team-lists").css("padding-bottom",padBottom+"px");
+			
+		} else {
+			$(".team-lists").css("padding-bottom","80px");
+			parent.removeClass("adjustHeight");
+		}
 	});
+
 	if( $(".term-staff .infowrap").length > 0 ) {
 		$(".term-staff .infowrap").each(function(){
 			var divHeight = $(this).outerHeight();

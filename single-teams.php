@@ -2,12 +2,14 @@
 $post_id = get_the_ID();
 $jobtitle = get_field("title",$post_id);
 $photo = get_field("image",$post_id);
+$taxonomy = 'team-groups';
+$post_terms = get_the_terms($post_id,$taxonomy);
 get_header(); 
 ?>
 
 <?php if ($photo) { ?>
 <div class="teamPicWrap">
-	<div class="wrapper" style="background-image:url('<?php echo $photo['url'] ?>')">
+	<div class="wrapper fadeIn wow" data-wow-delay=".3s" style="background-image:url('<?php echo $photo['url'] ?>')">
 		<img src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>" class="teamPic" />
 	</div>
 </div>		
@@ -21,6 +23,14 @@ get_header();
 			<div class="jobtitle"><?php echo $jobtitle ?></div>	
 			<?php } ?>
 		</div>
+
+		<?php  
+		if($post_terms) {
+		$term = $post_terms[0];
+		$termName = $term->name;
+		$termLink = get_term_link($term); ?>
+		<div class="backButton"><div class="btndiv"><a href="<?php echo $termLink ?>" class="backBtn"><i class="fas fa-chevron-left"></i> Back to <?php echo $termName;?></a></div></div>
+		<?php } ?>
 	</div>
 </header>
 
@@ -40,7 +50,7 @@ get_header();
 		$bio = get_field("bio");
 		?>
 
-		<div class="leftcol">
+		<div class="leftcol animated fadeIn">
 
 			<div class="topinfo">
 				<?php if($phone) { ?>
