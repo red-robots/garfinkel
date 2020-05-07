@@ -91,7 +91,7 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 			$total = ($allTeams) ? count($allTeams) : 0;
 			$placeholder = THEMEURI . 'images/square.png';
 			if ( $teams->have_posts() ) {  ?>
-			<div class="team-lists fw term-<?php echo $term_slug ?>">
+			<div class="team-lists threeCols fw term-<?php echo $term_slug ?>">
 				<div class="wrapper">
 					<div class="flexwrap fadeIn wow" data-wow-delay=".5s">
 					<?php $i=1; while ( $teams->have_posts() ) : $teams->the_post();  
@@ -106,7 +106,7 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 						$z = ($total+1) - $i;
 						$has_jobtitle = ($jt) ? 'hasjobtitle':'nojobtitle';
 						?>
-						<div class="team <?php echo $has_jobtitle ?>" style="z-index:<?php echo $z;?>">
+						<div id="team_<?php echo $id?>" class="team <?php echo $has_jobtitle ?>" style="z-index:<?php echo $z;?>">
 							<div class="wrap">
 								<div class="photo <?php echo ($photo) ? 'haspic':'nopic'; ?>"<?php echo $photoBg ?>>
 									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
@@ -141,6 +141,7 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 					<?php $i++; endwhile; wp_reset_postdata(); ?>
 					</div>
 				</div>
+				<div id="basedOffset"></div>
 			</div>
 			<?php } ?>
 		<?php } ?>
@@ -150,32 +151,45 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 </div><!-- #primary -->
 <script>
 jQuery(document).ready(function($){
+
+
+	add_class_last_row_columns();
+
+	$(window).on("resize",function(){
+		add_class_last_row_columns();
+	});
+
+	function add_class_last_row_columns() {
+		var footerHeight = $('#footer').outerHeight();
+		var columns = [];
+		$(".team").each(function(){
+			var id = $(this).attr("id");
+			var btn_offset = $(this).offset().top;
+			var footer_offset = $('#basedOffset').offset().top;
+			var offset = footer_offset - btn_offset;
+			var offset_final = Math.round(offset);
+			columns.push(offset_final);
+		});
+
+		var minValue = Math.min.apply(Math, columns );
+		if( $(columns).length > 0 ) {
+			$(columns).each(function(k,v){
+				if( v==minValue ) {
+					$(".team").eq(k).addClass("lastRowCol");
+				} else {
+					$(".team").eq(k).removeClass("lastRowCol");
+				}
+			});
+		}
+	}
+
+
 	$(".staffmoreBtn").on("click",function(e){
 		e.preventDefault();
 		var target = $(this);
 		var id = $(this).attr("id");
 		var parent = $(this).parents(".team");
 		parent.toggleClass("active");
-		var btn_offset = $(this).offset().top;
-		var footer_offset = $('#footer').offset().top;
-		var offset = footer_offset - btn_offset;
-		var footerHeight = $('#footer').height();
-		var maxHeight = -1;
-		
-		/* If user clicks one of the items on last rows, adjust content height. That way, bio will NOT go under footer */
-		if( offset < footerHeight ) {
-			parent.addClass("adjustHeight");
-			$(".team.adjustHeight .staff-description .inside").each(function(){
-				maxHeight = maxHeight > $(this).outerHeight() ? maxHeight : $(this).outerHeight();
-			});
-
-			var padBottom = maxHeight + 20;
-			$(".team-lists").css("padding-bottom",padBottom+"px");
-			
-		} else {
-			$(".team-lists").css("padding-bottom","80px");
-			parent.removeClass("adjustHeight");
-		}
 	});
 
 	if( $(".term-staff .infowrap").length > 0 ) {
