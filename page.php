@@ -19,16 +19,14 @@ global $post;
 $slug = $post->post_name;
 ?>
 
-<div id="primary" class="content-area default cf <?php echo $has_header_image ?>">
-	<main id="main" class="site-main cf wrapper" role="main">
+<div id="primary" class="content-area defaultTemplate cf <?php echo $has_header_image ?>">
+	<main id="main" class="site-main cf wrapper medium" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php if (empty($header_image)) { ?>
 			<header class="entry-header">
-				<div class="wrapper">
-					<h1 class="page-title"><?php the_title(); ?></h1>
-				</div>
+				<h1 class="page-title"><?php the_title(); ?></h1>
 			</header>
 			<?php } ?>
 			

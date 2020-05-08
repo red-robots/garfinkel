@@ -23,7 +23,7 @@ a,input,button {
 }
 a {
 	color: $secondary;
-	text-decoration: none;
+	text-decoration: underline;
 	&:hover {
 		color: tint($secondary,50%);
 	}
@@ -127,11 +127,58 @@ body {
 	font-size: 14px;
 	line-height: 1.75;
 }
-.defaultTemplate {
+body.subpage .defaultTemplate {
+	padding-bottom: 60px;
+	&.has-header-image {
+		padding-top: 40px;
+	}
+	&.no-header-image {
+		padding-top: 50px;
+	}
+	.entry-header {
+		margin: 0 0;
+	}
+	h1.page-title {
+		font-size: 2.1rem;
+		font-weight: 500;
+		line-height: 1.2;
+		color: $primary;
+		position: relative;
+		margin: 0 0 30px;
+		&:after {
+			content:"";
+			display: block;
+			width: 8%;
+			height: 2px;
+			background: $primary;
+			margin-top: 18px;
+		}
+	}
 	.entry-content {
 		font-family: $font_secondary;
+		font-size: 16px;
+		line-height: 1.7;
+		h1,h2,h3,h4,h5,h6 {
+			font-family: $font_primary;
+			font-weight: 500;
+			line-height: 1.3;
+			color: $primary;
+			margin: 15px 0 0;
+			position: relative;
+    		bottom: -8px;
+		}
+		h1 { font-size: 1.6rem; }
+		h2 { font-size: 1.4rem; }
+		h3 { font-size: 1.3rem; }
+		h4 { font-size: 1.2rem; }
+		h5 { font-size: 1.1rem; }
+		h6 { font-size: 1rem; }
+		p {
+			margin-bottom: 1.6em;
+		}
 	}
 }
+
 
 /* Header */
 .site-header {
@@ -1810,6 +1857,9 @@ body.page-template-page-news {
 		font-size: 12px;
 		line-height: 1.2;
 		color: $secondary;
+		a {
+			text-decoration: none;
+		}
 		span.cats {
 			display: inline-block;
 			text-transform: uppercase;
@@ -2035,7 +2085,9 @@ body.page-template-page-news {
 				text-transform: uppercase;
 				color: $primary;
 				a {
+					display: inline-block;
 					color: $primary;
+					text-decoration: none;
 					&:hover {
 						color: $secondary;
 					}
@@ -2078,6 +2130,7 @@ body.page-template-page-news {
 	}
 	a {
 		display: inline-block;
+		text-decoration: none;
 		position: relative;
 		font-family: $font_primary;
 		font-weight: 500;
@@ -2618,6 +2671,9 @@ body.subpage.single-teams {
 		.contactinfo {
 			margin-bottom: 15px;
 			position: relative;
+			a {
+				text-decoration: none;
+			}
 			.t1 {
 				text-transform: uppercase;
 				color: $primary;
@@ -2730,8 +2786,12 @@ body.subpage.single-teams {
 				background: $primary;
 				border-radius: 100px;
 				position: absolute;
-				top: 6px;
+				top: 8px;
 				left: 0;
+			}
+			b {
+				color: $secondary;
+				text-transform: uppercase;
 			}
 		}
 		.gold {

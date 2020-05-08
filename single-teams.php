@@ -101,12 +101,25 @@ get_header();
 			
 
 			<?php if ($repeaterData) { ?>
-				<?php $ctr=1; foreach ($repeaterData as $fieldName => $tabName) { 
+				<?php 
+					$ctr=1; foreach ($repeaterData as $fieldName => $tabName) { 
 					$values = get_field($fieldName);
+					$hasValues = array();
+					if($values) {
+						foreach($values as $ars) {
+							if($ars) {
+								foreach($ars as $a) {
+									if($a) {
+										$hasValues[$fieldName] = $tabName;
+									}
+								}
+							}
+						}
+					}
 					$is_active = ($ctr==1) ? ' active':'';
 					$show_content = ($ctr==1) ? ' style="display:block"':'';
 					$list_style = ( in_array($fieldName, $noMarginBottomLists) ) ? ' style2':'';
-					if($values) { ?>
+					if($hasValues) { ?>
 					<div class="tabItem <?php echo $fieldName.$is_active ?>">
 						<h2 class="tabName"><span><?php echo $tabName ?> <i class="arrow"></i></span></h2>
 
@@ -139,12 +152,19 @@ get_header();
 								$info = '';
 								if($textVal1) {
 									$parts = explode(",",$textVal1);
+									$count = count($parts);
 									$boldTxt = $parts[0] . ': ';
 									$info = str_replace($parts[0].', ','',$textVal1);
 									$first = ($n==1) ? ' first':'';
 									?>
 									<li class="info<?php echo $first ?>">
-										<strong class="gold uppercase"><?php echo $boldTxt ?></strong> <?php echo $info ?>
+										<?php //if ($count>1) { ?>
+											<!-- <strong class="gold uppercase"><?php //echo $boldTxt ?></strong> <?php //echo $info ?> -->
+										<?php //} else { ?>
+											<?php //echo $textVal1 ?>
+										<?php // } ?>
+
+										<?php echo $textVal1 ?>
 									</li>
 								<?php $n++; } ?>
 							<?php } ?>
