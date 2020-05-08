@@ -500,6 +500,18 @@ function sortArray($array, $sortByKey, $sortDirection) {
     return $sortArray;
 }
 
+function cc_form_code( $atts ) {
+    // $a = shortcode_atts( array(
+    //     'foo' => 'something',
+    //     'bar' => 'something else',
+    // ), $atts );
+    $form_code = get_field("subscription_form_code","option");
+
+    return ($form_code) ? $form_code : '';
+}
+add_shortcode( 'subscribeform', 'cc_form_code' );
+
+
 // if( isset($_GET['insert']) && $_GET['insert']='faqs' ) {
 //     do_insert_custom_posts();
 // }
