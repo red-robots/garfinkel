@@ -1427,7 +1427,7 @@ h1.entry-title {
 	display: inline-block;
 	text-decoration: none;
 	font-family: $font_primary;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 500;
 	font-style: italic;
 	line-height: 1;
@@ -1625,9 +1625,9 @@ h1.entry-title {
 		padding: 20px;
 		color: #FFF;
 		font-family: $font_secondary;
-		font-size: 13px;
-		font-weight: 300;
-		line-height: 1.5;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.7;
 		@include mid {
 			max-width: 350px;
 		}
@@ -3127,6 +3127,70 @@ body.subpage.single-teams {
 	}
 }
 
+/* Subscribe Form */
+#page {
+	.ctct-form-custom {
+		max-width: 700px;
+		width: 100%;
+		padding: 30px;
+		background: #F7F7F7;
+		margin: 0 auto 40px;
+	}
+	div.ctct-form-embed form.ctct-form-custom label.ctct-form-label {
+		font-family: $font_secondary;
+		font-weight: 500;
+		font-size: 14px;
+		color: $lightgray;
+	}
+	div.ctct-form-embed form.ctct-form-custom input.ctct-form-element {
+		border-radius: 0px;
+		-webkit-appearance: none;
+		box-shadow: none;
+		outline: none;
+		padding: 5px 8px;
+		height: 40px;
+		border: 1px solid #dadada;
+		color: #000;
+		font-family: $font_primary;
+		font-size: 18px;
+		&:focus {
+			border-color: #d4bc7f;
+			outline: 0;
+			box-shadow: 0 0 0 0.2rem rgba(177, 133, 26, 0.25);
+		}
+	}
+	.ctct-gdpr-text {
+		font-family: $font_secondary;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1.5;
+		color: $lightgray;
+	}
+	.ctct-form-button {
+		background: $secondary;
+		font-family: $font_primary;
+		font-size: 16px;
+		font-style: italic;
+		font-weight: 600;
+		color: #FFF;
+		border-radius: 0px;
+		border: none;
+		padding: 12px 15px;
+		&:hover {
+			background: shade($secondary,20%);
+		}
+	}
+}
+
+.g-recaptcha {
+	position: relative;
+	z-index: 500;
+}
+
+body.subpage.page-newsletter .site-footer.stick-bottom,
+body.page-template-page-newsletter .site-footer.stick-bottom {
+	position: relative!important;
+}
 
 /* Footer */
 .site-footer {

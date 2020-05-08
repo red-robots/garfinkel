@@ -1037,7 +1037,7 @@ h1.entry-title{font-family:"Noto Sans JP",sans-serif;font-size:3em;font-weight:5
 .btnbg-arrow:after{bottom:10px;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
 .btnbg-arrow:hover{color:#FFF;opacity:1;background:#635721}
 .btnbg-arrow:hover:before,.btnbg-arrow:hover:after{margin-right:-3px}
-.btnlink{display:inline-block;text-decoration:none;font-family:"Noto Serif",serif;font-size:13px;font-weight:500;font-style:italic;line-height:1;color:#8d7c2f;position:relative;padding:5px 28px 5px 0}
+.btnlink{display:inline-block;text-decoration:none;font-family:"Noto Serif",serif;font-size:14px;font-weight:500;font-style:italic;line-height:1;color:#8d7c2f;position:relative;padding:5px 28px 5px 0}
 .btnlink:before,.btnlink:after{content:"";display:block;width:6px;height:1px;background:#8d7c2f;position:absolute;right:15px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .btnlink:before{top:9px;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 .btnlink:after{bottom:9px;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
@@ -1072,7 +1072,7 @@ h1.entry-title{font-family:"Noto Sans JP",sans-serif;font-size:3em;font-weight:5
 .section-about .toptext .title span{display:inline-block;position:relative}
 .section-about .toptext .title span:after{content:"";display:block;width:20%;height:1px;background:#8d7c2f;margin-top:10px}
 .section-about .toptext .text{font-size:1.35rem;line-height:1.2}
-.section-about .bottomtext{max-width:100%;width:100%;padding:20px;color:#FFF;font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:300;line-height:1.5}
+.section-about .bottomtext{max-width:100%;width:100%;padding:20px;color:#FFF;font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:400;line-height:1.7}
 @media(min-width:960px){.section-about .bottomtext{max-width:350px}
 }.section-about .bottomtext .button{margin-top:15px}
 .section-about .bottomtext .button span.btnspan{display:inline-block;position:relative}
@@ -1354,7 +1354,16 @@ body.subpage.single-teams .leftcol .bio{margin-bottom:3.5em}
 .error-404{position:relative;top:-15px}
 .error-404 .sitemapMenu{margin-top:30px}
 @media(min-width:600px){.error-404 .sitemapMenu ul.menu{-webkit-column-count:2;-moz-column-count:2;column-count:2;display:inline-block}
-}.site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
+}#page .ctct-form-custom{max-width:700px;width:100%;padding:30px;background:#f7f7f7;margin:0 auto 40px}
+#page div.ctct-form-embed form.ctct-form-custom label.ctct-form-label{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:14px;color:#5b5d5f}
+#page div.ctct-form-embed form.ctct-form-custom input.ctct-form-element{border-radius:0;-webkit-appearance:none;box-shadow:none;outline:0;padding:5px 8px;height:40px;border:1px solid #dadada;color:#000;font-family:"Noto Serif",serif;font-size:18px}
+#page div.ctct-form-embed form.ctct-form-custom input.ctct-form-element:focus{border-color:#d4bc7f;outline:0;box-shadow:0 0 0 .2rem rgba(177,133,26,0.25)}
+#page .ctct-gdpr-text{font-family:"Noto Sans JP",sans-serif;font-size:12px;font-weight:400;line-height:1.5;color:#5b5d5f}
+#page .ctct-form-button{background:#8d7c2f;font-family:"Noto Serif",serif;font-size:16px;font-style:italic;font-weight:600;color:#FFF;border-radius:0;border:0;padding:12px 15px}
+#page .ctct-form-button:hover{background:#716326}
+.g-recaptcha{position:relative;z-index:500}
+body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-newsletter .site-footer.stick-bottom{position:relative !important}
+.site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
 @media(min-width:960px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}
 @media(min-width:800px){.site-footer .footlogodiv{text-align:left}

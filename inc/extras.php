@@ -15,6 +15,9 @@
  */
 define('THEMEURI',get_template_directory_uri() . '/');
 function bellaworks_body_classes( $classes ) {
+    global $post;
+    $slug = ( isset($post->post_name) && $post->post_name ) ? ' page-' . $post->post_name : '';
+    
     // Adds a class of group-blog to blogs with more than 1 published author.
     if ( is_multi_author() ) {
         $classes[] = 'group-blog';
@@ -28,7 +31,7 @@ function bellaworks_body_classes( $classes ) {
     if ( is_front_page() || is_home() ) {
         $classes[] = 'homepage';
     } else {
-        $classes[] = 'subpage';
+        $classes[] = 'subpage'.$slug;
     }
 
     $browsers = ['is_iphone', 'is_chrome', 'is_safari', 'is_NS4', 'is_opera', 'is_macIE', 'is_winIE', 'is_gecko', 'is_lynx', 'is_IE', 'is_edge'];
