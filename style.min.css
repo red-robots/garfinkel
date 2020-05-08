@@ -822,7 +822,7 @@ body.subpage .defaultTemplate.no-header-image{padding-top:50px}
 body.subpage .defaultTemplate .entry-header{margin:0}
 body.subpage .defaultTemplate h1.page-title{font-size:2.1rem;font-weight:500;line-height:1.2;color:#1c3f6e;position:relative;margin:0 0 30px}
 body.subpage .defaultTemplate h1.page-title:after{content:"";display:block;width:8%;height:2px;background:#1c3f6e;margin-top:18px}
-body.subpage .defaultTemplate .entry-content{font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.7}
+body.subpage .defaultTemplate .entry-content{font-family:"Noto Sans JP",sans-serif;font-size:15px;line-height:1.7}
 body.subpage .defaultTemplate .entry-content h1,body.subpage .defaultTemplate .entry-content h2,body.subpage .defaultTemplate .entry-content h3,body.subpage .defaultTemplate .entry-content h4,body.subpage .defaultTemplate .entry-content h5,body.subpage .defaultTemplate .entry-content h6{font-family:"Noto Serif",serif;font-weight:500;line-height:1.3;color:#1c3f6e;margin:15px 0 0;position:relative;bottom:-8px}
 body.subpage .defaultTemplate .entry-content h1{font-size:1.6rem}
 body.subpage .defaultTemplate .entry-content h2{font-size:1.4rem}
@@ -1207,7 +1207,7 @@ body.page-template-page-news{background:#f7f7f7}
 .team-lists div.button a.btnbg-arrow:after{bottom:11px}
 .team-lists img.placeholder{width:100%;height:auto;float:left}
 .team-lists.term-staff .wrapper{overflow:visible}
-.team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative}
+.team-lists.term-staff .infowrap{background:#1c3f6e;padding:0;position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 @media(min-width:600px){.team-lists.term-staff .infowrap{min-height:83px}
 }.team-lists.term-staff div.button{top:0;margin-top:5px;margin-bottom:8px}
 .team-lists.term-staff div.button a{color:#FFF}
@@ -1380,6 +1380,9 @@ body.subpage.single-teams .leftcol .bio{margin-bottom:3.5em}
 #page .ctct-form-button:hover{background:#716326}
 .g-recaptcha{position:relative;z-index:500}
 body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-newsletter .site-footer.stick-bottom{position:relative !important}
+.survey-section .smcx-widget{max-width:100% !important;width:100%;height:100vh}
+.survey-section .smcx-iframe-container{max-width:100% !important;width:100% !important;height:100% !important}
+.survey-section iframe{width:100% !important;height:100% !important}
 .site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
 @media(min-width:960px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}

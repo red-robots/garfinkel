@@ -152,12 +152,27 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 <script>
 jQuery(document).ready(function($){
 
-
+	equalize_height();
 	add_class_last_row_columns();
 
 	$(window).on("resize",function(){
+		equalize_height();
 		add_class_last_row_columns();
 	});
+
+	/* Equalize Height of Team info */
+	function equalize_height() {
+		var maxHeight = -1;
+
+		$('.infowrap').each(function() {
+		 maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+		});
+
+		$('.infowrap').each(function() {
+		 $(this).height(maxHeight);
+		});
+	}
+	
 
 	function add_class_last_row_columns() {
 		var footerHeight = $('#footer').outerHeight();
@@ -200,6 +215,9 @@ jQuery(document).ready(function($){
 			parent.find('.staff-description').css("top",topVal);
 		});
 	}
+
+
+
 });
 </script>
 <?php

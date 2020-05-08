@@ -156,7 +156,7 @@ body.subpage .defaultTemplate {
 	}
 	.entry-content {
 		font-family: $font_secondary;
-		font-size: 16px;
+		font-size: 15px;
 		line-height: 1.7;
 		h1,h2,h3,h4,h5,h6 {
 			font-family: $font_primary;
@@ -2293,8 +2293,12 @@ body.page-template-page-news {
 		background: $primary;
 		padding: 0 0;
 		position: relative;
+		@include flexgroup-center();
 		@include xs {
 			min-height: 83px;
+		}
+		.infoInner {
+			
 		}
 	}
 	div.button {
@@ -2353,7 +2357,6 @@ body.page-template-page-news {
 		position: relative;
 		.wrap {
 			position: relative;
-			// height: 100%;
 			background-color: $primary;
 		}
 		&.nojobtitle {
@@ -3250,6 +3253,24 @@ body.subpage.single-teams {
 body.subpage.page-newsletter .site-footer.stick-bottom,
 body.page-template-page-newsletter .site-footer.stick-bottom {
 	position: relative!important;
+}
+
+/* Survey */
+.survey-section {
+	.smcx-widget {
+		max-width: 100%!important;
+		width: 100%;
+		height: 100vh;
+	}
+	.smcx-iframe-container {
+		max-width: 100%!important;
+		width: 100%!important;
+		height: 100%!important;
+	}
+	iframe {
+		width: 100%!important;
+		height: 100%!important;
+	}
 }
 
 /* Footer */

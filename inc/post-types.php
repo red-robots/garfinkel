@@ -32,6 +32,14 @@ function js_custom_init() {
             'menu_icon' => 'dashicons-lightbulb',
             'supports'  => array('title','editor')
         ),
+        array(
+            'post_type' => 'careers',
+            'menu_name' => 'Careers',
+            'plural'    => 'Careers',
+            'single'    => 'Career',
+            'menu_icon' => 'dashicons-businesswoman',
+            'supports'  => array('title','editor')
+        ),
     );
 
     
