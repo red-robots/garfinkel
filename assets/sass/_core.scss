@@ -127,56 +127,62 @@ body {
 	font-size: 14px;
 	line-height: 1.75;
 }
-body.subpage .defaultTemplate {
-	padding-bottom: 60px;
-	&.has-header-image {
-		padding-top: 40px;
-	}
-	&.no-header-image {
-		padding-top: 50px;
-	}
-	.entry-header {
-		margin: 0 0;
-	}
-	h1.page-title {
-		font-size: 2.1rem;
-		font-weight: 500;
-		line-height: 1.2;
-		color: $primary;
-		position: relative;
-		margin: 0 0 30px;
-		&:after {
-			content:"";
-			display: block;
-			width: 8%;
-			height: 2px;
-			background: $primary;
-			margin-top: 18px;
+body.subpage.single-practice-areas,
+body.subpage {
+	.defaultTemplate {
+		padding-bottom: 60px;
+		&.has-header-image {
+			padding-top: 40px;
 		}
-	}
-	.entry-content {
-		font-family: $font_secondary;
-		font-size: 15px;
-		line-height: 1.7;
-		h1,h2,h3,h4,h5,h6 {
-			font-family: $font_primary;
+		&.no-header-image {
+			padding-top: 50px;
+		}
+		.entry-header {
+			margin: 0 0;
+		}
+		h1.page-title {
+			font-size: 2.1rem;
 			font-weight: 500;
-			line-height: 1.3;
+			line-height: 1.2;
 			color: $primary;
-			margin: 15px 0 0;
 			position: relative;
-    		bottom: -8px;
+			margin: 0 0 30px;
+			&:after {
+				content:"";
+				display: block;
+				width: 8%;
+				height: 2px;
+				background: $primary;
+				margin-top: 18px;
+			}
 		}
-		h1 { font-size: 1.6rem; }
-		h2 { font-size: 1.4rem; }
-		h3 { font-size: 1.3rem; }
-		h4 { font-size: 1.2rem; }
-		h5 { font-size: 1.1rem; }
-		h6 { font-size: 1rem; }
-		p {
-			margin-bottom: 1.6em;
+		.entry-content {
+			font-family: $font_secondary;
+			font-size: 15px;
+			line-height: 1.7;
+			h1,h2,h3,h4,h5,h6 {
+				font-family: $font_primary;
+				font-weight: 500;
+				line-height: 1.3;
+				color: $primary;
+				margin: 15px 0 0;
+				position: relative;
+	    		bottom: -8px;
+			}
+			h1 { font-size: 1.6rem; }
+			h2 { font-size: 1.4rem; }
+			h3 { font-size: 1.3rem; }
+			h4 { font-size: 1.2rem; }
+			h5 { font-size: 1.1rem; }
+			h6 { font-size: 1rem; }
+			p {
+				margin-bottom: 1.6em;
+			}
 		}
 	}
+}
+body.subpage.single-practice-areas .content-area {
+	padding-top: 50px;
 }
 
 
@@ -1493,7 +1499,7 @@ h1.entry-title {
 		transition: all ease .3s;
 	}
 	&:before {
-		top: 9px;
+		top: 10px;
 		transform: rotate(45deg);
 	}
 	&:after {
