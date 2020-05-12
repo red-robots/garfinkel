@@ -21,9 +21,10 @@ $currentPage = get_permalink($post_id);
 		<?php while ( have_posts() ) : the_post(); ?>
 
 		<?php
-			$bottombox = get_field("bottombox",$post_id);
-			$benefits = get_field("benefits",$post_id);
-			$mainText = strip_tags(get_the_content($post_id));
+			$bottombox = get_field("bottombox");
+			$benefits = get_field("benefits");
+			$main_content = get_the_content();
+			$mainText = strip_tags($main_content);
 			$mainText = preg_replace('/\s+/', '', $mainText);
 			if (strpos($mainText, 'string(0)') !== false) {
 			    $mainText = '';
@@ -43,7 +44,7 @@ $currentPage = get_permalink($post_id);
 				
 				<?php if ( $mainText ) { ?>
 				<div class="entry-content cf">
-					<?php the_content(); ?>
+					<?php echo email_obfuscator($main_content); ?>
 				</div>
 				<?php } ?>
 				
