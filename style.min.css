@@ -1383,6 +1383,42 @@ body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-n
 .survey-section .smcx-widget{max-width:100% !important;width:100%;height:100vh}
 .survey-section .smcx-iframe-container{max-width:100% !important;width:100% !important;height:100% !important}
 .survey-section iframe{width:100% !important;height:100% !important}
+.careerspage .site-main{padding-top:50px;padding-bottom:50px}
+@media(min-width:800px){.careerspage .site-main{padding-top:80px;padding-bottom:80px}
+}.careerspage .bottomBlueBox{width:100%;float:left;background:#1c3f6e;color:#FFF;font-size:.9rem;font-style:italic;line-height:1.6;margin-top:30px}
+.careerspage .bottomBlueBox p{margin:0 0 25px}
+.careerspage .bottomBlueBox p:last-child{margin-bottom:0}
+.careerspage .bottomBlueBox .wrap{padding:20px}
+.careerspage .top-content-wrap{width:100%;float:left}
+.careerspage .entry-content{color:#1c3f6e;font-size:1rem;line-height:1.7}
+.careerspage .twocol .leftcol{width:100%;float:left}
+@media(min-width:800px){.careerspage .twocol .leftcol{margin-top:-18px;width:66%}
+}.careerspage .twocol .rightcol{width:100%;float:left;margin-top:30px}
+@media(min-width:800px){.careerspage .twocol .rightcol{width:30%;float:right;margin-top:0}
+}.careerspage .benefits{background:#122236;color:#FFF;padding:20px;font-family:"Noto Sans JP",sans-serif;font-size:1rem;line-height:1.4}
+.careerspage .benefits p{margin:0 0 15px}
+.careerspage .benefits ul{margin:0;padding:0;list-style:none}
+.careerspage .benefits ul li{position:relative;font-size:15px;font-weight:500;line-height:1.6;text-transform:uppercase;margin-top:15px;margin-bottom:0;padding-left:15px}
+.careerspage .benefits ul li:first-child{margin-top:0}
+.careerspage .benefits ul li:before{content:"";display:block;width:7px;height:7px;background:#8d7c2f;border-radius:100px;position:absolute;top:9px;left:0}
+.careerspage #mobile-sidebar .benefits{margin-top:30px}
+.section-careers .section-title{font-family:"Noto Sans JP",sans-serif;font-size:16px;font-weight:500;line-height:1.5;letter-spacing:1px;text-transform:uppercase;color:#8d7c2f;margin:10px 0 30px;position:relative}
+.section-careers .section-title:after{content:"";display:block;width:8%;height:2px;background:#8d7c2f;margin-top:10px}
+.section-careers .career-info{margin-bottom:10px}
+.section-careers .career-info .jobtitle{cursor:pointer;background:#f7f7f7;color:#1c3f6e;font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:500;line-height:1.6;text-transform:uppercase;margin:0;padding:1.2rem 1rem;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-careers .career-info .jobtitle span.arrow{display:inline-block;width:15px;height:15px;position:absolute;top:24px;right:15px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-careers .career-info .jobtitle span.arrow:before,.section-careers .career-info .jobtitle span.arrow:after{content:"";display:block;width:75%;height:1px;background:#1c3f6e;position:absolute;left:0;top:7px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-careers .career-info .jobtitle span.arrow:before{-webkit-transform:translateY(-4px) rotate(48deg);-ms-transform:translateY(-4px) rotate(48deg);transform:translateY(-4px) rotate(48deg)}
+.section-careers .career-info .jobtitle span.arrow:after{-webkit-transform:translateY(4px) rotate(-48deg);-ms-transform:translateY(4px) rotate(-48deg);transform:translateY(4px) rotate(-48deg)}
+.section-careers .career-info .jobtitle:hover{background:#dedede}
+.section-careers .career-info .jobdescription{display:none;margin-bottom:30px;-webkit-animation-duration:.9s;animation-duration:.9s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.section-careers .career-info .jobinfo{padding:20px 30px 0}
+.section-careers .career-info .jobinfo .sub{font-family:"Noto Serif",serif;font-size:1.3rem;font-weight:400;color:#1c3f6e;line-height:1.5;margin:0 0 10px}
+.section-careers .career-info .jobinfo .wrap{font-family:"Noto Sans JP",sans-serif;line-height:1.5}
+.section-careers .career-info .jobinfo .wrap ul{margin:0}
+.section-careers .career-info .jobinfo .wrap ul li{margin:10px 0}
+.section-careers .career-info.open .jobdescription{-webkit-animation-name:fadeIn;animation-name:fadeIn}
+.section-careers .career-info.open .arrow{-webkit-transform:translate(-8px,3px) rotate(90deg);-ms-transform:translate(-8px,3px) rotate(90deg);transform:translate(-8px,3px) rotate(90deg)}
 .site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
 @media(min-width:960px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}

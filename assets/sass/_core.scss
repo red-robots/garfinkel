@@ -1370,7 +1370,6 @@ h1.entry-title {
 				line-height: 1.6;
 			}
 
-			
 			.button {
 				position: absolute;
 				left: 0;
@@ -3273,6 +3272,213 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 		width: 100%!important;
 		height: 100%!important;
 	}
+}
+.careerspage {
+	.site-main {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		@include tab {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+	}
+	.bottomBlueBox {
+		width: 100%;
+		float: left;
+		background: $primary;
+		color: #FFF;
+		font-size: 0.9rem;
+		font-style: italic;
+		line-height: 1.6;
+		margin-top: 30px;
+		p {
+			margin: 0 0 25px;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+		.wrap {
+			padding: 20px;
+		}
+	}
+	.top-content-wrap {
+		width: 100%;
+		float: left;
+	}
+	.entry-content {
+		color: $primary;
+		font-size: 1rem;
+    	line-height: 1.7;
+	}
+	.twocol {
+		.leftcol {
+			width: 100%;
+			float: left;
+			@include tab {
+				margin-top: -18px;
+				width: 66%;
+			}
+		}
+		.rightcol {
+			width: 100%;
+			float: left;
+			margin-top: 30px;
+			@include tab {
+				width: 30%;
+				float: right;
+				margin-top: 0;
+			}
+		}
+	}
+	.benefits {
+		background: $darkblue;
+		color: #FFF;
+		padding: 20px;
+		font-family: $font_secondary;
+		font-size: 1rem;
+		line-height: 1.4;
+		p {
+			margin: 0 0 15px;
+		}
+		ul {
+			margin: 0 0;
+			padding: 0 0;
+			list-style: none;
+			li {
+				position: relative;
+				font-size: 15px;
+				font-weight: 500;
+				line-height: 1.6;
+				text-transform: uppercase;
+				margin-top: 15px;
+				margin-bottom: 0;
+				padding-left: 15px;
+				&:first-child {
+					margin-top: 0;
+				}
+				&:before {
+					content:"";
+					display: block;
+					width: 7px;
+					height: 7px;
+					background: $secondary;
+					border-radius: 100px;
+					position: absolute;
+					top: 9px;
+					left: 0;
+				}
+			}
+		}
+	}
+	#mobile-sidebar {
+		.benefits {
+			margin-top: 30px;
+		}
+	}
+}
+
+.section-careers {
+	.section-title {
+		font-family: $font_secondary;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.5;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: $secondary;
+		margin: 10px 0 30px;
+		position: relative;
+		&:after {
+			content:"";
+			display: block;
+			width: 8%;
+			height: 2px;
+			background: $secondary;
+			margin-top: 10px;
+		}
+	}
+	.career-info {
+		margin-bottom: 10px;
+		.jobtitle {
+			cursor: pointer;
+			background: $gray;
+			color: $primary;
+			font-family: $font_secondary;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 1.6;
+			text-transform: uppercase;
+			margin: 0 0;
+			padding: 1.2rem 1rem;
+			position: relative;
+			transition: all ease .3s;
+			span.arrow {
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				top: 24px;
+				right: 15px;
+				transition: all ease .3s;
+				&:before, &:after {
+					content:"";
+					display: block;
+					width: 75%;
+					height: 1px;
+					background: $primary;
+					position: absolute;
+					left: 0;
+					top: 7px;
+					transition: all ease .3s;
+				}
+				&:before {
+					transform: translateY(-4px) rotate(48deg);
+				}
+				&:after {
+					transform: translateY(4px) rotate(-48deg);
+				}
+			}
+			&:hover {
+				background: shade($gray,10%);
+			}
+		}
+		.jobdescription {
+			display: none;
+			margin-bottom: 30px;
+			@include animated(.9s);
+		}
+		.jobinfo {
+			padding: 20px 30px 0;
+			.sub {
+				font-family: $font_primary;
+				font-size: 1.3rem;
+				font-weight: 400;
+				color: $primary;
+				line-height: 1.5;
+				margin: 0 0 10px;
+			}
+			.wrap {
+				font-family: $font_secondary;
+				line-height: 1.5;
+				ul {
+					margin: 0 0;
+					li {
+						margin: 10px 0;
+					}
+				}
+			}
+		}
+		&.open {
+			.jobdescription {
+				animation-name: fadeIn;
+			}
+			.arrow {
+				transform: translate(-8px, 3px) rotate(90deg);
+			}
+		}
+		
+	}
+
 }
 
 /* Footer */
