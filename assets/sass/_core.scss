@@ -178,6 +178,15 @@ body.subpage {
 			p {
 				margin-bottom: 1.6em;
 			}
+			table {
+				width: 100%;
+				margin: 0 0;
+				border: 1px solid #CCC;
+				th, td {
+					border-bottom: 1px solid #CCC;
+					padding: 3px 5px;
+				}
+			}
 		}
 	}
 }

@@ -831,6 +831,8 @@ body.subpage.single-practice-areas .defaultTemplate .entry-content h4,body.subpa
 body.subpage.single-practice-areas .defaultTemplate .entry-content h5,body.subpage .defaultTemplate .entry-content h5{font-size:1.1rem}
 body.subpage.single-practice-areas .defaultTemplate .entry-content h6,body.subpage .defaultTemplate .entry-content h6{font-size:1rem}
 body.subpage.single-practice-areas .defaultTemplate .entry-content p,body.subpage .defaultTemplate .entry-content p{margin-bottom:1.6em}
+body.subpage.single-practice-areas .defaultTemplate .entry-content table,body.subpage .defaultTemplate .entry-content table{width:100%;margin:0;border:1px solid #CCC}
+body.subpage.single-practice-areas .defaultTemplate .entry-content table th,body.subpage.single-practice-areas .defaultTemplate .entry-content table td,body.subpage .defaultTemplate .entry-content table th,body.subpage .defaultTemplate .entry-content table td{border-bottom:1px solid #CCC;padding:3px 5px}
 body.subpage.nobanner.single-practice-areas .content-area{padding-top:50px}
 .site-header{position:relative;z-index:100;background:#f7f7f7;width:100%;float:left}
 @media(min-width:800px){.site-header{height:auto}
