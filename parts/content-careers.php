@@ -41,14 +41,14 @@ if ( $careers->have_posts() ) {  ?>
 				<?php if ($responsibilities) { ?>
 				<div class="jobinfo responsibilities">
 					<h2 class="sub">Responsibilities</h2>
-					<div class="wrap"><?php echo $responsibilities ?></div>
+					<div class="wrap"><?php echo email_obfuscator($responsibilities); ?></div>
 				</div>	
 				<?php } ?>
 
 				<?php if ($requirements) { ?>
 				<div class="jobinfo requirements">
 					<h2 class="sub">Requirements</h2>
-					<div class="wrap"><?php echo $requirements ?></div>
+					<div class="wrap"><?php echo email_obfuscator($requirements); ?></div>
 				</div>	
 				<?php } ?>
 			</div>

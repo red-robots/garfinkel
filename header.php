@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif+JP:200,300,400,500,600,700,900|Noto+Serif+SC:200,300,400,500,600,700,900|Noto+Serif:400,400i,700,700i|Noto+Sans+JP:100,300,400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif+JP:200,300,400,500,600,700,900|Noto+Serif+SC:200,300,400,500,600,700,900|Noto+Serif:400,400i,700,700i|Noto+Sans+JP:100,300,400,500,700,900|Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <?php wp_head(); ?>
 <?php  
-$customClass = (get_field("banner")) ? 'hasbanner':'nobanner';
+$customClass = (get_field("hero_image")) ? 'hasbanner':'nobanner';
 ?>
 <script>var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});</script>
 </head>
@@ -25,9 +25,7 @@ if($posttype=='teams' && is_single() ) {
 		$style = ' style="background-image:url('.$photo['url'].')"';
 	}
 }
-
 ?>
-
 <body <?php body_class($customClass); ?>>
 <div id="page" class="site cf">
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
