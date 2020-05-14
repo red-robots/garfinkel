@@ -94,22 +94,22 @@ $currentPage = get_permalink($post_id);
 
 <?php /* Contact Garfinkel */ ?>
 <?php
-$s4_title = get_field("gb_tittle","option");
-$s4_text = get_field("gb_text","option");
-$s4_btntext = get_field("button_text","option");
-$s4_btnlink = get_field("button_link","option");
-if( $s4_title || $s4_text ) { ?>
+$b_title = get_field("contact_title");
+$b_text = get_field("services_contact_text");
+$b_btntext = get_field("services_contact_button");
+$b_btnlink = get_field("services_contact_button_link");
+if( $b_title || $b_text ) { ?>
 <section class="section-contact gray fw">
 	<div class="wrapper text-center fadeIn wow">
 		<div class="middle-line"></div>
-		<?php if ($s4_title) { ?>
-			<h2 class="sectiontitle"><?php echo $s4_title ?></h2>	
+		<?php if ($b_title) { ?>
+			<h2 class="sectiontitle"><?php echo $b_title ?></h2>	
 		<?php } ?>
-		<?php if ($s4_text) { ?>
-			<div class="sectiontext"><?php echo $s4_text ?></div>	
+		<?php if ($b_text) { ?>
+			<div class="sectiontext"><?php echo $b_text ?></div>	
 		<?php } ?>
-		<?php if ($s4_btntext && $s4_btnlink) { ?>
-		<div class="button"><span class="btnspan"><a href="<?php echo $s4_btnlink ?>" class="btnbg"><?php echo $s4_btntext ?></a></span></div>
+		<?php if ($b_btntext && $b_btnlink) { ?>
+		<div class="button"><span class="btnspan"><a href="<?php echo $b_btnlink ?>" class="btnbg"><?php echo $b_btntext ?></a></span></div>
 		<?php } ?>	
 	</div>
 </section>
