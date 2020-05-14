@@ -69,6 +69,11 @@ $prev_id = ( isset($lists[$currentIndex-1]) && $lists[$currentIndex-1] ) ? $list
 				<?php } ?>
 			</div><!-- .entry-content -->
 
+			<?php $bottomText = get_field("news_bottom_text","option"); ?>
+			<?php if( $bottomText ) { ?>
+			<div class="news-bottom-text"><?php echo $bottomText ?></div>	
+			<?php } ?>
+
 		</article><!-- #post-## -->
 		<?php endwhile;  ?>
 

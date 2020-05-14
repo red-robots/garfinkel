@@ -11,6 +11,7 @@ $slug = $post->post_name;
 $taxonomy = 'category';
 $post_type = 'post';
 $currentPage = get_permalink();
+$rectangle = THEMEURI . 'images/rectangle.png';
 ?>
 
 <div id="primary" class="content-area default cf <?php echo $has_header_image ?>">
@@ -149,7 +150,7 @@ $currentPage = get_permalink();
 							<div class="fcol news animated fadeIn">
 								<div class="inside">
 									<?php if ( $img ) { ?>
-									<div class="feat-image"><img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>"></div>	
+									<div class="feat-image" style="background-image:url('<?php echo $img[0] ?>');"><img src="<?php echo $rectangle ?>" alt="" aria-hidden="true"/></div>	
 									<?php } else { ?>
 									<div class="feat-image na"><img src="<?php echo $rectangle ?>" alt="" aria-hidden="true" class="placeholder"></div>
 									<?php } ?>
