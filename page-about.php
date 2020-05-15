@@ -126,6 +126,54 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 			</div>
 		</section>
 		<?php } ?>
+
+
+		<?php 
+		$row4_title1 = get_field("row4_title1");
+		$row4_title2 = get_field("row4_title2");
+		$row4_text = get_field("row4_text");
+		if( ($row4_title1 || $row4_title2) ||  $row4_text ) { ?>
+		<section class="contentrow arow4">
+			<div class="wrapper-narrow">
+				<div class="flexwrap">
+					<?php if ($row4_text) { ?>
+					<div class="r3col textcol">
+						<?php if ($row4_title1) { ?>
+						<h3 class="title-small"><?php echo $row4_title1 ?></h3>	
+						<?php } ?>
+						<?php if ($row4_title2) { ?>
+						<h3 class="title-big"><?php echo $row4_title2 ?></h3>	
+						<?php } ?>
+						<div class="text"><?php echo $row4_text ?></div>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
+		</section>
+		<?php } ?>
+
+
+		<?php
+		$row5_title = get_field("row5_title");
+		$row5_text = get_field("row5_text");
+		$row5_button_name = get_field("row5_button_name");
+		$row5_button_link = get_field("row5_button_link");
+		if( $row5_title || $row5_text ) { ?>
+		<section class="section-contact gray fw">
+			<div class="wrapper text-center fadeIn wow">
+				<div class="middle-line"></div>
+				<?php if ($row5_title) { ?>
+					<h2 class="sectiontitle"><?php echo $row5_title ?></h2>	
+				<?php } ?>
+				<?php if ($row5_text) { ?>
+					<div class="sectiontext"><?php echo $row5_text ?></div>	
+				<?php } ?>
+				<?php if ($row5_button_name && $row5_button_link) { ?>
+				<div class="button"><span class="btnspan"><a href="<?php echo $row5_button_link ?>" class="btnbg"><?php echo $row5_button_name ?></a></span></div>
+				<?php } ?>	
+			</div>
+		</section>
+		<?php } ?>
 		
 	
 	<?php endwhile; ?><!-- #main -->

@@ -1469,11 +1469,12 @@ body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-n
 }.aboutpage .arow1 .col2{width:100%;font-family:"Noto Sans JP",sans-serif}
 @media(min-width:600px){.aboutpage .arow1 .col2{width:60%}
 }.aboutpage .arow1 .button{margin-top:25px}
-.aboutpage .arow2{padding-bottom:100px}
-.aboutpage .arow2 .wrapper{background:#FFF;padding-left:30px;padding-right:30px}
-@media(min-width:800px){.aboutpage .arow2 .wrapper{padding-left:80px;padding-right:80px}
-}.aboutpage .arow2 .col1{width:100%;font-family:"Noto Sans JP",sans-serif;padding-top:50px;padding-bottom:50px}
-@media(min-width:600px){.aboutpage .arow2 .col1{width:70%;padding-right:8%}
+.aboutpage .arow2{padding-bottom:50px}
+@media(min-width:800px){.aboutpage .arow2{padding-bottom:100px}
+}.aboutpage .arow2 .wrapper{background:#FFF;padding-left:30px;padding-right:30px;padding-bottom:50px}
+@media(min-width:800px){.aboutpage .arow2 .wrapper{padding-left:80px;padding-right:80px;padding-bottom:0}
+}.aboutpage .arow2 .col1{width:100%;font-family:"Noto Sans JP",sans-serif;padding-top:40px;padding-bottom:20px}
+@media(min-width:600px){.aboutpage .arow2 .col1{width:70%;padding-right:8%;padding-top:50px;padding-bottom:50px}
 }.aboutpage .arow2 .col2{width:100%;font-family:"Noto Sans JP",sans-serif;background:#8d7c2f;color:#FFF;padding:30px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 @media(min-width:600px){.aboutpage .arow2 .col2{width:30%}
 }.aboutpage .arow2 .col2 p{line-height:1.5}
@@ -1481,15 +1482,26 @@ body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-n
 .aboutpage .arow2 h3.sub{font-family:"Noto Serif",serif;font-size:1.2rem;font-weight:400;line-height:1.3;color:#FFF;margin:0 0 20px}
 .aboutpage .title-small{font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:600;line-height:1.6;color:#8d7c2f;text-transform:uppercase;position:relative;margin:0 0 25px}
 .aboutpage .title-small:after{content:"";display:block;width:6%;height:1px;background:#8d7c2f;margin-top:10px}
-.aboutpage .title-big{font-family:"Noto Serif",serif;font-size:1.7rem;font-weight:400;line-height:1.2;color:#1c3f6e;margin:0 0 5px}
-.aboutpage .arow3{padding-bottom:100px}
-.aboutpage .arow3 .imagecol{width:100%;margin-bottom:30px}
+.aboutpage .title-big{font-family:"Noto Serif",serif;font-size:1.7rem;font-weight:300;line-height:1.3;color:#1c3f6e;margin:0 0 5px}
+.aboutpage .arow3{padding-bottom:50px}
+@media(min-width:800px){.aboutpage .arow3{padding-bottom:100px}
+}.aboutpage .arow3 .imagecol{width:100%;margin-bottom:30px}
 @media(min-width:800px){.aboutpage .arow3 .imagecol{width:30%;margin-bottom:0}
 }.aboutpage .arow3 .imagecol div.image{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}
 .aboutpage .arow3 .imagecol div.image img{width:100%;height:auto}
 .aboutpage .arow3 .textcol{width:100%;font-family:"Noto Sans JP",sans-serif}
 @media(min-width:800px){.aboutpage .arow3 .textcol{width:70%;padding-left:5%}
-}.site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
+}.aboutpage .arow4{background:#FFF;padding-top:60px;padding-bottom:60px}
+@media(min-width:960px){.aboutpage .arow4{padding-top:100px;padding-bottom:100px}
+}.aboutpage .arow4 .title-big{margin-bottom:20px}
+@media(min-width:800px){.aboutpage .arow4 .title-big{margin-bottom:40px}
+}.aboutpage .arow4 .text{font-family:"Noto Sans JP",sans-serif;font-weight:500;color:#8d7c2f}
+.aboutpage .arow4 .text ul{width:100%;margin:0;padding:0;list-style:none}
+@media(min-width:800px){.aboutpage .arow4 .text ul{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+}.aboutpage .arow4 .text ul li{line-height:1.3;position:relative;margin:5px 0;padding-left:18px}
+@media(min-width:800px){.aboutpage .arow4 .text ul li{width:50%;margin:7px 0}
+}.aboutpage .arow4 .text ul li:before{content:"";display:block;width:6px;height:6px;background:#1c3f6e;position:absolute;top:7px;left:0;border-radius:100px}
+.site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
 @media(min-width:960px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}
 @media(min-width:800px){.site-footer .footlogodiv{text-align:left}
