@@ -63,7 +63,7 @@ if( is_front_page() ) {
 			    <div class="swiper-button-prev"></div>
 			<?php } ?>
 		</div>
-		<div class="scrollDownDiv">
+		<div class="scrollDownDiv" style="display:none;">
 			<div class="wrapper"><a href="#" id="scrolldown" class="fadeInDown wow" data-wow-delay=".5s"><span class="sr">scroll down</span></a></div>
 		</div>
 	<?php } ?>

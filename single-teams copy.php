@@ -4,15 +4,15 @@ $jobtitle = get_field("title",$post_id);
 $photo = get_field("image",$post_id);
 $taxonomy = 'team-groups';
 $post_terms = get_the_terms($post_id,$taxonomy);
-$photoBg = ($photo) ? ' style="background-image:url('.$photo['sizes']['medium_large'].')"':'';
 get_header(); 
 ?>
 
 <?php if ($photo) { ?>
-<img class="teamImage wow fadeIn" src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>">
-<div class="mobileTeamImage wow fadeIn"<?php echo $photoBg ?>>
-	<img src="<?php echo get_bloginfo("template_url") ?>/images/rectangle.png" alt="" aria-hidden="true">
-</div>
+<div class="teamPicWrap">
+	<div class="wrapper fadeIn wow" data-wow-delay=".3s" style="background-image:url('<?php echo $photo['url'] ?>')">
+		<img src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>" class="teamPic" />
+	</div>
+</div>		
 <?php } ?>
 
 <header class="single-header fw">
@@ -34,9 +34,9 @@ get_header();
 	</div>
 </header>
 
-<main id="main" class="site-main singleTeam fw" role="main">
-	
-	<div class="wrapper medium-large team-text">
+<main id="main" class="site-main fw" role="main">
+
+	<div class="wrapper medium-large">
 	<?php while ( have_posts() ) : the_post(); 
 		$photo = get_field("image");
 		$style_photo = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
@@ -116,11 +116,8 @@ get_header();
 							}
 						}
 					}
-					//$is_active = ($ctr==1) ? ' active':'';
+					$is_active = ($ctr==1) ? ' active':'';
 					$show_content = ($ctr==1) ? ' style="display:block"':'';
-					$is_active = '';
-					$show_content = '';
-					
 					$list_style = ( in_array($fieldName, $noMarginBottomLists) ) ? ' style2':'';
 					if($hasValues) { ?>
 					<div class="tabItem <?php echo $fieldName.$is_active ?>">

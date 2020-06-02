@@ -14,6 +14,7 @@
  * @return array
  */
 define('THEMEURI',get_template_directory_uri() . '/');
+
 function bellaworks_body_classes( $classes ) {
     global $post;
     $slug = ( isset($post->post_name) && $post->post_name ) ? ' page-' . $post->post_name : '';

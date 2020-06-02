@@ -79,7 +79,7 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 					</div>	
 					<?php } ?>
 					<?php if ($row2_text2) { ?>
-					<div class="col col2">
+					<div class="col col2 darkblue">
 						<div class="text">
 							<?php if ($row2_col2title) { ?>
 							<h3 class="sub"><?php echo $row2_col2title ?></h3>	

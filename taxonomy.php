@@ -19,6 +19,7 @@ $term_id = $obj->term_id;
 $term_name = $obj->name;
 $term_description = $obj->description;
 $term_description = ( get_field("taxdescription",$obj) ) ? get_field("taxdescription",$obj) : $obj->description;
+$term_custom_description = get_field("catdescription",$obj);
 $taxonomy = $obj->taxonomy;
 $page_title = $term_name;
 $header_image = '';
@@ -73,6 +74,16 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 
 
 		<?php if($taxonomy=='team-groups') { ?>
+
+			<?php if ( $term_custom_description ) { ?>
+			<section class="maintext fw fadeIn wow" data-wow-delay=".3s">
+				<div class="wrapper fadeIn wow">
+					<?php echo $term_custom_description; ?>
+				</div>
+			</section>
+			<?php } ?>
+
+
 			<?php  
 			$args = array(
 				'posts_per_page'=> -1,

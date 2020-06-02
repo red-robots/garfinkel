@@ -1283,16 +1283,12 @@ h1.entry-title {
 	padding-bottom: 50px;
 	overflow: hidden;
 	@include tab {
-		padding-top: 80px;
-		padding-bottom: 60px;
+		padding-top: 70px;
+		padding-bottom: 50px;
 	}
 	@include mid {
-		padding-top: 100px;
-		padding-bottom: 100px;
-	}
-	@include desk {
-		padding-top: 130px;
-		padding-bottom: 120px;
+		padding-top: 80px;
+		padding-bottom: 60px;
 	}
 	.innerwrap {
 		position: relative;
@@ -1559,13 +1555,11 @@ h1.entry-title {
 	padding-bottom: 30px;
 	@include tab {
 		font-size: 1rem;
-		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-top: 50px;
+		padding-bottom: 50px;
 	}
 	@include mid {
 		font-size: 1.3rem;
-		padding-top: 90px;
-		padding-bottom: 90px;
 	}
 	.midwrap {
 		padding-top: 50px;
@@ -1582,10 +1576,7 @@ h1.entry-title {
 	padding-top: 30px;
 	padding-bottom: 50px;
 	@include tab {
-		padding-bottom: 100px;
-	}
-	@include mid {
-		padding-bottom: 150px;
+		padding-bottom: 80px;
 	}
 	.inner {
 		width: 100%;
@@ -2456,6 +2447,69 @@ body.page-template-page-news {
 }
 
 /* Single Team */
+body.single-teams {
+	.teamImage {
+		width: 50vh;
+		height: auto;
+		position: fixed;
+		bottom: 0;
+		right: -5vw;
+		display: none;
+		@include tab {
+			display: block;
+		}
+		@include mid {
+			right: 3vw;
+		}
+		@include desk {
+			right: 12vw;
+		}
+		@media screen and (max-height:800px) {
+			bottom: -10vh;
+		}
+	}
+	.mobileTeamImage {
+		width: 100%;
+		float: left;
+		display: block;
+		background-size: 75%;
+		background-position: top center;
+		background-attachment: scroll;
+		background-repeat: no-repeat;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+		@include tab {
+			display: none;
+		}
+	}
+}
+.site-main.singleTeam {
+	background-size: contain;
+	background-position: top right;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	.teamPhoto {
+		display: none;
+		width: 100%;
+		height: 200%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-top: 300px;
+		background-size: contain;
+		background-position: top right;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+	}
+	.team-text {
+		position: relative;
+		z-index: 30;
+	}
+}
 .teamPicWrap {
 	width: 100%;
 	height: 100%;
@@ -2463,10 +2517,10 @@ body.page-template-page-news {
 	top: 170px;
 	right: 0;
 	overflow: hidden;
-	transition: all ease .3s;
-	* {
-		transition: all ease .3s;
-	}
+	// transition: all ease .3s;
+	// * {
+	// 	transition: all ease .3s;
+	// }
 	.wrapper {
 		max-width: 80%;
 		height: 100%;
@@ -3224,6 +3278,89 @@ body.subpage.single-teams {
 	}
 }
 
+/* Sitemap */
+.pagesitemap {
+	.sitemapMenu {
+		text-align: center;
+		max-width: 700px;
+		width: 100%;
+		padding-bottom: 60px;
+		.sitemapnav {
+			width: 100%;
+			margin: 0 auto;
+			text-align: left;
+		}
+		ul {
+			margin: 0 0;
+			padding: 0 0;
+			list-style: none;
+			li {
+				position: relative;
+			}
+		}
+		ul > li {
+			padding-left: 12px;
+			margin-bottom: 2px;
+			> a:before {
+				content:"";
+				display: block;
+				width: 5px;
+				height: 5px;
+				background: $primary;
+				position: absolute;
+				top: 7px;
+				left: 0;
+				transition: all ease-out .3s;
+			}
+			ul {
+				padding-left: 10px;
+			}
+			ul li {
+				padding-left: 10px;
+				> a:before {
+					background: transparent;
+					border: 1px solid $primary;
+					border-radius: 100%;
+					width: 3px;
+					height: 3px;
+					top: 8px;
+					transition: all ease-out .3s;
+				}
+			}
+			ul li:hover > a:before {
+				border-color: $primary;
+				background: transparent;
+			}
+		}
+		ul.menu > li > a:hover:before {
+			background: tint($primary,40%);
+		}
+		ul.menu {		
+			@include tab {
+				column-count: 2;
+			}
+			ul a {
+				padding: 0 0 0 2px;
+			}
+		}
+		ul.menu > li {
+			width: 100%;
+			@include tab {
+				width: 230px;
+
+			}
+		}
+		a {
+			color: $primary;
+			text-decoration: none;
+			display: inline-block;
+			&:hover {
+				color: tint($primary,40%);
+			}
+		}
+	}
+}
+
 /* Subscribe Form */
 #page {
 	.ctct-form-custom {
@@ -3807,6 +3944,9 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			color: #FFF;
 			padding: 30px;
 			@include flexgroup-center();
+			&.darkblue {
+				background: $primary;
+			}
 			@include xs {
 				width: 30%;
 			}
@@ -4007,8 +4147,8 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			list-style: none;
 		}
 		li {
-			margin-bottom: 2px;
 			text-align: center;
+			margin:3px 0;
 			@include tab {
 				text-align: left;
 			}
@@ -4017,6 +4157,7 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			display: inline-block;
 			text-decoration: none;
 			color: #FFF;
+			font-size: 0.75rem;
 			font-weight: 500;
 			&:hover {
 				opacity: 1;
@@ -4026,6 +4167,7 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 	}
 	.contact-info {
 		text-align: center;
+		font-size: .65rem;
 		font-weight: 300;
 		line-height: 1.6;
 		@include tab {
@@ -4061,6 +4203,7 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 	.subscribetext {
 		a {
 			font-family: $font_primary;
+			font-size: .9rem;
 			font-style: italic;
 			font-weight: 600;
 			&:hover {

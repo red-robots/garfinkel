@@ -37,6 +37,18 @@ jQuery(document).ready(function ($) {
 		}
     });
 
+    $(window).scroll(function() {
+    	var footerHeight = $("#footer").height();
+    	var imageBottom = footerHeight - 100;
+		if($(window).scrollTop() + $(window).height() == $(document).height()) {
+			$("body").addClass("scrolledToBottom");
+			//$(".teamImage").attr("style",'bottom:'+imageBottom+'px');
+		} else {
+			$("body").removeClass("scrolledToBottom");
+			//$(".teamImage").attr("style",'bottom:0px');
+		}
+	});
+
     /* Header Button */
     $(".formSubmitBtn").on("click",function(e){
     	e.preventDefault();
