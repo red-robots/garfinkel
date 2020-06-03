@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: FAQs (default)
+ * Template Name: FAQs group by Category
  *
  */
 
@@ -42,21 +42,43 @@ $slug = $post->post_name;
 		<?php endwhile; ?>
 
 		<?php  
-		$args = array(
-			'posts_per_page'=> -1,
-			'post_type'		=> 'faq',
-			'post_status'	=> 'publish'
-		);
-		$faqs = new WP_Query($args);
-		if ( $faqs->have_posts() ) {  ?>
+		$taxonomy = 'faq-category';
+		$terms = get_terms([
+		    'taxonomy' => $taxonomy,
+		    'hide_empty' => true,
+		]);
+		if($terms) { ?>
 		<section class="section-faqs fw">
 			<div class="wrapper cf">
+			<?php foreach ($terms as $term) { ?>
+			<div class="faq-group">
+				<div class="faq-category"><span><?php echo $term->name; ?></span></div>
+				<?php 
+				$args = array(
+					'posts_per_page'=> -1,
+					'post_type'		=> 'faq',
+					'post_status'	=> 'publish',
+					'tax_query'=> array(
+							array(
+								'taxonomy' => $taxonomy,
+								'field' => 'term_id',
+								'terms' => $term->term_id
+							)
+					)
+				);
+				$faqs = new WP_Query($args);
+				if ( $faqs->have_posts() ) {  ?>
+				<div class="faq-posts">
 				<?php while ( $faqs->have_posts() ) : $faqs->the_post();  ?>
 					<div class="faq-item">
 						<h2 class="question"><?php echo get_the_title(); ?><i class="arrow"></i></h2>
 						<div class="answer"><?php the_content(); ?></div>
 					</div>
 				<?php endwhile; wp_reset_postdata(); ?>
+				</div>
+				<?php } ?>
+			</div>
+			<?php } ?>
 			</div>
 		</section>
 		<?php } ?>

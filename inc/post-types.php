@@ -118,6 +118,13 @@ function ii_custom_taxonomies() {
                 'taxonomy'  => 'team-groups',
                 'rewrite'   => 'team'
             ),
+            array(
+                'post_type' => 'faq',
+                'menu_name' => 'FAQ Category',
+                'plural'    => 'FAQ Categories',
+                'single'    => 'FAQ Category',
+                'taxonomy'  => 'faq-category'
+            ),
         );
     
     if($posts) {

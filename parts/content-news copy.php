@@ -24,6 +24,30 @@ $next_id = ( isset($lists[$currentIndex+1]) && $lists[$currentIndex+1] ) ? $list
 $prev_id = ( isset($lists[$currentIndex-1]) && $lists[$currentIndex-1] ) ? $lists[$currentIndex-1] : '';
 ?>
 
+<header class="page-header">
+	<div class="wrapper">
+		<h1 class="entry-title">
+			<?php the_title(); ?>
+			<span class="postDate">(<?php echo get_the_date('m/d/Y',$current_id); ?>)</span>		
+		</h1>
+	</div>
+	<span class="diagonal-lines"></span>
+</header>
+
+<div class="breadcrumb">
+	<div class="wrapper">
+		<?php if ($prev_id) { ?>
+			<a href="<?php echo get_permalink($prev_id); ?>" id="prevpost">previous</a>
+		<?php } ?>
+		<?php if ($prev_id && $next_id) { ?>
+			<span>|</span>
+		<?php } ?>
+		<?php if ($next_id) { ?>
+			<a href="<?php echo get_permalink($next_id); ?>" id="nextpost">next</a>
+		<?php } ?>
+	</div>
+</div>
+
 <main id="main" class="site-main single-post cf" role="main">
 	<div class="wrapper">
 
@@ -31,13 +55,8 @@ $prev_id = ( isset($lists[$currentIndex-1]) && $lists[$currentIndex-1] ) ? $list
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
-			<div class="feat-image fw"><?php the_post_thumbnail('large') ?></div>	
+			<div class="feat-image"><?php the_post_thumbnail('large') ?></div>	
 			<?php } ?>
-
-			<header class="post-header">
-				<div class="post-date"><?php echo get_the_date('m/d/Y') ?></div>
-				<h1><?php the_title(); ?></h1>
-			</header>
 
 			<div class="entry-content">
 				<?php 
@@ -54,20 +73,6 @@ $prev_id = ( isset($lists[$currentIndex-1]) && $lists[$currentIndex-1] ) ? $list
 			<?php if( $bottomText ) { ?>
 			<div class="news-bottom-text"><?php echo $bottomText ?></div>	
 			<?php } ?>
-
-			<div class="breadcrumb">
-				<div class="inner">
-					<?php if ($prev_id) { ?>
-						<a href="<?php echo get_permalink($prev_id); ?>" id="prevpost">previous</a>
-					<?php } ?>
-					<?php if ($prev_id && $next_id) { ?>
-						<span>|</span>
-					<?php } ?>
-					<?php if ($next_id) { ?>
-						<a href="<?php echo get_permalink($next_id); ?>" id="nextpost">next</a>
-					<?php } ?>
-				</div>
-			</div>
 
 		</article><!-- #post-## -->
 		<?php endwhile;  ?>
