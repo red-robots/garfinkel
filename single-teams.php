@@ -9,7 +9,9 @@ get_header();
 ?>
 
 <?php if ($photo) { ?>
-<img class="teamImage wow fadeIn" src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>">
+<div class="desktopTeamImage wow fadeIn">
+	<img class="teamImage" src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>">
+</div>
 <div class="mobileTeamImage wow fadeIn"<?php echo $photoBg ?>>
 	<img src="<?php echo get_bloginfo("template_url") ?>/images/rectangle.png" alt="" aria-hidden="true">
 </div>
@@ -214,27 +216,5 @@ get_header();
 	<?php endwhile; ?>
 	</div>
 </main><!-- #main -->
-
-<script>
-jQuery(document).ready(function($){
-	$(".tabName").on("click",function(e){
-		var parent = $(this).parents(".tabItem");
-		parent.find(".tabContent").slideToggle();
-		if( parent.hasClass("active") ) {
-			parent.removeClass('active');
-		} else {
-			parent.addClass("active");
-		}
-	});
-
-	if( $(".teamPicWrap").length > 0 ) {
-		var headerHeight = $("#masthead").height();
-		var titleBarHeight = $(".single-header").height();
-		var ht = (headerHeight + titleBarHeight) + 10;
-		var topTeam = Math.round(ht);
-		$(".teamPicWrap").css("top",topTeam+"px");
-	}
-});
-</script>
 
 <?php get_footer(); ?>

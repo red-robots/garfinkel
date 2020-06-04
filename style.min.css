@@ -1246,13 +1246,11 @@ body.page-template-page-news{background:#f7f7f7}
 @media(min-width:600px){.team-lists.term-staff.threeCols .team{width:50%}
 }@media(min-width:800px){.team-lists.term-staff.threeCols .team{width:33.33%}
 }@media(min-width:960px){.team-lists.term-staff.threeCols .team{width:25%}
-}body.single-teams .teamImage{width:50vh;height:auto;position:fixed;bottom:0;right:-5vw;display:none}
-@media(min-width:800px){body.single-teams .teamImage{display:block}
-}@media(min-width:960px){body.single-teams .teamImage{right:3vw}
-}@media(min-width:1300px){body.single-teams .teamImage{right:12vw;bottom:-2vh}
-}@media screen and (max-height:800px){body.single-teams .teamImage{bottom:-10vh}
-}@media screen and (max-height:700px){body.single-teams .teamImage{bottom:-15vh}
-}@media screen and (max-height:600px){body.single-teams .teamImage{bottom:-20vh}
+}body.single-teams .desktopTeamImage{width:100%;height:100%;position:fixed;top:0;right:0;display:none}
+@media(min-width:800px){body.single-teams .desktopTeamImage{display:block}
+}body.single-teams .desktopTeamImage img{width:auto;height:50vh;position:absolute;bottom:0;right:0;-webkit-transition:all ease .2s;transition:all ease .2s}
+@media(min-width:960px){body.single-teams .desktopTeamImage img{right:-6vw}
+}@media(min-width:1300px){body.single-teams .desktopTeamImage img{right:12vw}
 }body.single-teams .mobileTeamImage{width:100%;float:left;display:block;background-size:75%;background-position:top center;background-attachment:scroll;background-repeat:no-repeat}
 body.single-teams .mobileTeamImage img{width:100%;height:auto;float:left}
 @media(min-width:800px){body.single-teams .mobileTeamImage{display:none}

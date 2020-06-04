@@ -37,17 +37,62 @@ jQuery(document).ready(function ($) {
 		}
     });
 
-    $(window).scroll(function() {
-    	var footerHeight = $("#footer").height();
-    	var imageBottom = footerHeight - 100;
-		if($(window).scrollTop() + $(window).height() == $(document).height()) {
-			$("body").addClass("scrolledToBottom");
-			//$(".teamImage").attr("style",'bottom:'+imageBottom+'px');
-		} else {
-			$("body").removeClass("scrolledToBottom");
-			//$(".teamImage").attr("style",'bottom:0px');
+
+	if( $('.desktopTeamImage').length > 0 ) {
+
+		adjust_team_photo();
+
+		$(window).on("scroll resize",function() {
+			adjust_team_photo();
+		});
+	}
+
+	if( $(".tabName").length > 0 ) {
+		$(".tabName").on("click",function(e){
+			var footerHeight = $("#footer").height();
+			var screenHeight = $(window).height();
+			var header1 = $('#masthead').height();
+			var header2 = $(".single-header").height();
+			var headHeight = header1 + header2;
+			var contentHeight = (screenHeight - headHeight) - 30;
+			var parent = $(this).parents(".tabItem");
+			parent.find(".tabContent").slideToggle();
+			//adjust_team_photo();
+			$(".teamImage").css({ "height":contentHeight+"px","bottom":"0px"});
+			if( parent.hasClass("active") ) {
+				parent.removeClass('active');
+			} else {
+				parent.addClass("active");
+			}
+		});
+
+		if( $(".teamPicWrap").length > 0 ) {
+			var headerHeight = $("#masthead").height();
+			var titleBarHeight = $(".single-header").height();
+			var ht = (headerHeight + titleBarHeight) + 10;
+			var topTeam = Math.round(ht);
+			$(".teamPicWrap").css("top",topTeam+"px");
 		}
-	});
+	}
+
+	function adjust_team_photo() {
+		var footerHeight = $("#footer").height();
+		var screenHeight = $(window).height();
+		var header1 = $('#masthead').height();
+		var header2 = $(".single-header").height();
+		var headHeight = header1 + header2;
+		var contentHeight = (screenHeight - headHeight) - 10;
+		$(".teamImage").css({ "height":contentHeight+"px"});
+	    var scrollHeight = $(document).height();
+		var scrollPosition = $(window).height() + $(window).scrollTop();
+		var sh = (scrollHeight - scrollPosition) / scrollHeight;
+		if ( sh < 0.033 ) {
+		    $(".teamImage").css({ "height":contentHeight+"px","bottom":footerHeight+"px"});
+		} else {
+			$(".teamImage").css({ "height":contentHeight+"px","bottom":"0px"});
+		}
+	}
+
 
     /* Header Button */
     $(".formSubmitBtn").on("click",function(e){
