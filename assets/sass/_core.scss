@@ -4216,6 +4216,13 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 	}
 }
 
+#testimonials-static.testimonials.swiper-container {
+	.swiper-slide {
+		opacity: 1!important;
+		visibility: visible!important;
+	}
+}
+
 /* Footer */
 .site-footer {
 	background: $darkblue;

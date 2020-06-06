@@ -1546,6 +1546,7 @@ body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-n
 .testimonials.swiper-container .testimonial-pagination{width:100%;text-align:center;padding:10px;position:absolute;left:0;bottom:0;z-index:30}
 .testimonials.swiper-container .testimonial-pagination .swiper-pagination-bullet{background:#FFF}
 .testimonials.swiper-container .swiper-button-prev,.testimonials.swiper-container .swiper-button-next{display:none}
+#testimonials-static.testimonials.swiper-container .swiper-slide{opacity:1 !important;visibility:visible !important}
 .site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
 @media(min-width:960px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}
