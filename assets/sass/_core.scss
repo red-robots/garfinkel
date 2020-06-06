@@ -4176,6 +4176,46 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 	
 }
 
+/* Testimonials */
+.testimonials.swiper-container {
+	height: auto;
+	background: $darkblue;
+	position: relative;
+	@include flexgroup-center();
+	.swiper-slide {
+		text-align: center;
+		padding: 40px 20px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all ease-in-out .3s;
+		&.swiper-slide-active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	.testimonial {
+		display: inline-block;
+		text-align: left;
+		padding:0 30px;
+	}
+	.testimonial-pagination  {
+		width: 100%;
+		text-align: center;
+		padding: 10px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 30;
+		.swiper-pagination-bullet {
+			background: #FFF;
+		}
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none;
+	}
+}
+
 /* Footer */
 .site-footer {
 	background: $darkblue;

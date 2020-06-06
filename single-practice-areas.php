@@ -27,11 +27,12 @@ $currentPage = get_permalink($post_id);
 		}
 		$details = get_field("details");
 		$infotitle = get_field("infotitle");
-		$testimonial = get_field("testimonial");
-		$testimonial_name = get_field("testimonial_name");
+		// $testimonial = get_field("testimonial");
+		// $testimonial_name = get_field("testimonial_name");
+		$testimonials = get_field("testimonials");
 		$text_large = get_field("text_large");
 		$text_small = get_field("text_small");
-		$colClass = ( ($text_large || $text_small) &&  $testimonial ) ? 'twocol':'onecol';
+		$colClass = ( ($text_large || $text_small) &&  $testimonials ) ? 'twocol':'onecol';
 		?>
 		<div class="top-content-wrap <?php echo $colClass ?>">
 			<?php if (empty($header_image)) { ?>
@@ -75,16 +76,42 @@ $currentPage = get_permalink($post_id);
 				</div>
 			</div>
 			<?php } ?>
+
 			
-			<?php if ( $testimonial ) { ?>
+			<?php if ( $testimonials ) { 
+				$max = 3;
+				$count = count($testimonials);
+				$slideId = ($count>1) ? 'testimonials-slider':'testimonials-static';
+			?>
 			<div class="rightcol">
-				<div class="testimonial">
-					<div class="quote"><span><i>&quot;</i></span></div>
-					<?php echo $testimonial; ?>
-					<?php if ($testimonial_name) { ?>
-					<div class="author">- <?php echo $testimonial_name ?></div>
-					<?php } ?>
+				<div id="<?php echo $slideId ?>" class="swiper-container testimonials">
+					<div class="swiper-wrapper">
+						<?php $i=1; foreach ($testimonials as $e) { 
+							$t_text = $e['testimonial'];
+							$t_name = $e['name'];
+							if($t_text) { ?>
+								<?php if ($i<=3) { ?>
+									<div class="swiper-slide">
+										<div class="testimonial">
+											<div class="quote"><span><i>&quot;</i></span></div>
+											<?php echo $t_text; ?>
+											<?php if ($t_name) { ?>
+											<div class="author">- <?php echo $t_name ?></div>
+											<?php } ?>
+										</div>
+									</div>
+								<?php } ?>
+							<?php $i++; } ?>
+						<?php } ?>
+					</div>
+					<!-- Add Pagination -->
+					<div class="testimonial-pagination"></div>
+					<!-- Add Arrows -->
+					<div class="testimonial-button-next swiper-button-next swiper-button-white"></div>
+					<div class="testimonial-button-prev swiper-button-prev swiper-button-white"></div>
 				</div>
+
+				
 			</div>
 			<?php } ?>
 		</div>
@@ -122,12 +149,25 @@ jQuery(document).ready(function($){
 		parent.toggleClass('open');
 		parent.find(".atext").slideToggle();
 	});
-	// var screenWidth = $(window).width();
-	// if( screenWidth < 800 ) {
-	// 	$("#career-right .benefits").appendTo('#mobile-sidebar');
-	// } else {
 
-	// }
+	if( $("#testimonials-slider").length > 0 ) {
+		var swiper_testimonials = new Swiper('#testimonials-slider', {
+			autoplay: {
+				delay: 10000,
+			},
+			loop: true,
+			spaceBetween: 30,
+			effect: 'fade',
+			pagination: {
+				el: '.testimonial-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.testimonial-button-next',
+				prevEl: '.testimonial-button-prev',
+			},
+		});
+	}
 });
 </script>
 <?php
