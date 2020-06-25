@@ -54,13 +54,42 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 
 
 		<?php 
+		/* NEW SECTION */
+		$row22Content = get_field("row22_content"); 
+		if($row22Content) { ?> 
+		<section class="aboutRow2Boxes">
+			<div class="wrapper">
+				<div class="flexwrap">
+				<?php foreach ($row22Content as $e) { 
+					$r2_title = $e['title'];
+					$r2_text = $e['text'];
+					if($r2_title || $r2_text) { ?>
+					<div class="r2box">
+						<div class="inside">
+							<?php if ($r2_title) { ?>
+							<h3 class="r2Title"><?php echo $r2_title ?></h3>	
+							<?php } ?>
+							<?php if ($r2_text) { ?>
+							<div class="r2Text"><?php echo $r2_text ?></div>	
+							<?php } ?>
+						</div>
+					</div>	
+					<?php } ?>
+				<?php } ?>
+				</div>
+			</div>
+		</section>
+		<?php } ?>
+
+		<?php 
 		$row2 = get_field("row2"); 
 		$row2_title1 = ( isset($row2['col1_title1']) && $row2['col1_title1'] ) ? $row2['col1_title1'] : '';
 		$row2_title2 = ( isset($row2['col1_title2']) && $row2['col1_title2'] ) ? $row2['col1_title2'] : '';
 		$row2_text1 = ( isset($row2['col1_content']) && $row2['col1_content'] ) ? $row2['col1_content'] : '';
-		$row2_col2title = ( isset($row2['col2_title']) && $row2['col2_title'] ) ? $row2['col2_title'] : '';
-		$row2_text2 = ( isset($row2['col2_content']) && $row2['col2_content'] ) ? $row2['col2_content'] : '';
-		$row2_class = ($row2_text1 && $row2_text2) ? 'twoccol':'onecol';
+		// $row2_col2title = ( isset($row2['col2_title']) && $row2['col2_title'] ) ? $row2['col2_title'] : '';
+		// $row2_text2 = ( isset($row2['col2_content']) && $row2['col2_content'] ) ? $row2['col2_content'] : '';
+		$row2_image = ( isset($row2['col2_image']) && $row2['col2_image'] ) ? $row2['col2_image'] : '';
+		$row2_class = ($row2_text1 && $row2_image) ? 'twoccol':'onecol';
 		?>
 
 		<?php if ( $row2_text1 || $row2_text2 ) { ?>
@@ -78,13 +107,10 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 						<div class="text"><?php echo $row2_text1 ?></div>
 					</div>	
 					<?php } ?>
-					<?php if ($row2_text2) { ?>
+					<?php if ($row2_image) { ?>
 					<div class="col col2 darkblue">
-						<div class="text">
-							<?php if ($row2_col2title) { ?>
-							<h3 class="sub"><?php echo $row2_col2title ?></h3>	
-							<?php } ?>
-							<?php echo $row2_text2 ?>
+						<div class="colImage" style="background-image:url('<?php echo $row2_image['url'] ?>');">
+							<img src="<?php echo $rectangle ?>" alt="" aria-hidden="true">
 						</div>
 					</div>	
 					<?php } ?>

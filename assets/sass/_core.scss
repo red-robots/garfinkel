@@ -3973,20 +3973,34 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 	}
 	.arow1 {
 		padding-top: 50px;
-		padding-bottom: 50px;
+		padding-bottom: 0px;
 		@include tab {
 			padding-top: 100px;
-			padding-bottom: 100px;
+			padding-bottom: 20px;
 		}
 		.col1 {
 			width: 100%;
 			font-family: $font_primary;
-			font-size: 1.2rem;
+			font-size: 1.4rem;
 			line-height: 1.6;
 			color: $primary;
+			position: relative;
+			margin-bottom: 30px;
 			@include xs {
 				width: 40%;
 				padding-right: 10%;
+			}
+			@include tab {
+				font-size: 1.7rem;
+				margin-bottom: 0;
+			}
+			&:after {
+				content:"";
+				display: block;
+				width: 20%;
+				height: 2px;
+				background: $secondary;
+				margin-top: 30px;
 			}
 		}
 		.col2 {
@@ -3994,6 +4008,12 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			font-family: $font_secondary;
 			@include xs {
 				width: 60%;
+			}
+			p:first-child {
+				margin-top: 0;
+			}
+			p:last-child {
+				margin-bottom: 0;
 			}
 		}
 
@@ -4013,6 +4033,8 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			padding-left: 30px;
 			padding-right: 30px;
 			padding-bottom: 50px;
+			max-width: 1160px;
+			width: 100%;
 			@include tab {
 				padding-left: 80px;
 				padding-right: 80px;
@@ -4025,10 +4047,13 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			padding-top: 40px;
 			padding-bottom: 20px;
 			@include xs {
-				width: 70%;
+				width: 60%;
 				padding-right: 8%;
 				padding-top: 50px;
 				padding-bottom: 50px;
+			}
+			@include tab {
+				width: 70%;
 			}
 		}
 		.col2 {
@@ -4042,6 +4067,9 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 				background: $primary;
 			}
 			@include xs {
+				width: 40%;
+			}
+			@include tab {
 				width: 30%;
 			}
 			p {
@@ -4060,6 +4088,27 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			line-height: 1.3;
 			color: #FFF;
 			margin: 0 0 20px;
+		}
+		.col2 {
+			padding: 0 0;
+		}
+		.colImage {
+			width: 100%;
+			height: auto;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			@include xs {
+				height: 100%;
+			}
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+				@include xs {
+					display: none;
+				}
+			}
 		}
 	}
 	.title-small {
@@ -4173,7 +4222,41 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 			}
 		}
 	}
-	
+}
+
+.aboutRow2Boxes {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include tab {
+		padding-bottom: 80px;
+	}
+	.flexwrap {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.r2box {
+		padding: 20px;
+		width: 100%;
+		@include tab {
+			width: 33.33%;
+		}
+		.inside {
+			background: #FFF;
+			height: 100%;
+		}
+		.r2Title {
+			margin: 0 0;
+			padding: 10px 20px;
+			background: $primary;
+			color: #FFF;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 1.2;
+		}
+		.r2Text {
+			padding: 20px;
+		}
+	}
 }
 
 /* Testimonials */
