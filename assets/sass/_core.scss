@@ -4255,6 +4255,12 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 		}
 		.r2Text {
 			padding: 20px;
+			p:first-child {
+				margin-top: 0;
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

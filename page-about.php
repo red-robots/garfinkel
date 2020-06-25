@@ -185,7 +185,7 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 		$row5_button_name = get_field("row5_button_name");
 		$row5_button_link = get_field("row5_button_link");
 		if( $row5_title || $row5_text ) { ?>
-		<section class="section-contact gray fw">
+		<section class="section-contact white fw">
 			<div class="wrapper text-center fadeIn wow">
 				<div class="middle-line"></div>
 				<?php if ($row5_title) { ?>
