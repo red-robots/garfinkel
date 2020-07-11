@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
 	if( $('.desktopTeamImage').length > 0 ) {
 
 		adjust_team_photo();
-		$(window).on("resize",function() {
+		$(window).on("scroll resize",function() {
 			adjust_team_photo();
 		});
 	}
@@ -85,11 +85,12 @@ jQuery(document).ready(function ($) {
 	    var scrollHeight = $(document).height();
 		var scrollPosition = $(window).height() + $(window).scrollTop();
 		var sh = (scrollHeight - scrollPosition) / scrollHeight;
-		if ( sh < 0.033 ) {
-		    $(".teamImage").css({ "height":contentHeight+"px","bottom":footerHeight+"px"});
-		} else {
-			$(".teamImage").css({ "height":contentHeight+"px","bottom":"0px"});
-		}
+		// if ( sh < 0.033 ) {
+		//     $(".teamImage").css({ "height":contentHeight+"px","bottom":footerHeight+"px"});
+		// } else {
+		// 	$(".teamImage").css({ "height":contentHeight+"px","bottom":"0"});
+		// }
+		$(".teamImage").css({ "height":contentHeight+"px","bottom":"0"});
 	}
 
 
