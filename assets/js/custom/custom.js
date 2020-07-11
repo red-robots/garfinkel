@@ -41,8 +41,7 @@ jQuery(document).ready(function ($) {
 	if( $('.desktopTeamImage').length > 0 ) {
 
 		adjust_team_photo();
-
-		$(window).on("scroll resize",function() {
+		$(window).on("resize",function() {
 			adjust_team_photo();
 		});
 	}

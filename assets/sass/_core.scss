@@ -2512,7 +2512,7 @@ body.single-teams {
 			bottom: 0;
 			right: 0;
 			// margin-top: 230px;
-			transition: all ease .2s;
+			//transition: all ease .2s;
 			@include mid {
 				right: -6vw;
 			}
@@ -4135,7 +4135,7 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 		font-weight: 300;
 		line-height: 1.3;
 		color: $primary;
-		margin: 0 0 5px;
+		margin: 0 0 20px;
 	}
 
 	.arow3 {
