@@ -40,7 +40,7 @@ jQuery(document).ready(function ($) {
 
 	if( $('.desktopTeamImage').length > 0 ) {
 		adjust_team_photo();
-		$(window).on("scroll resize orientationchange",function() {
+		$(window).on("load scroll resize",function() {
 			adjust_team_photo();
 		});
 	}
@@ -95,8 +95,10 @@ jQuery(document).ready(function ($) {
 		var sw = windowWidth - leftcolWidth;
 		var sideWidth = sw/2;
 		var imgWidth = $("img.teamImage").width();
-		var rightImage = sideWidth - (imgWidth/1.25);
-		if(windowWidth>1079) {
+		var d = (78/100) * imgWidth;
+		//var rightImage = sideWidth - (imgWidth/1.25);
+		var rightImage = sideWidth - d;
+		if(windowWidth>1020) {
 			$(".teamImage").css("right",rightImage+"px");
 			$(".leftcol").css("width","");
 		} else {
@@ -107,6 +109,7 @@ jQuery(document).ready(function ($) {
 			var textwidth = wrap - img_part;
 			$(".leftcol").css("width",textwidth+"px");
 		}
+
 	}
 
 
