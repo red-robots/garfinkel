@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <?php if ($photo) { ?>
-<div class="desktopTeamImage wow fadeIn">
+<div class="desktopTeamImage">
 	<img class="teamImage" src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>">
 </div>
 <div class="mobileTeamImage wow fadeIn"<?php echo $photoBg ?>>

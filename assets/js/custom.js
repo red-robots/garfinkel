@@ -40,6 +40,12 @@ jQuery(document).ready(function ($) {
 
 	if( $('.desktopTeamImage').length > 0 ) {
 		adjust_team_photo();
+		$(window).on("load",function(){
+			$('.desktopTeamImage').css({
+				"visibility":"visible",
+				"opacity":"1"
+			});
+		});
 		$(window).on("load scroll resize",function() {
 			adjust_team_photo();
 		});
