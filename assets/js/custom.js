@@ -39,9 +39,8 @@ jQuery(document).ready(function ($) {
 
 
 	if( $('.desktopTeamImage').length > 0 ) {
-
 		adjust_team_photo();
-		$(window).on("scroll resize",function() {
+		$(window).on("scroll resize orientationchange",function() {
 			adjust_team_photo();
 		});
 	}
@@ -91,6 +90,23 @@ jQuery(document).ready(function ($) {
 		// 	$(".teamImage").css({ "height":contentHeight+"px","bottom":"0"});
 		// }
 		$(".teamImage").css({ "height":contentHeight+"px","bottom":"0"});
+		var windowWidth = $(window).width();
+		var leftcolWidth = $(".leftcol").width();
+		var sw = windowWidth - leftcolWidth;
+		var sideWidth = sw/2;
+		var imgWidth = $("img.teamImage").width();
+		var rightImage = sideWidth - (imgWidth/1.25);
+		if(windowWidth>1079) {
+			$(".teamImage").css("right",rightImage+"px");
+			$(".leftcol").css("width","");
+		} else {
+			var a = (15/100) * imgWidth;
+			var img_part = imgWidth - a;
+			var imgw = imgWidth - 70;
+			var wrap = $(".wrapper.team-text").innerWidth();
+			var textwidth = wrap - img_part;
+			$(".leftcol").css("width",textwidth+"px");
+		}
 	}
 
 

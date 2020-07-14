@@ -2517,7 +2517,7 @@ body.single-teams {
 				right: -6vw;
 			}
 			@include desk {
-				right: 12vw;
+				right: -2vw;
 			}
 		}
 	}
@@ -2814,13 +2814,16 @@ body.subpage.single-teams {
 			width: 50%;
 		}
 		@include mid {
-			width: 60%;
+			width: 70%;
+		}
+		@include desk {
+			width: 90%;
 		}
 		@media screen and (max-width: 768px) {
 			width: 100%!important;
 		}
 		@media screen and (max-device-width: 1380px) {
-			width: 55%;
+			width: 60%;
 		}
 		.contactinfo {
 			margin-bottom: 15px;

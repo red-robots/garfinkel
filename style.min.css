@@ -1250,7 +1250,7 @@ body.page-template-page-news{background:#f7f7f7}
 @media(min-width:800px){body.single-teams .desktopTeamImage{display:block}
 }body.single-teams .desktopTeamImage img{width:auto;height:50vh;position:absolute;bottom:0;right:0}
 @media(min-width:960px){body.single-teams .desktopTeamImage img{right:-6vw}
-}@media(min-width:1300px){body.single-teams .desktopTeamImage img{right:12vw}
+}@media(min-width:1300px){body.single-teams .desktopTeamImage img{right:-2vw}
 }body.single-teams .mobileTeamImage{width:100%;float:left;display:block;background-size:75%;background-position:top center;background-attachment:scroll;background-repeat:no-repeat}
 body.single-teams .mobileTeamImage img{width:100%;height:auto;float:left}
 @media(min-width:800px){body.single-teams .mobileTeamImage{display:none}
@@ -1300,9 +1300,10 @@ body.subpage.single-teams .teamphoto{width:100%;height:100%;position:absolute;bo
 body.subpage.single-teams .teamphoto .photo{width:50%;height:100%;position:absolute;top:0;right:0;background-size:contain;background-attachment:fixed;background-repeat:no-repeat;background-position:bottom right}
 body.subpage.single-teams .leftcol{font-family:"Noto Sans JP",sans-serif;width:100%;padding-top:70px;padding-bottom:50px}
 @media(min-width:800px){body.subpage.single-teams .leftcol{width:50%}
-}@media(min-width:960px){body.subpage.single-teams .leftcol{width:60%}
+}@media(min-width:960px){body.subpage.single-teams .leftcol{width:70%}
+}@media(min-width:1300px){body.subpage.single-teams .leftcol{width:90%}
 }@media screen and (max-width:768px){body.subpage.single-teams .leftcol{width:100% !important}
-}@media screen and (max-device-width:1380px){body.subpage.single-teams .leftcol{width:55%}
+}@media screen and (max-device-width:1380px){body.subpage.single-teams .leftcol{width:60%}
 }body.subpage.single-teams .leftcol .contactinfo{margin-bottom:15px;position:relative}
 body.subpage.single-teams .leftcol .contactinfo a{text-decoration:none}
 body.subpage.single-teams .leftcol .contactinfo .t1{text-transform:uppercase;color:#1c3f6e;letter-spacing:1px;font-weight:600}
