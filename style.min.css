@@ -1248,7 +1248,7 @@ body.page-template-page-news{background:#f7f7f7}
 }@media(min-width:960px){.team-lists.term-staff.threeCols .team{width:25%}
 }body.single-teams .desktopTeamImage{width:100%;height:100%;position:fixed;top:0;right:0;display:none}
 @media(min-width:800px){body.single-teams .desktopTeamImage{display:block}
-}body.single-teams .desktopTeamImage img{width:auto;height:50vh;position:absolute;bottom:0;right:0}
+}body.single-teams .desktopTeamImage img{max-width:450px;width:auto;height:50vh;position:absolute;bottom:0;right:0}
 @media(min-width:960px){body.single-teams .desktopTeamImage img{right:-6vw}
 }@media(min-width:1300px){body.single-teams .desktopTeamImage img{right:-2vw}
 }body.single-teams .mobileTeamImage{width:100%;float:left;display:block;background-size:75%;background-position:top center;background-attachment:scroll;background-repeat:no-repeat}
