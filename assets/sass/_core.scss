@@ -2499,7 +2499,7 @@ body.single-teams {
 		top: 0;
 		right: 0;
 		display: none;
-		transition: all ease .1s;
+		transition: all ease .2s;
 		@include tab {
 			visibility: hidden;
 			opacity: 0;

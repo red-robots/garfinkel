@@ -5992,8 +5992,8 @@ body.single-teams .desktopTeamImage {
   top: 0;
   right: 0;
   display: none;
-  -webkit-transition: all ease .1s;
-  transition: all ease .1s; }
+  -webkit-transition: all ease .2s;
+  transition: all ease .2s; }
   @media (min-width: 800px) {
     body.single-teams .desktopTeamImage {
       visibility: hidden;
