@@ -48,7 +48,6 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
 }
 
-
 function add_query_vars_filter( $vars ) {
   $vars[] = "pg";
   return $vars;

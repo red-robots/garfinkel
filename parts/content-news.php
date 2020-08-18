@@ -29,9 +29,20 @@ $prev_id = ( isset($lists[$currentIndex-1]) && $lists[$currentIndex-1] ) ? $list
 
 		<?php while ( have_posts() ) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			<?php
+			$thumbID = get_post_thumbnail_id();  
+			$thumbinfo = get_post($thumbID);
+			$thumb_caption = ( isset($thumbinfo->post_excerpt) ) ? $thumbinfo->post_excerpt : '';
+			?>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
-			<div class="feat-image fw"><?php the_post_thumbnail('large') ?></div>	
+			<div class="feat-image fw">
+				<?php the_post_thumbnail('large') ?>
+				<?php if ($thumb_caption) { ?>
+				<div class="thumb-caption"><?php echo $thumb_caption ?></div>			
+				<?php } ?>		
+			</div>	
 			<?php } ?>
 
 			<header class="post-header">

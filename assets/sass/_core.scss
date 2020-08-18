@@ -2012,6 +2012,16 @@ body.page-template-page-news {
 			height: auto;
 			float: left;
 		}
+		.thumb-caption {
+			width: 100%;
+			float: left;
+			text-align: right;
+			font-style: italic;
+			font-size: 12px;
+			line-height: 1.5;
+			color: #949494;
+			margin: 6px 0 10px;
+		}
 	}
 	.breadcrumb {
 		padding: 0 0;
@@ -4316,6 +4326,18 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 	.swiper-slide {
 		opacity: 1!important;
 		visibility: visible!important;
+	}
+}
+
+.wp-caption {
+	position: relative;
+	.wp-caption-text {
+		text-align: right;
+		font-style: italic;
+		font-size: 12px;
+		line-height: 1.5;
+		color: #949494;
+		margin: 2px 0 20px;
 	}
 }
 

@@ -1148,6 +1148,7 @@ body.page-template-page-news{background:#f7f7f7}
 @media(min-width:800px){#content .site-main.single-post{padding-top:60px;padding-bottom:60px}
 }#content .site-main.single-post .feat-image{margin-bottom:30px}
 #content .site-main.single-post .feat-image img{width:100%;height:auto;float:left}
+#content .site-main.single-post .feat-image .thumb-caption{width:100%;float:left;text-align:right;font-style:italic;font-size:12px;line-height:1.5;color:#949494;margin:6px 0 10px}
 #content .site-main.single-post .breadcrumb{padding:0;margin-bottom:15px;margin-top:40px}
 #content .site-main.single-post .breadcrumb a{font-weight:600}
 #content .site-main.single-post .breadcrumb a#prevpost{margin-left:15px}
@@ -1569,6 +1570,8 @@ body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-n
 .testimonials.swiper-container .testimonial-pagination .swiper-pagination-bullet{background:#FFF}
 .testimonials.swiper-container .swiper-button-prev,.testimonials.swiper-container .swiper-button-next{display:none}
 #testimonials-static.testimonials.swiper-container .swiper-slide{opacity:1 !important;visibility:visible !important}
+.wp-caption{position:relative}
+.wp-caption .wp-caption-text{text-align:right;font-style:italic;font-size:12px;line-height:1.5;color:#949494;margin:2px 0 20px}
 .site-footer{background:#122236;color:#FFF;font-size:10px;padding-top:30px;width:100%;position:relative;z-index:30}
 @media(min-width:960px){.site-footer.stick-bottom{position:fixed;left:0;bottom:0}
 }.site-footer .footlogodiv{text-align:center}

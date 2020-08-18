@@ -8,6 +8,7 @@ $post_type = $post->post_type;
 ?>
 
 <div id="primary" class="content-area defaultTemplate cf">
+	
 	<?php if ( $post_type=='post' ) { 
 
 		get_template_part( 'parts/content', 'news' );
