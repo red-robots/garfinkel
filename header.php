@@ -39,11 +39,14 @@ if($posttype=='teams' && is_single() ) {
 	</div>
 
 
-  <?php if ( $popupMessage = get_field('popup_message','option') ) { ?>
-  <div id="popupMsg" class="popup-message-wrap" style="display:none">
-    <div class="popup-message"><?php echo $popupMessage ?></div>
-    <a href="javascript:void(0)" id="closePopMessage"><span>close</span></a>
-  </div> 
+  <?php if ( $popupMessage = get_field('popup_message','option') ) { 
+    $visibility = get_field('popup_message_visibillity','option');
+    if($visibility=='on') { ?>
+    <div id="popupMsg" class="popup-message-wrap" style="display:none">
+      <div class="popup-message"><?php echo $popupMessage ?></div>
+      <a href="javascript:void(0)" id="closePopMessage"><span>close</span></a>
+    </div> 
+    <?php } ?>
   <?php } ?>
 	
 
