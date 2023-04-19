@@ -524,8 +524,8 @@ h1.entry-title{font-family:"Noto Sans JP",sans-serif;font-size:3em;font-weight:5
 .practice-areas .stitle span{display:inline-block;position:relative}
 .practice-areas .stitle span:after{content:"";display:block;width:38%;height:1px;background:#8d7c2f;margin-top:6px}
 .practice-areas .stext{font-size:1.6rem;font-weight:500;line-height:1.2;color:#1c3f6e;max-width:350px;width:100%}
-.practice-areas .posts .flexwrap{margin-left:-15px;margin-right:-15px}
-.practice-areas .posts .fbox{width:100%;padding:15px}
+.practice-areas .posts .flexwrap{margin-left:-10px;margin-right:-10px}
+.practice-areas .posts .fbox{width:100%;padding:10px}
 .practice-areas .posts .fbox .inner{background:#122236;color:#fff;height:100%;position:relative;padding:25px 15px 45px}
 .practice-areas .posts .fbox .title{font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:500;line-height:1.2;text-transform:uppercase;margin:0 0 15px}
 .practice-areas .posts .fbox .text{font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:400;line-height:1.6}
@@ -1119,6 +1119,8 @@ body.subpage.single-teams .leftcol{width:50%}
 body.subpage #static-banner{height:300px}
 .practice-areas{padding-top:80px;padding-bottom:60px}
 .practice-areas .posts .fbox{width:25%}
+.practice-areas.count-4 .posts .fbox{width:25%}
+.practice-areas.count-5 .posts .fbox{width:20%}
 .midwrap{max-width:900px}
 .content-area .maintext{font-size:1.3rem}
 .content-area .maintext .midwrap{padding-top:60px;padding-bottom:60px}

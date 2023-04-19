@@ -1356,18 +1356,16 @@ h1.entry-title {
 	}
 	.posts {
 		.flexwrap {
-			margin-left: -15px;
-			margin-right: -15px;
+			margin-left: -10px;
+			margin-right: -10px;
 		}
 		.fbox {
 			width: 100%;
-			padding: 15px;
+			padding: 10px;
 			@include tab {
 				width: 50%;
 			}
 			@include mid {
-				// Need 5 now, not 4
-				// width: 25%;
 				width: 25%;
 			}
 			.inner {
@@ -1436,6 +1434,27 @@ h1.entry-title {
 			}
 		}
 	}
+
+  &.count-4 {
+    .posts {
+      .fbox {
+        @include mid {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  &.count-5 {
+    .posts {
+      .fbox {
+        @include mid {
+          width: 20%;
+        }
+      }
+    }
+  }
+
 }
 .btnbg {
 	display: inline-block;

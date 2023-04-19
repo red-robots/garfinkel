@@ -25,8 +25,10 @@ get_header();
 	$section_2_title = get_field("section_2_title");
 	$section_2_subline = get_field("section_2_subline");
 
-	if ( $areas->have_posts() ) {  ?>
-	<section class="practice-areas fw">
+	if ( $areas->have_posts() ) {  
+  $areas_count = $areas->found_posts;
+  ?>
+	<section class="practice-areas fw count-<?php echo $areas_count ?>">
 		<div class="innerwrap fw">
 			<div class="wrapper medium-large cf">
 				<?php if ($section_2_title || $section_2_subline) { ?>
