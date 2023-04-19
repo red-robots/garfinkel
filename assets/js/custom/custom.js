@@ -369,6 +369,15 @@ jQuery(document).ready(function ($) {
 		$('.menu-toggle').removeClass('open');
 		$('body').removeClass('open-menu')
 	});
-	
+
+
+  /*---- POP UP MESSAGE ----*/
+  if(localStorage.getItem('garfinkelPopState') != 'hidden'){
+    $("#popupMsg").fadeIn();
+  } 
+  $('#closePopMessage').click(function(e) {
+    $('#popupMsg').fadeOut(); 
+    localStorage.setItem('garfinkelPopState','hidden');
+  });
 
 });// END #####################################    END

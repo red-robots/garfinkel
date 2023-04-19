@@ -37,6 +37,14 @@ if($posttype=='teams' && is_single() ) {
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mobile-menu','container'=>false ) ); ?>
 		</div>
 	</div>
+
+
+  <?php if ( $popupMessage = get_field('popup_message','option') ) { ?>
+  <div id="popupMsg" class="popup-message-wrap" style="display:none">
+    <div class="popup-message"><?php echo $popupMessage ?></div>
+    <a href="javascript:void(0)" id="closePopMessage"><span>close</span></a>
+  </div> 
+  <?php } ?>
 	
 
 	<header id="masthead" class="site-header" role="banner">
