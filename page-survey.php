@@ -36,7 +36,8 @@ $slug = $post->post_name;
 			<?php } ?>
 
 			<div class="survey-section">
-				<script type="text/javascript" async="" id="smcx-sdk" src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd_2Fh8Asn2222oTY9aiHhA71JuJmWalQkb56y90LzK_2F7uL.js"></script>
+				<script>(function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgdykkhU3oOfyoFlS7l5HmoRjA1WBkcjarTdPrqUMNUeue.js",a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
+				<!-- <script type="text/javascript" async="" id="smcx-sdk" src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd_2Fh8Asn2222oTY9aiHhA71JuJmWalQkb56y90LzK_2F7uL.js"></script> -->
 			</div>
 
 
