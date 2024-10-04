@@ -20,6 +20,9 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 			</header><!-- .page-header -->
 
 			<div class="news-section-wrapper cf">
+				<div class="search">
+					<?php get_search_form(); ?>
+				</div>
 				<div class="news-inner cf">
 					<div class="news-results">
 						<div id="newsContent">
