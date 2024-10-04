@@ -1776,7 +1776,7 @@ h1.entry-title {
 }
 
 /* News page */
-body.page-template-page-news {
+body.page-template-page-news, body.search {
 	background: $gray;
 }
 .news-bottom-text {
@@ -4651,3 +4651,12 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
     }
   }
 }
+.search {
+	padding: 0 0 30px 0;
+	input.search-field, input.search-submit {
+		padding: 10px;
+		border-radius: 0;
+		border: 1px solid $darkblue;
+	}
+}
+.clear {clear:both;}

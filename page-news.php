@@ -64,6 +64,9 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 		}
 		?>
 		<div class="news-section-wrapper cf">
+			<div class="search">
+				<?php get_search_form(); ?>
+			</div>
 			<?php if ($terms) { ?>
 			<div class="filterby">
 				<span class="filtertxt">FILTER BY</span>
