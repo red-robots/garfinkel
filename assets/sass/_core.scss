@@ -3575,6 +3575,23 @@ body.page-template-page-newsletter .site-footer.stick-bottom {
 		height: 100%!important;
 	}
 }
+.entry-content {
+	.button {
+		margin-top: 15px;
+		span.btnspan {
+			display: inline-block;
+			position: relative;
+			// &:after {
+			// 	content:"";
+			// 	display: block;
+			// 	width: 50%;
+			// 	height: 1px;
+			// 	background: $secondary;
+			// 	margin-top: 10px;
+			// }
+		}
+	}
+}
 .careerspage {
 	.site-main {
 		padding-top: 50px;

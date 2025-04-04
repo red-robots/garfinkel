@@ -828,6 +828,8 @@ body.subpage.page-newsletter .site-footer.stick-bottom,body.page-template-page-n
 .survey-section .smcx-widget{max-width:100% !important;width:100%;height:100vh}
 .survey-section .smcx-iframe-container{max-width:100% !important;width:100% !important;height:100% !important}
 .survey-section iframe{width:100% !important;height:100% !important}
+.entry-content .button{margin-top:15px}
+.entry-content .button span.btnspan{display:inline-block;position:relative}
 .careerspage .site-main{padding-top:50px;padding-bottom:50px}
 .careerspage .bottomBlueBox{width:100%;float:left;background:#1c3f6e;color:#FFF;font-size:.9rem;font-style:italic;line-height:1.6;margin-top:30px}
 .careerspage .bottomBlueBox p{margin:0 0 25px}

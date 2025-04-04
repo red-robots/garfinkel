@@ -69,14 +69,17 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 			</div>
 			<?php if ($terms) { ?>
 			<div class="filterby">
-				<span class="filtertxt">FILTER BY</span>
-				<span class="filterOpts"><?php echo $filter_by; ?></span>
+				<span class="filtertxt">FILTER BY CATEGORY</span>
+				<span class="filterOpts"><?php //echo $filter_by; ?><?php echo do_shortcode('[facetwp facet="categories"]'); ?></span>
+				<span class="filtertxt">FILTER BY RESOURCE</span>
+				<span class="filterOpts"><?php //echo $filter_by; ?><?php echo do_shortcode('[facetwp facet="resources"]'); ?></span>
 			</div>
 			<?php } ?>
 
 			<div class="news-inner cf">
 
 				<?php  
+
 				$posts_per_page = 12;
 				$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 				$posts = array();
@@ -90,13 +93,15 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 					'post_status'	=> 'publish',
 					'paged'			=> $paged,
 					'orderby'       => 'date',       
-				  	'order'         => 'DESC'
+				  	'order'         => 'DESC',
+				  	'facetwp'       => true
 				);
 
 				$all_args = array(
 					'posts_per_page'=> -1,
 					'post_type'		=> $post_type,
 					'post_status'	=> 'publish',
+					// 'facetwp'        => true
 				);
 
 				if( $query_cat_slug ) {
@@ -120,14 +125,18 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 				$all = get_posts($all_args);
 				$total = count($all);
 
-				if ( $posts ) {  ?>
+				$wp_query = new WP_Query( $args );
+				?>
+	
+				<?php if($wp_query->have_posts()) :  //if ( $posts ) {  ?>
 				<div class="news-results">
 					<?php if ($is_filtered) { ?>
 					<div id="totalItems"><?php echo $total_text ?></div>	
 					<?php } ?>
 					<div id="newsContent">
-						<div id="newsInner" class="flexwrap">
-						<?php foreach($posts as $item) {
+						<div id="newsInner" class="flexwrap ">
+						
+						<?php while($wp_query->have_posts()) : $wp_query->the_post(); //foreach($posts as $item) {
 							$id = $item->ID;
 							$content = strip_tags( $item->post_content );
 							$content = ($content) ? shortenText($content,100,' ') : '';
@@ -165,7 +174,8 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 									<div class="button"><a href="<?php echo get_permalink($id); ?>" class="btnlink">Read More</a></div>
 								</div>
 							</div>
-						<?php } wp_reset_postdata(); ?>
+						<?php endwhile; //} wp_reset_postdata(); ?>
+						<!--</div> facet-template -->
 						</div>
 
 						<?php 
@@ -191,17 +201,18 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 				                echo paginate_links($pagination);
 				            ?>
 				        </div>
-						<?php } ?>
+						<?php  } ?>
 
 						
 					</div>
 				</div>
-				<?php } else { ?>
+				<?php endif;  ?>
+				<!-- <?php //} else { ?>
 					<div class="news-results notfound">
 						<p><strong class="red">No record found.</strong></p>
 					</div>
-				<?php } ?>
-
+				<?php //} ?> -->
+			
 			</div>
 		</div>
 
