@@ -125,6 +125,13 @@ function ii_custom_taxonomies() {
                 'single'    => 'FAQ Category',
                 'taxonomy'  => 'faq-category'
             ),
+            array(
+                'post_type' => 'post',
+                'menu_name' => 'Resources',
+                'plural'    => 'Resources',
+                'single'    => 'Resource',
+                'taxonomy'  => 'resource-category'
+            ),
         );
     
     if($posts) {
