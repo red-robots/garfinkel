@@ -115,7 +115,7 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 				}
 
 				
-				$total = count($all);
+				// $total = count($all);
 
 				$wp_query = new WP_Query( $args );
 				?>
@@ -169,12 +169,8 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 						<?php endwhile;  ?>
 						</div>
 
-						<?php 
-						$total_pages = ceil($total / $posts_per_page);
-						if($paged!=$total_pages) { ?>
-							<?php echo do_shortcode('[facetwp facet="pager_"]'); ?>
-						<?php } else { ?>
-						<?php } ?>
+						<?php echo do_shortcode('[facetwp facet="pager_"]'); ?>
+						
 
 						
 
