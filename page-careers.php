@@ -57,6 +57,7 @@ $currentPage = get_permalink($post_id);
 					<?php echo $benefits; ?>
 				</div>
 				<?php } ?>
+				<?php echo do_shortcode('[styled_btn link="https://garfinkelimmigration.isolvedhire.com" text="View job opportunities" target="_blank"]'); ?>
 			</div>
 
 
