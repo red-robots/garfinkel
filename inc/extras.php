@@ -15,6 +15,17 @@
  */
 define('THEMEURI',get_template_directory_uri() . '/');
 
+
+
+add_filter( 'facetwp_is_main_query', function( $is_main_query, $query ) {
+  if ( $query->is_archive() && $query->is_main_query() ) {
+    $is_main_query = false;
+  }
+  return $is_main_query;
+}, 10, 2 );
+
+
+
 function bellaworks_body_classes( $classes ) {
     global $post;
     $slug = ( isset($post->post_name) && $post->post_name ) ? ' page-' . $post->post_name : '';

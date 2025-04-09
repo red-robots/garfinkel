@@ -43,6 +43,7 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 
 		<?php 
 		/* NEWS FEEDS */ 
+		//$query_cat_id = ( isset($_GET['cat']) && is_numeric($_GET['cat']) ) ? $_GET['cat'] : '';
 		$query_cat_slug = ( isset($_GET['cat']) && $_GET['cat'] ) ? $_GET['cat'] : '';
 		$options = array();
 		$filter_by = '';
@@ -69,9 +70,9 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 			<?php if ($terms) { ?>
 			<div class="filterby">
 				<span class="filtertxt">FILTER BY CATEGORY</span>
-				<span class="filterOpts"><?php echo do_shortcode('[facetwp facet="categories"]'); ?></span>
+				<span class="filterOpts"><?php //echo $filter_by; ?><?php echo do_shortcode('[facetwp facet="categories"]'); ?></span>
 				<span class="filtertxt">FILTER BY RESOURCE</span>
-				<span class="filterOpts"><?php echo do_shortcode('[facetwp facet="resources"]'); ?></span>
+				<span class="filterOpts"><?php //echo $filter_by; ?><?php //echo do_shortcode('[facetwp facet="resources"]'); ?></span>
 			</div>
 			<?php } ?>
 
@@ -96,6 +97,12 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 				  	'facetwp'       => true
 				);
 
+				// $all_args = array(
+				// 	'posts_per_page'=> -1,
+				// 	'post_type'		=> $post_type,
+				// 	'post_status'	=> 'publish',
+				// 	'facetwp'        => true
+				// );
 
 				if( $query_cat_slug ) {
 					$args['tax_query'] = array(
@@ -114,7 +121,8 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 									);
 				}
 
-				
+				$posts = get_posts($args);
+				// $all = get_posts($all_args);
 				$total = count($all);
 
 				$wp_query = new WP_Query( $args );
@@ -166,22 +174,46 @@ $rectangle = THEMEURI . 'images/rectangle.png';
 									<div class="button"><a href="<?php echo get_permalink($id); ?>" class="btnlink">Read More</a></div>
 								</div>
 							</div>
-						<?php endwhile;  ?>
+						<?php endwhile; //} wp_reset_postdata(); ?>
+						<!--</div> facet-template -->
 						</div>
 
 						<?php 
 						$total_pages = ceil($total / $posts_per_page);
 						if($paged!=$total_pages) { ?>
-							<?php echo do_shortcode('[facetwp facet="pager_"]'); ?>
+						<!-- <div class="morediv text-center"><a href="#" id="loadmore" data-maxpagenum="<?php echo $total_pages ?>" data-nextpage="<?php echo $paged ?>" class="btngold">Load More Articles</a></div> -->
+						<?php echo do_shortcode('[facetwp facet="pager_"]'); ?>
 						<?php } else { ?>
+						<!-- <div class="morediv text-center endpage"><span class="end">No more posts to load.</span></div> -->
 						<?php } ?>
 
-						
+						<?php if ($total_pages > 1){ ?>
+
+						<div id="pagination" class="pagination" style="display:none;">
+				            <?php
+				                $pagination = array(
+				                    'base' => @add_query_arg('pg','%#%'),
+				                    'format' => '?paged=%#%',
+				                    'current' => $paged,
+				                    'total' => $total_pages,
+				                    'prev_text' => __( '&laquo;', 'red_partners' ),
+				                    'next_text' => __( '&raquo;', 'red_partners' ),
+				                    'type' => 'plain'
+				                );
+				                // echo paginate_links($pagination);
+				            ?>
+				        </div>
+						<?php  } ?>
 
 						
 					</div>
 				</div>
 				<?php endif;  wp_reset_postdata(); ?>
+				<!-- <?php //} else { ?>
+					<div class="news-results notfound">
+						<p><strong class="red">No record found.</strong></p>
+					</div>
+				<?php //} ?> -->
 			
 			</div>
 		</div>
