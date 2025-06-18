@@ -90,7 +90,7 @@ get_header();
 			$repeaterData['honors_and_awards'] = 'Honors and Awards';
 			$repeaterData['published_works'] = 'Published Works';
 			$repeaterData['certified_legal_specialties'] = 'Certified Legal Specialties';
-			$repeaterData['bar_admissions'] = 'Bar Admissions';
+			$repeaterData['bar_admissions'] = 'Admissions';
 			$repeaterData['education'] = 'Education';
 			$repeaterData['professional_associations_and_memberships'] = 'Professional Associations and Memberships';
 			$repeaterData['past_employment_positions'] = 'Past Employment Positions';

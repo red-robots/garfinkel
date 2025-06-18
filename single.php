@@ -7,6 +7,21 @@ $slug = $post->post_name;
 $post_type = $post->post_type;
 ?>
 
+<script type="text/javascript">
+	// document.addEventListener('contextmenu', event => {
+	//     event.preventDefault();
+	// });
+
+	document.querySelectorAll('.feat-image').forEach(element => {
+	    element.style.pointerEvents = 'none';
+	});
+</script>
+<style type="text/css">
+	.feat-image, img.size-full {
+	    pointer-events: none;
+	}
+</style>
+
 <div id="primary" class="content-area defaultTemplate cf">
 	
 	<?php if ( $post_type=='post' ) { 
