@@ -65,6 +65,11 @@ require get_template_directory() . '/inc/block-all-registration-and-comments.php
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Google Analytics (GA4) event tracking.
+ */
+require get_template_directory() . '/inc/analytics.php';
+
 
 // Remove WP Version From Styles	
 add_filter( 'style_loader_src', 'sdt_remove_ver_css_js', 9999 );
