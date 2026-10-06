@@ -143,7 +143,9 @@ if( $b_title || $b_text ) { ?>
 <?php } ?>
 
 <script>
-jQuery(document).ready(function($){
+// jQuery is deferred, wait for the document before using it.
+document.addEventListener('DOMContentLoaded',function(){
+	var $ = jQuery;
 	$(".atitle").on("click",function(){
 		var parent = $(this).parents(".accordion");
 		parent.toggleClass('open');

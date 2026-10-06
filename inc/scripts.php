@@ -7,14 +7,19 @@ function bellaworks_scripts() {
 	$theme_dir = get_template_directory();
 	$theme_uri = get_template_directory_uri();
 
-	wp_enqueue_style( 
-		'bellaworks-style', 
-		$theme_uri . '/style.min.css?v=' . filemtime( $theme_dir . '/style.min.css' ), 
-	);
+	// The stylesheet is printed inline so the page can paint without waiting on a second request.
+	wp_register_style( 'bellaworks-style', false );
+	wp_enqueue_style( 'bellaworks-style' );
+	wp_add_inline_style( 'bellaworks-style', bellaworks_inline_stylesheet() );
+
+	// Scripts are deferred so they don't block the first paint. WordPress falls back to a normal
+	// (blocking) tag on any page where a plugin script that depends on jQuery can't be deferred.
+	$head_defer   = array( 'in_footer' => false, 'strategy' => 'defer' );
+	$footer_defer = array( 'in_footer' => true, 'strategy' => 'defer' );
 
   wp_deregister_script('jquery');
   // wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, '3.4.1', false);
-  wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/jquery.min.js', false, '3.6.3', false);
+  wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/jquery.min.js', false, '3.6.3', $head_defer);
   wp_enqueue_script('jquery');
 
 	
@@ -23,14 +28,24 @@ function bellaworks_scripts() {
 			'bellaworks-blocks', 
 			$theme_uri . '/assets/js/vendors.min.js?v=' . filemtime( $theme_dir . '/assets/js/vendors.min.js' ), 
 			array(), '20120206', 
-			true 
+			$footer_defer 
 		);
+
+	// Swiper is only used by the testimonials slider on practice area pages.
+	if ( is_singular( 'practice-areas' ) ) {
+		wp_enqueue_script( 
+			'bellaworks-swiper', 
+			$theme_uri . '/assets/js/swiper.min.js?v=' . filemtime( $theme_dir . '/assets/js/swiper.min.js' ), 
+			array(), '5.4.2', 
+			$footer_defer 
+		);
+	}
 
 	wp_enqueue_script( 
 			'bellaworks-custom', 
 			$theme_uri . '/assets/js/custom.min.js?v=' . filemtime( $theme_dir . '/assets/js/custom.min.js' ), 
 			array(), '20120206', 
-			true 
+			$footer_defer 
 		);
 
 	// Pages are built in the classic editor, only load the block styles where blocks are actually used.
@@ -43,6 +58,31 @@ function bellaworks_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bellaworks_scripts' );
+
+/*-------------------------------------
+  Returns style.min.css for inline output, with its
+  relative image paths pointed back at the theme folder.
+---------------------------------------*/
+function bellaworks_inline_stylesheet() {
+	$css = file_get_contents( get_template_directory() . '/style.min.css' );
+	if ( ! $css ) {
+		return '';
+	}
+	return str_replace( 'url("images/', 'url("' . get_template_directory_uri() . '/images/', $css );
+}
+
+/*-------------------------------------
+  The translator plugin's scripts depend on jQuery, so they
+  have to be deferred too or jQuery can't be.
+---------------------------------------*/
+function bellaworks_defer_plugin_scripts() {
+	foreach ( array( 'scripts', 'scripts-google' ) as $handle ) {
+		if ( wp_script_is( $handle, 'registered' ) ) {
+			wp_script_add_data( $handle, 'strategy', 'defer' );
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'bellaworks_defer_plugin_scripts', 100 );
 
 /*-------------------------------------
   Load stylesheets that only style content below the fold

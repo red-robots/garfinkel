@@ -161,7 +161,9 @@ $page_title .= '<br><em>'.$term_name.'</em>';
 	</main><!-- #main -->
 </div><!-- #primary -->
 <script>
-jQuery(document).ready(function($){
+// jQuery is deferred, wait for the document before using it.
+document.addEventListener('DOMContentLoaded',function(){
+	var $ = jQuery;
 
 	equalize_height();
 	add_class_last_row_columns();

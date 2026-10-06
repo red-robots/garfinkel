@@ -75,7 +75,9 @@ $currentPage = get_permalink($post_id);
 </div><!-- #primary -->
 
 <script>
-jQuery(document).ready(function($){
+// jQuery is deferred, wait for the document before using it.
+document.addEventListener('DOMContentLoaded',function(){
+	var $ = jQuery;
 	$(".jobtitle").on("click",function(){
 		var parent = $(this).parents(".career-info");
 		parent.toggleClass('open');
