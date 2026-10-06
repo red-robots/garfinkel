@@ -34,13 +34,14 @@ const precision = 10;
 // JS Vendor options.
 
 // Path to JS vendor folder.
-const jsVendorSRC = './assets/js/vendor/*.js';
+// Only list the libraries the site uses. swiper.js, select2.full.js and parallax.js are in the folder but not bundled.
+const jsVendorSRC = ['./assets/js/vendors/wow.js'];
 
 // Path to place the compiled JS vendors file.
 const jsVendorDestination = './assets/js/';
 
 // Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
-const jsVendorFile = 'vendor';
+const jsVendorFile = 'vendors';
 
 // JS Custom options.
 
@@ -68,7 +69,7 @@ const imgDST = './assets/img/';
 const watchStyles = './assets/sass/**/*.scss';
 
 // Path to all vendor JS files.
-const watchJsVendor = './assets/js/vendor/*.js';
+const watchJsVendor = './assets/js/vendors/*.js';
 
 // Path to all custom JS files.
 const watchJsCustom = './assets/js/custom/*.js';

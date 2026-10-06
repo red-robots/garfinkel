@@ -254,7 +254,8 @@ function get_images_from_website($imageURL) {
     return ( file_exists($complete_save_loc) ) ?  $complete_save_loc : '';
 }
 
-add_action( 'init', 'extractdata' );
+// The import script (assets/js/extract.js) was only needed for the original content migration, don't load it on every page.
+// add_action( 'init', 'extractdata' );
 function extractdata() {
    wp_register_script( "extractdata", get_stylesheet_directory_uri() . '/assets/js/extract.js', array('jquery') );
    wp_localize_script( 'extractdata', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));        

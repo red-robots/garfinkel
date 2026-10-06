@@ -18,7 +18,8 @@ if( is_front_page() ) {
 
 				<?php if ( isset($slides['url']) && $slides['url'] ) { ?>
 
-					<div class="swiper-slide slideItem" style="background-image:url('<?php echo $slides['url'] ?>');">
+					<?php bellaworks_banner_style( $slides, '#static-banner .slideItem' ); ?>
+					<div class="swiper-slide slideItem">
 						<?php if ($tagline) { ?>
 						<div class="slideCaption">
 							<div class="wrapper">
@@ -77,7 +78,8 @@ if( is_front_page() ) {
 	
 	<?php if( $slides ) {  ?>
 	<div id="static-banner" class="banner-wrap fw subpage">
-		<div class="banner-image cf fadeIn animated" style="background-image:url('<?php echo $slides['url']; ?>');">
+		<?php bellaworks_banner_style( $slides, '#static-banner .banner-image' ); ?>
+		<div class="banner-image cf fadeIn animated">
 			<div class="wrapper">
 				<div class="caption">
 					<h1 class="page-title fadeInRight wow"><?php echo $page_title ?></h1>

@@ -5,8 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif+JP:200,300,400,500,600,700,900|Noto+Serif+SC:200,300,400,500,600,700,900|Noto+Serif:400,400i,700,700i|Noto+Sans+JP:100,300,400,500,700,900|Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<?php // Only the families/weights the stylesheet uses, loaded without blocking render. ?>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Catamaran&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" media="print" onload="this.media='all'">
+<noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Catamaran&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</noscript>
 <?php wp_head(); ?>
 <?php  
 $customClass = (get_field("hero_image")) ? 'hasbanner':'nobanner';

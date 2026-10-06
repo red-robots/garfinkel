@@ -1,7 +1,7 @@
 <?php 
 get_header(); 
 ?>
-<div id="primary" class="content-area fw">
+<div id="primary" class="content-area fw" role="main">
 	<?php while ( have_posts() ) : the_post(); ?>
 		
 		<?php if ( get_the_content() ) { ?>
@@ -82,7 +82,7 @@ get_header();
 			<div class="inner">
 				<?php if ($section3_image) { ?>
 				<div class="imagecol fadeIn wow">
-					<img src="<?php echo $section3_image['url'] ?>" alt="<?php echo $section3_image['title'] ?>">
+					<?php echo wp_get_attachment_image( $section3_image['ID'], 'large', false, array( 'alt' => $section3_image['title'], 'loading' => 'lazy' ) ); ?>
 				</div>	
 				<?php } ?>
 				<?php if ($short_description || $section3_subline) { ?>

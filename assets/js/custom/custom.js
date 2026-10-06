@@ -26,16 +26,19 @@ jQuery(document).ready(function ($) {
 	// 	},
  //    });
 
-	var swiper = new Swiper('#slideshow', {
-		effect: 'fade', /* "fade", "cube", "coverflow" or "flip" */
-		loop: true,
-		noSwiping: false,
-		simulateTouch : false,
-		speed: 1000,
-		autoplay: {
-			delay: 4000,
-		}
-    });
+	// Swiper is no longer bundled in vendors.js (the banner is a single image), add swiper.js back to the vendors build to use this.
+	if( typeof Swiper !== 'undefined' ) {
+		var swiper = new Swiper('#slideshow', {
+			effect: 'fade', /* "fade", "cube", "coverflow" or "flip" */
+			loop: true,
+			noSwiping: false,
+			simulateTouch : false,
+			speed: 1000,
+			autoplay: {
+				delay: 4000,
+			}
+	    });
+	}
 
 
 	if( $('.desktopTeamImage').length > 0 ) {
@@ -147,14 +150,17 @@ jQuery(document).ready(function ($) {
     }
 
     /* Select Style */
-    $(".select-input-field").each(function(){
-    	var label = $(this).data("label");
-    	var id = $(this).data("id");
-    	$("select#"+id).select2({ placeholder: label, allowClear: true });
-    });
+    // Select2 is no longer bundled in vendors.js (no page uses these classes), add select2.full.js back to the vendors build to use this.
+    if( $.fn.select2 ) {
+	    $(".select-input-field").each(function(){
+	    	var label = $(this).data("label");
+	    	var id = $(this).data("id");
+	    	$("select#"+id).select2({ placeholder: label, allowClear: true });
+	    });
 
 
-	$(".contactform select").select2();
+		$(".contactform select").select2();
+	}
 
 	/* FAQS accordion */
 	if( $(".faq-item").length > 0 ) {

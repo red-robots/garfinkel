@@ -119,3 +119,30 @@ function bellaworks_category_transient_flusher() {
 }
 add_action( 'edit_category', 'bellaworks_category_transient_flusher' );
 add_action( 'save_post',     'bellaworks_category_transient_flusher' );
+
+/*-------------------------------------
+  Banner images are CSS backgrounds, so they can't use srcset.
+  Returns a smaller source for phones/tablets and the original for desktop.
+---------------------------------------*/
+function bellaworks_banner_sources( $image ) {
+	if ( ! is_array( $image ) || empty( $image['url'] ) ) {
+		return array();
+	}
+	$mobile = ( isset( $image['sizes']['1536x1536'] ) && $image['sizes']['1536x1536'] ) ? $image['sizes']['1536x1536'] : $image['url'];
+	return array(
+		'mobile'  => $mobile,
+		'desktop' => $image['url'],
+	);
+}
+
+function bellaworks_banner_style( $image, $selector ) {
+	$sources = bellaworks_banner_sources( $image );
+	if ( ! $sources ) {
+		return;
+	} ?>
+	<style>
+		<?php echo $selector; ?>{background-image:url('<?php echo esc_url( $sources['desktop'] ); ?>');}
+		@media (max-width:820px){<?php echo $selector; ?>{background-image:url('<?php echo esc_url( $sources['mobile'] ); ?>');}}
+	</style>
+	<?php
+}

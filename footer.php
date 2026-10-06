@@ -18,7 +18,7 @@
 			<div class="footcol fcol1">
 				<div class="footlogodiv">
 					<?php if ($footlogo) { ?>
-					<img src="<?php echo $footlogo['url'] ?>" alt="<?php echo $footlogo['title'] ?>" class="footlogo">	
+					<img src="<?php echo $footlogo['url'] ?>" alt="<?php echo $footlogo['title'] ?>" width="<?php echo $footlogo['width'] ?>" height="<?php echo $footlogo['height'] ?>" loading="lazy" class="footlogo">	
 					<?php } ?>
 				</div>
 			</div>
